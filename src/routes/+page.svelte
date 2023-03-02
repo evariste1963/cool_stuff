@@ -11,27 +11,27 @@
 	}
    
     let pos;
-  
+    // console.log(window.innerHeight)
 </script>
 
 <div class="top" />
 <h1>this is my cool stuff library</h1>
 <h2>Button-89</h2>
 <Button89 />
-
-<h2>Slider Button</h2>
-<SliderBtn />
-
-<div style="height:100vh"></div>
-<div style="height:100vh"></div>
-
-
 {#if pos >= window.innerHeight - 25}
 	<div class="top-btn">
 		<a class="myBtn" href=".top" on:click|preventDefault={scrollIntoView}>Back to top</a>
 	</div>
 {/if}
-<svelte:window bind:scrollY={pos} />
+<svelte:window bind:scrollY={pos} /> 
+
+
+<div style="height:100vh"></div>
+<div style="height:100vh"></div>
+<h2>Slider Button</h2>
+<SliderBtn />
+
+
 
 <style>
     .myBtn {
