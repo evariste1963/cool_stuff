@@ -21,6 +21,10 @@
 {/if}
 
 <style>
+
+  .top {
+    position: absolute;
+  }
   .myBtn {
     position: fixed;
     bottom: 80px;

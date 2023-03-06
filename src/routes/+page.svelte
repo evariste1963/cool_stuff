@@ -4,6 +4,8 @@
   import SliderBtn from "$lib/SliderBtn.svelte";
   import BackToTopBtn from "../lib/BackToTopBtn.svelte";
   import SvelteScolling from "../lib/SvelteScolling.svelte";
+  import ScrollToBtn from "$lib/ScrollToBtn.svelte"
+  import { scrollRef } from 'svelte-scrolling';
 
   const pageLoader = () => {
     pageIsLoaded = true;
@@ -25,10 +27,12 @@
 		z-index: 9999"
   />
 {:else}
+
+<BackToTopBtn />
   <div class="page">
     <h1>this is my cool stuff library</h1>
 
-    <BackToTopBtn />
+    
     <SvelteScolling />
 
     <h2>Button-89</h2>
@@ -36,8 +40,21 @@
 
     <h2>Slider Button</h2>
     <SliderBtn />
-
+<ScrollToBtn />
     <div style="height:100vh" />
     <div style="height:100vh" />
+	<div class='scroll' use:scrollRef={'scroll'} />
   </div>
 {/if}
+
+
+<style>
+.page {
+	margin: 1em 2em
+}
+
+.scroll {
+	height:100vh;
+	width:100%
+}
+</style>
