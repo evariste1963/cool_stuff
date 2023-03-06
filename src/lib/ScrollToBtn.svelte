@@ -15,7 +15,7 @@ a {
 		align-items: center;
 		justify-content: center;
 		width: 10em;
-		height: 80%;
+		
 		border-top: solid 2px #fff;
 		border-bottom: solid 2px #fff;
 		border-left: none;

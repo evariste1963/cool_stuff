@@ -34,13 +34,16 @@
 
     
     <SvelteScolling />
-
+<div class="btns">
     <h2>Button-89</h2>
     <Button89 />
 
     <h2>Slider Button</h2>
     <SliderBtn />
-<ScrollToBtn />
+	
+	<h2>Scroll To Button</h2>
+	<ScrollToBtn />
+</div>
     <div style="height:100vh" />
     <div style="height:100vh" />
 	<div class='scroll' use:scrollRef={'scroll'} />
@@ -51,6 +54,17 @@
 <style>
 .page {
 	margin: 1em 2em
+}
+
+h2 {
+	margin: 0 1em 0 2em;
+}
+
+.btns {
+	display: flex;
+	align-items:center;
+	border-top: 2px solid  rgba(97, 108, 110, 0.7);
+	border-bottom: 2px solid  rgba(97, 108, 110, 0.7);
 }
 
 .scroll {

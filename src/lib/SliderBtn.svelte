@@ -26,7 +26,7 @@
 		text-decoration: none;
 		padding: 1rem 1rem;
 		border-radius: 0.7rem;
-		margin: 0;
+		margin: 0 2rem 0 0;;
 		color: rgba(255, 255, 255, 0.7);
 		background-color: rgba(97, 108, 110, 0.7);
 		cursor: pointer;
@@ -46,7 +46,7 @@
 		bottom: 0;
 		left: 0;
 		inset: 2px;
-		background: rgba(255, 255, 255, 0.6);
+		background: rgba(255, 255, 255, 0.9);
 		z-index: -1;
 		transform: scaleX(0);
 		transform-origin: top right;
