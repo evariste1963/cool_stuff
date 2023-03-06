@@ -22,10 +22,7 @@
 
 <style>
 
-  .top {
-    position: absolute;
-  }
-  .myBtn {
+    .myBtn {
     position: fixed;
     bottom: 80px;
     right: 30px;
