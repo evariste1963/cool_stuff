@@ -3,6 +3,7 @@
   import Button89 from "$lib/Button89.svelte";
   import SliderBtn from "$lib/SliderBtn.svelte";
   import BackToTopBtn from "../lib/BackToTopBtn.svelte";
+  import SvelteScolling from "../lib/SvelteScolling.svelte";
 
   const pageLoader = () => {
     pageIsLoaded = true;
@@ -27,6 +28,7 @@
   <h1>this is my cool stuff library</h1>
 
   <BackToTopBtn />
+  <SvelteScolling />
 
   <h2>Button-89</h2>
   <Button89 />
