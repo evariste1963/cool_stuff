@@ -23,7 +23,7 @@
 <style>
   .myBtn {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px;
     right: 30px;
     z-index: 9999;
     font-size: 18px;

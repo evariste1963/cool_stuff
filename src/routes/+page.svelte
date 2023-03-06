@@ -11,7 +11,7 @@
   let pageIsLoaded = false;
 </script>
 
-<!-- this is to check that thew page is loaded -->
+<!-- this is to check that the page is loaded -->
 {#if !pageIsLoaded}
   <div
     use:pageLoader
@@ -25,17 +25,19 @@
 		z-index: 9999"
   />
 {:else}
-  <h1>this is my cool stuff library</h1>
+  <div class="page">
+    <h1>this is my cool stuff library</h1>
 
-  <BackToTopBtn />
-  <SvelteScolling />
+    <BackToTopBtn />
+    <SvelteScolling />
 
-  <h2>Button-89</h2>
-  <Button89 />
+    <h2>Button-89</h2>
+    <Button89 />
 
-  <h2>Slider Button</h2>
-  <SliderBtn />
+    <h2>Slider Button</h2>
+    <SliderBtn />
 
-  <div style="height:100vh" />
-  <div style="height:100vh" />
+    <div style="height:100vh" />
+    <div style="height:100vh" />
+  </div>
 {/if}
