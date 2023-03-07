@@ -31,5 +31,6 @@
     transition: color 1s ease;
     transition: font-weight 1s ease;
     z-index: 1;
+    box-shadow: 6px 6px 6px 0 rgba(97, 108, 110, 0.8);
   }
 </style>

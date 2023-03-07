@@ -31,6 +31,7 @@
     cursor: pointer;
     padding: 15px;
     border-radius: 0.7rem;
+    box-shadow: 6px 6px 6px 0 rgba(97, 108, 110, 0.8);
   }
 
   .top-btn ::before {

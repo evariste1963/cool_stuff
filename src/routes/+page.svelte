@@ -34,7 +34,7 @@
 
 <style>
   .page {
-    margin: 4em 2em;
+    margin: 2em;
   }
 
   h2 {
