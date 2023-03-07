@@ -22,9 +22,7 @@
     align-items: center;
     justify-content: center;
     width: 10em;
-
     border: solid 2px rgba(97, 108, 110, 0.8);
-
     font-size: 1.5rem;
     font-weight: 500;
     text-decoration: none;
@@ -34,13 +32,13 @@
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(97, 108, 110, 0.8);
     cursor: pointer;
-    transition: color 1s ease;
-    transition: font-weight 1s ease;
+    transition: font-weight 1s, color 1s ease-in-out;
     z-index: 1;
   }
 
   .toggled {
     background: rgba(255, 255, 255, 0.7);
     color: rgba(97, 108, 110, 0.8);
+    font-weight: bold;
   }
 </style>

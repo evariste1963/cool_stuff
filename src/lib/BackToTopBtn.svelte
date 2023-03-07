@@ -20,6 +20,10 @@
 {/if}
 
 <style>
+  /* this ensures that the scrollIntoView rturns to the top of the page */
+  .top {
+    position: absolute;
+  }
   .myBtn {
     position: fixed;
     bottom: 80px;
