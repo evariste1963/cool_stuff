@@ -11,7 +11,6 @@
 <svelte:window bind:scrollY={pos} />
 
 <div class="top" />
-
 {#if pos >= window.innerHeight - 25}
   <div class="top-btn">
     <a class="myBtn" href=".top" on:click|preventDefault={scrollIntoView}
@@ -37,6 +36,7 @@
     cursor: pointer;
     padding: 15px;
     border-radius: 0.7rem;
+    text-decoration: none;
   }
 
   .top-btn a::before {
