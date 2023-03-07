@@ -21,8 +21,7 @@
 {/if}
 
 <style>
-
-    .myBtn {
+  .myBtn {
     position: fixed;
     bottom: 80px;
     right: 30px;
