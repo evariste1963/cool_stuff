@@ -6,7 +6,7 @@
     { page: "Home", path: "/" },
     { page: "About", path: "about" },
     { page: "Events", path: "events" },
-    { page: "Contact", path: "contact" },
+    { page: "scrollDiv", path: "scrollDiv" },
   ];
 </script>
 
