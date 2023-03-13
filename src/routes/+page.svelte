@@ -1,5 +1,5 @@
 <script>
-  import "../app.css";
+  //import "../app.css";
   import Button89 from "$lib/Button89.svelte";
   import SliderBtn from "$lib/SliderBtn.svelte";
   import BackToTopBtn from "../lib/BackToTopBtn.svelte";
@@ -7,7 +7,7 @@
   import ScrollToBtn from "$lib/ScrollToBtn.svelte";
   import ToggleHideBtn from "$lib/ToggleHideBtn.svelte";
   import { scrollRef } from "svelte-scrolling";
-  import SKEmbed from '$lib/SKEmbed.svelte'
+  import SKEmbed from "$lib/SKEmbed.svelte";
 </script>
 
 <BackToTopBtn />
@@ -32,10 +32,9 @@
     <SKEmbed />
   </div>
   <div style="height:100vh" />
-  
+
   <div style="height:100vh" />
   <div class="scroll" use:scrollRef={"scroll"} />
-  
 </div>
 
 <style>
@@ -44,10 +43,10 @@
   }
 
   .embed {
-    width:100%;
+    width: 100%;
     height: 800px;
     margin: 4em auto;
-   background-color: rgba(57, 119, 119, 0.9);
+    background-color: rgba(57, 119, 119, 0.9);
   }
 
   h2 {

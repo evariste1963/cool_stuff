@@ -1,5 +1,5 @@
 <script>
-  //import "./app.css";
+  import "../app.css";
   import Navbar from "$lib/Navbar.svelte";
   import Footer from "$lib/Footer.svelte";
   import Loader from "../lib/Loader.svelte";
