@@ -5,7 +5,7 @@
   let navItems = [
     { page: "Home", path: "/" },
     { page: "About", path: "about" },
-    { page: "Events", path: "events" },
+    { page: "paralax", path: "paralax" },
     { page: "scrollDiv", path: "scrollDiv" },
   ];
 </script>
