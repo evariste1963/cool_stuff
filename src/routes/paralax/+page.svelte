@@ -3,6 +3,7 @@
   let speed = 4;
 </script>
 
+<!-- can also use scrollTop as per scrollDiv example" -->
 <svelte:window bind:scrollY={scroll} />
 
 <h1>{scroll}</h1>
@@ -57,7 +58,7 @@
   <div class="box" style:margin-left="40%" />
   <div
     class="box"
-    style:transform={`translate3d(0, ${(scroll / speed) * 1.2}px, 0)`}
+    style:transform={`translate3d(0, ${(scroll / speed) * 2.1}px, 0)`}
     style:background="green"
     style:margin-left="65%"
   />
