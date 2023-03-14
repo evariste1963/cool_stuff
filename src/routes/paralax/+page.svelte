@@ -1,13 +1,12 @@
 <script>
-  const randomNum = (Math.random(2, 10) * 10).toFixed(2);
   let scroll;
-  let speed = randomNum;
+  let speed = 3;
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
 <h1>{scroll}</h1>
-<h2>{speed}</h2>
+
 <section>
   <div
     class="box pin"
@@ -56,7 +55,7 @@
   <div class="box" style:margin-left="40%" />
   <div
     class="box"
-    style:transform={`translate3d(0, ${(scroll / speed) * 3}px, 0)`}
+    style:transform={`translate3d(0, ${(scroll / speed) * 1.2}px, 0)`}
     style:background="red"
     style:margin-left="50%"
   />
@@ -108,17 +107,13 @@
   section {
     height: 1000em;
   }
-  h1,
-  h2 {
+  h1 {
     position: fixed;
     top: 50px;
     margin-left: 10px;
     z-index: 10;
   }
 
-  h2 {
-    left: 100px;
-  }
   .box {
     --size: 50px;
     height: var(--size);
