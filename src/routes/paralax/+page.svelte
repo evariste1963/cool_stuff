@@ -1,6 +1,6 @@
 <script>
   let scroll;
-  let speed = 3;
+  let speed = 4;
 </script>
 
 <svelte:window bind:scrollY={scroll} />
@@ -10,9 +10,11 @@
 <section>
   <div
     class="box pin"
-    style:transform={`translate3d(0, ${scroll / speed}px, 0)`}
+    style:transform={`translate3d(${scroll / speed}px, ${scroll / speed}px, 0) rotate(${scroll / speed}deg)`} 
     style:background="teal"
     style:margin-left="10%"
+    style:top="10%"
+    
   />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
@@ -23,8 +25,8 @@
 
   <div
     class="box pin"
-    style:transform={`translate3d(0, ${(scroll / speed) * 0.2}px, 0)`}
-    style:background="teal"
+    style:transform={`translate3d(${scroll / speed * -1}px, ${(scroll / speed) * 0.01}px, 0) rotate(${scroll / speed *-3}deg)`}
+    style:background="purple"
     style:margin-left="90%"
   />
   <div class="box" style:margin-left="90%" />
@@ -36,9 +38,9 @@
   <br /><br /><br /><br /><br />
   <div
     class="box"
-    style:transform={`translate3d(0, ${(scroll / speed) * 2}px, 0)`}
-    style:background="red"
-    style:margin-left="65%"
+    style:transform={`translate3d(0, ${(scroll / speed) * 3}px, 0)`}
+    style:background="orangered"
+    style:margin-left="50%"
   />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
@@ -56,8 +58,8 @@
   <div
     class="box"
     style:transform={`translate3d(0, ${(scroll / speed) * 1.2}px, 0)`}
-    style:background="red"
-    style:margin-left="50%"
+    style:background="green"
+    style:margin-left="65%"
   />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" />
@@ -105,7 +107,7 @@
 
 <style>
   section {
-    height: 1000em;
+    height: auto;
   }
   h1 {
     position: fixed;
@@ -124,5 +126,7 @@
 
   .pin {
     position: fixed;
+    margin-bottom: 100px;
+  
   }
 </style>
