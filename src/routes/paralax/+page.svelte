@@ -85,10 +85,15 @@
 
   <div class="box" style:margin-left="90%" />
   <div class="box" style:margin-left="85%" />
-  <div class="box" style:margin-left="45%" style:background="blueviolet" />
+  <div
+    class="box"
+    style:margin-left="45%"
+    style:border-radius="50%"
+    style:background="blueviolet"
+  />
   <div class="box" style:margin-left="35%" />
   <div class="box" style:margin-left="75%" style:background="aqua" />
-  <div class="box" style:margin-left="85%" />
+  <div class="box" style:margin-left="85%" style:border-radius="50%" />
   <br /><br /><br /><br /><br />
   <div
     class="box"
@@ -101,12 +106,17 @@
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" style:background="brown" />
   <div class="box" style:margin-left="30%" />
-  <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="25%" style:border-radius="50%" />
   <div class="box" style:margin-left="60%" />
-  <div class="box" style:margin-left="55%" />
+  <div class="box" style:margin-left="55%" style:border-radius="50%" />
   <div class="box" style:margin-left="20%" />
-  <div class="box" style:margin-left="40%" />
-  <div class="box" style:margin-left="30%" style:background="black" />
+  <div class="box" style:margin-left="40%" style:border-radius="50%" />
+  <div
+    class="box"
+    style:margin-left="30%"
+    style:border-radius="50%"
+    style:background="black"
+  />
   <div class="box" style:margin-left="25%" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="20%" />
@@ -128,7 +138,7 @@
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" style:background="gold" />
-  <div class="box" style:margin-left="60%" />
+  <div class="box" style:margin-left="60%" style:border-radius="50%" />
   <div class="box" style:margin-left="55%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
@@ -136,15 +146,20 @@
   <div class="box" style:margin-left="25%" style:background="gray" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="20%" />
-  <div class="box" style:margin-left="40%" />
+  <div class="box" style:margin-left="40%" style:border-radius="50%" />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" />
-  <div class="box" style:margin-left="60%" style:background="olive" />
+  <div
+    class="box"
+    style:margin-left="60%"
+    style:border-radius="50%"
+    style:background="olive"
+  />
   <div class="box" style:margin-left="55%" />
   <div class="box" style:margin-left="90%" />
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="45%" style:background="blueviolet" />
-  <div class="box" style:margin-left="35%" />
+  <div class="box" style:margin-left="35%" style:border-radius="50%" />
   <div class="box" style:margin-left="75%" style:background="aqua" />
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="20%" />
@@ -154,36 +169,46 @@
   <div class="box" style:margin-left="60%" style:background="tomato" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
-  <div class="box" style:margin-left="30%" />
+  <div class="box" style:margin-left="30%" style:border-radius="50%" />
   <div class="box" style:margin-left="25%" />
   <div class="box" style:margin-left="90%" />
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="45%" style:background="blueviolet" />
-  <div class="box" style:margin-left="35%" />
-  <div class="box" style:margin-left="75%" style:background="aqua" />
+  <div class="box" style:margin-left="35%" style:border-radius="50%" />
+  <div
+    class="box"
+    style:margin-left="75%"
+    style:border-radius="50%"
+    style:background="aqua"
+  />
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="55%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" style:background="plum" />
   <div class="box" style:margin-left="30%" />
-  <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="25%" style:border-radius="50%" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="20%" />
-  <div class="box" style:margin-left="40%" style:background="purple" />
+  <div
+    class="box"
+    style:margin-left="40%"
+    style:border-radius="50%"
+    style:background="purple"
+  />
   <div class="box" style:margin-left="30%" />
 
   <div class="box" style:margin-left="90%" />
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="45%" style:background="blueviolet" />
-  <div class="box" style:margin-left="35%" />
+  <div class="box" style:margin-left="35%" style:border-radius="50%" />
   <div class="box" style:margin-left="75%" style:background="aqua" />
   <div class="box" style:margin-left="85%" />
-  <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="25%" style:border-radius="50%" />
   <div class="box" style:margin-left="60%" style:background="maroon" />
   <div class="box" style:margin-left="55%" />
   <div class="box" style:margin-left="20%" />
-  <div class="box" style:margin-left="40%" />
+  <div class="box" style:margin-left="40%" style:border-radius="50%" />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" />
   <div class="box" style:margin-left="60%" style:background="navy" />
