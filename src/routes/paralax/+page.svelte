@@ -10,13 +10,12 @@
 
 <section>
   <div
-    class="box1 pin"
-    id="outer-cube-down"
-    style:transform={`translate3d(${scroll / speed}px, ${
+    class="pin outer-cube-down"
+    style:transform={`translate3d(${(scroll / speed) * 2}px, ${
       scroll / speed
     }px, 0) rotateY(${scroll / speed}deg) rotateZ(${scroll / speed}deg)`}
     style:margin-left="10%"
-    style:top="10%"
+    style:top="15%"
   >
     <div class="front" />
     <div class="back" />
@@ -27,8 +26,7 @@
   </div>
 
   <div
-    class="box1"
-    id="outer-cube"
+    class="box1 outer-cube"
     style:margin-left="40%"
     style:top="100%"
     style:transform={`translate3d(${scroll / speed}px, ${
@@ -52,9 +50,9 @@
 
   <div
     class="box pin"
-    style:transform={`translate3d(${(scroll / speed) * -1}px, ${
-      (scroll / speed) * 0.01
-    }px, 0) rotate(${(scroll / speed) * -3}deg)`}
+    style:transform={`translate3d(${(scroll / speed) * -1}px, 0, 0) rotate(${
+      (scroll / speed) * -3
+    }deg)`}
     style:background="purple"
     style:margin-left="90%"
   />
@@ -136,23 +134,25 @@
 
 <style>
   :root {
-    --size: 5em;
-    --halfsize: 2.5em;
-    --halfsizen: -2.5em;
+    --size: 4em;
+    --halfsize: 2em;
+    --halfsizen: -2em;
     --ballTopColor: #a8e44f;
   }
   section {
     height: auto;
+    background-color: rgb(27, 26, 26);
   }
   h1 {
     position: fixed;
     top: 50px;
     margin-left: 10px;
+    color: #fff;
     z-index: 10;
   }
 
   .box {
-    --size: 5em;
+    --size: 4em;
     height: var(--size);
     width: var(--size);
     background-color: rgb(149, 143, 143);
@@ -164,19 +164,19 @@
     margin-bottom: 100px;
   }
 
-  #outer-cube,
-  #outer-cube-down {
+  .outer-cube,
+  .outer-cube-down {
     display: flex;
     align-items: center;
     justify-content: center;
     transform-style: preserve-3d;
   }
 
-  #outer-cube {
+  .outer-cube {
     position: absolute;
   }
-  #outer-cube div,
-  #outer-cube-down div {
+  .outer-cube div,
+  .outer-cube-down div {
     position: fixed;
     width: var(--size);
     height: var(--size);
@@ -188,7 +188,6 @@
       linear-gradient(127deg, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0) 70.71%),
       linear-gradient(336deg, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0) 70.71%);
     box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.4);
-    /*border-radius: 50%;*/
   }
 
   .back {
@@ -221,6 +220,5 @@
   }
   .pin {
     position: fixed;
-    margin-bottom: 100px;
   }
 </style>
