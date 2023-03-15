@@ -240,7 +240,7 @@
     width: var(--size);
     background-color: rgb(149, 143, 143);
     margin-bottom: 1rem;
-    box-shadow: 4px 4px 4px 0 rgba(97, 108, 110, 0.8);
+    box-shadow: 4px 4px 8px 0 rgba(97, 108, 110, 0.8);
   }
 
   .pin {
