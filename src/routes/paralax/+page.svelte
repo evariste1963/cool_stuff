@@ -14,8 +14,25 @@
     style:transform={`translate3d(${(scroll / speed) * 2}px, ${
       scroll / speed
     }px, 0) rotateY(${scroll / speed}deg) rotateZ(${scroll / speed}deg)`}
-    style:margin-left="10%"
-    style:top="15%"
+    style:left="50%"
+    style:top="50%"
+  >
+    <div class="front" />
+    <div class="back" />
+    <div class="top" />
+    <div class="bottom" />
+    <div class="left" />
+    <div class="right" />
+  </div>
+  <div
+    class="outer-cube"
+    style:transform={`translate3d(${(scroll / speed) * -3}px, ${
+      (scroll / speed) * 2.5
+    }px,  ${scroll / speed}px) rotateY(${scroll / speed}deg) rotateZ(${
+      scroll / speed
+    }deg)`}
+    style:left="50%"
+    style:top="50%"
   >
     <div class="front" />
     <div class="back" />
@@ -26,9 +43,9 @@
   </div>
 
   <div
-    class="box1 outer-cube"
-    style:margin-left="40%"
-    style:top="100%"
+    class="outer-cube"
+    style:left="50%"
+    style:top="50%"
     style:transform={`translate3d(${scroll / speed}px, ${
       (scroll / speed) * 3
     }px, ${scroll / speed}px) rotateY(${(scroll / speed) * 2}deg) rotateZ(${
@@ -55,7 +72,8 @@
     }px) rotate(${(scroll / speed) * -1}deg) rotateX(${
       (scroll / speed) * 2
     }deg) rotateY(${(scroll / speed) * -1}deg)`}
-    style:margin-left="90%"
+    style:left="50%"
+    style:top="50%"
   >
     <div class="front" />
     <div class="back" />
