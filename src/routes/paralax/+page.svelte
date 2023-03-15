@@ -92,7 +92,9 @@
   <br /><br /><br /><br /><br />
   <div
     class="box"
-    style:transform={`translate3d(0, ${(scroll / speed) * 3}px, 0)`}
+    style:transform={`translate3d(0, ${(scroll / speed) * 3}px, 0) rotateZ(${
+      (scroll / speed) * 2
+    }deg)`}
     style:background="orangered"
     style:margin-left="50%"
   />
@@ -111,11 +113,14 @@
   <div class="box" style:margin-left="40%" />
   <div
     class="box"
-    style:transform={`translate3d(0, ${(scroll / speed) * 2.1}px, 0)`}
+    style:transform={`translate3d(0, ${(scroll / speed) * 2.1}px, 0) rotateY(${
+      (scroll / speed) * 2
+    }deg)`}
     style:background="green"
     style:margin-left="65%"
+    style:border-radius="50%"
   />
-  <div class="box" style:margin-left="90%" />
+  <div class="box" style:margin-left="90%" style:border-radius="50%" />
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="45%" style:background="blueviolet" />
   <div class="box" style:margin-left="35%" />
