@@ -43,24 +43,33 @@
     <div class="right" />
   </div>
   <div class="box" style:margin-left="40%" />
-  <div class="box" style:margin-left="30%" />
+  <div class="box" style:margin-left="30%" style:background="fuscia" />
   <div class="box" style:margin-left="25%" />
   <div class="box" style:margin-left="60%" />
   <br /><br /><br /><br /><br />
 
   <div
-    class="box pin"
-    style:transform={`translate3d(${(scroll / speed) * -1}px, 0, 0) rotate(${
-      (scroll / speed) * -3
-    }deg)`}
-    style:background="purple"
+    class="pin outer-cube-down"
+    style:transform={`translate3d(${(scroll / speed) * -1}px, 0, ${
+      scroll / speed
+    }px) rotate(${(scroll / speed) * -1}deg) rotateX(${
+      (scroll / speed) * 2
+    }deg) rotateY(${(scroll / speed) * -1}deg)`}
     style:margin-left="90%"
-  />
+  >
+    <div class="front" />
+    <div class="back" />
+    <div class="top" />
+    <div class="bottom" />
+    <div class="left" />
+    <div class="right" /></div
+  >
+
   <div class="box" style:margin-left="90%" />
   <div class="box" style:margin-left="85%" />
-  <div class="box" style:margin-left="45%" />
+  <div class="box" style:margin-left="45%" style:background="blueviolet" />
   <div class="box" style:margin-left="35%" />
-  <div class="box" style:margin-left="75%" />
+  <div class="box" style:margin-left="75%" style:background="aqua" />
   <div class="box" style:margin-left="85%" />
   <br /><br /><br /><br /><br />
   <div
@@ -70,14 +79,14 @@
     style:margin-left="50%"
   />
   <div class="box" style:margin-left="20%" />
-  <div class="box" style:margin-left="40%" />
+  <div class="box" style:margin-left="40%" style:background="brown" />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="55%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
-  <div class="box" style:margin-left="30%" />
+  <div class="box" style:margin-left="30%" style:background="black" />
   <div class="box" style:margin-left="25%" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="20%" />
@@ -88,48 +97,73 @@
     style:background="green"
     style:margin-left="65%"
   />
+  <div class="box" style:margin-left="90%" />
+  <div class="box" style:margin-left="85%" />
+  <div class="box" style:margin-left="45%" style:background="blueviolet" />
+  <div class="box" style:margin-left="35%" />
+  <div class="box" style:margin-left="75%" style:background="aqua" />
+  <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="30%" />
-  <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="25%" style:background="gold" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="55%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
   <div class="box" style:margin-left="30%" />
-  <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="25%" style:background="gray" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="60%" style:background="olive" />
+  <div class="box" style:margin-left="55%" />
+  <div class="box" style:margin-left="90%" />
+  <div class="box" style:margin-left="85%" />
+  <div class="box" style:margin-left="45%" style:background="blueviolet" />
+  <div class="box" style:margin-left="35%" />
+  <div class="box" style:margin-left="75%" style:background="aqua" />
+  <div class="box" style:margin-left="85%" />
+  <div class="box" style:margin-left="20%" />
+  <div class="box" style:margin-left="40%" />
+  <div class="box" style:margin-left="30%" />
+  <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="60%" style:background="tomato" />
+  <div class="box" style:margin-left="20%" />
+  <div class="box" style:margin-left="40%" />
+  <div class="box" style:margin-left="30%" />
+  <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="90%" />
+  <div class="box" style:margin-left="85%" />
+  <div class="box" style:margin-left="45%" style:background="blueviolet" />
+  <div class="box" style:margin-left="35%" />
+  <div class="box" style:margin-left="75%" style:background="aqua" />
+  <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="60%" />
+  <div class="box" style:margin-left="55%" />
+  <div class="box" style:margin-left="20%" />
+  <div class="box" style:margin-left="40%" style:background="plum" />
+  <div class="box" style:margin-left="30%" />
+  <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="60%" />
+  <div class="box" style:margin-left="20%" />
+  <div class="box" style:margin-left="40%" style:background="purple" />
+  <div class="box" style:margin-left="30%" />
+
+  <div class="box" style:margin-left="90%" />
+  <div class="box" style:margin-left="85%" />
+  <div class="box" style:margin-left="45%" style:background="blueviolet" />
+  <div class="box" style:margin-left="35%" />
+  <div class="box" style:margin-left="75%" style:background="aqua" />
+  <div class="box" style:margin-left="85%" />
+  <div class="box" style:margin-left="25%" />
+  <div class="box" style:margin-left="60%" style:background="maroon" />
   <div class="box" style:margin-left="55%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" />
-  <div class="box" style:margin-left="60%" />
-  <div class="box" style:margin-left="20%" />
-  <div class="box" style:margin-left="40%" />
-  <div class="box" style:margin-left="30%" />
-  <div class="box" style:margin-left="25%" />
-  <div class="box" style:margin-left="60%" />
-  <div class="box" style:margin-left="55%" />
-  <div class="box" style:margin-left="20%" />
-  <div class="box" style:margin-left="40%" />
-  <div class="box" style:margin-left="30%" />
-  <div class="box" style:margin-left="25%" />
-  <div class="box" style:margin-left="60%" />
-  <div class="box" style:margin-left="20%" />
-  <div class="box" style:margin-left="40%" />
-  <div class="box" style:margin-left="30%" />
-  <div class="box" style:margin-left="25%" />
-  <div class="box" style:margin-left="60%" />
-  <div class="box" style:margin-left="55%" />
-  <div class="box" style:margin-left="20%" />
-  <div class="box" style:margin-left="40%" />
-  <div class="box" style:margin-left="30%" />
-  <div class="box" style:margin-left="25%" />
-  <div class="box" style:margin-left="60%" />
+  <div class="box" style:margin-left="60%" style:background="navy" />
 </section>
 
 <style>
@@ -138,6 +172,7 @@
     --halfsize: 2em;
     --halfsizen: -2em;
     --ballTopColor: #a8e44f;
+    --borderColour: rgb(255, 255, 67);
   }
   section {
     height: auto;
@@ -188,6 +223,7 @@
       linear-gradient(127deg, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0) 70.71%),
       linear-gradient(336deg, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0) 70.71%);
     box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.4);
+    border: solid 2px var(--borderColour);
   }
 
   .back {
