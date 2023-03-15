@@ -10,14 +10,40 @@
 
 <section>
   <div
-    class="box pin"
-    style:transform={`translate3d(${scroll / speed}px, ${scroll / speed}px, 0) rotate(${scroll / speed}deg)`} 
-    style:background="teal"
+    class="box1 pin"
+    id="outer-cube-down"
+    style:transform={`translate3d(${scroll / speed}px, ${
+      scroll / speed
+    }px, 0) rotateY(${scroll / speed}deg) rotateZ(${scroll / speed}deg)`}
     style:margin-left="10%"
     style:top="10%"
-    
-  />
-  <div class="box" style:margin-left="20%" />
+  >
+    <div class="front" />
+    <div class="back" />
+    <div class="top" />
+    <div class="bottom" />
+    <div class="left" />
+    <div class="right" />
+  </div>
+
+  <div
+    class="box1"
+    id="outer-cube"
+    style:margin-left="40%"
+    style:top="100%"
+    style:transform={`translate3d(${scroll / speed}px, ${
+      (scroll / speed) * 3
+    }px, ${scroll / speed}px) rotateY(${(scroll / speed) * 2}deg) rotateZ(${
+      (scroll / speed) * -2
+    }deg)`}
+  >
+    <div class="front" />
+    <div class="back" />
+    <div class="top" />
+    <div class="bottom" />
+    <div class="left" />
+    <div class="right" />
+  </div>
   <div class="box" style:margin-left="40%" />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" />
@@ -26,7 +52,9 @@
 
   <div
     class="box pin"
-    style:transform={`translate3d(${scroll / speed * -1}px, ${(scroll / speed) * 0.01}px, 0) rotate(${scroll / speed *-3}deg)`}
+    style:transform={`translate3d(${(scroll / speed) * -1}px, ${
+      (scroll / speed) * 0.01
+    }px, 0) rotate(${(scroll / speed) * -3}deg)`}
     style:background="purple"
     style:margin-left="90%"
   />
@@ -107,6 +135,12 @@
 </section>
 
 <style>
+  :root {
+    --size: 5em;
+    --halfsize: 2.5em;
+    --halfsizen: -2.5em;
+    --ballTopColor: #a8e44f;
+  }
   section {
     height: auto;
   }
@@ -118,16 +152,75 @@
   }
 
   .box {
-    --size: 50px;
+    --size: 5em;
     height: var(--size);
     width: var(--size);
-    background: lightGrey;
+    background-color: rgb(149, 143, 143);
     margin-bottom: 1rem;
   }
 
   .pin {
     position: fixed;
     margin-bottom: 100px;
-  
+  }
+
+  #outer-cube,
+  #outer-cube-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+  }
+
+  #outer-cube {
+    position: absolute;
+  }
+  #outer-cube div,
+  #outer-cube-down div {
+    position: fixed;
+    width: var(--size);
+    height: var(--size);
+    background: linear-gradient(
+        217deg,
+        rgba(255, 0, 0, 0.5),
+        rgba(255, 0, 0, 0) 70.71%
+      ),
+      linear-gradient(127deg, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0) 70.71%),
+      linear-gradient(336deg, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0) 70.71%);
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.4);
+    /*border-radius: 50%;*/
+  }
+
+  .back {
+    transform: translateZ(var(--halfsizen)) rotateY(180deg);
+  }
+  .right {
+    transform: rotateY(-270deg) translateX(var(--halfsize));
+    transform-origin: top right;
+  }
+
+  .left {
+    transform: rotateY(270deg) translateX(var(--halfsizen));
+    transform-origin: center left;
+  }
+  .top {
+    opacity: 1;
+    transform: rotateX(-90deg) translateY(var(--halfsizen));
+    transform-origin: top center;
+  }
+  .bottom {
+    transform: rotateX(90deg) translateY(var(--halfsize));
+    transform-origin: bottom center;
+  }
+  .front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateZ(var(--halfsize));
+    transform-style: preserve-3d;
+  }
+  .pin {
+    position: fixed;
+    margin-bottom: 100px;
   }
 </style>
