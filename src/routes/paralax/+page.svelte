@@ -238,14 +238,9 @@
     --size: 4em;
     height: var(--size);
     width: var(--size);
-    background-color: rgb(149, 143, 143);
+    background-color: rgb(149, 143, 143); /*todo: create a random colour*/
     margin-bottom: 1rem;
-    box-shadow: 4px 4px 8px 0 rgba(97, 108, 110, 0.8);
-  }
-
-  .pin {
-    position: fixed;
-    margin-bottom: 100px;
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.8);
   }
 
   .outer-cube,
@@ -303,7 +298,10 @@
     transform: translateZ(var(--halfsize));
     transform-style: preserve-3d;
   }
+
   .pin {
     position: fixed;
+    margin-bottom: 100px;
+    box-shadow: 0 0 8px 2px rgba(100, 32, 24, 0.8);
   }
 </style>
