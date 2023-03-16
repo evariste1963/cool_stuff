@@ -159,6 +159,12 @@
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="30%" />
   <div
+    class="box"
+    style:transform={`translate3d(0, ${(scroll / speed) * 2}px, 0)`}
+    style:background="green"
+    style:margin-left="65%"
+  />
+  <div
     style:margin-left="75%"
     style:width="6em"
     style:transform-origin=" center"
@@ -344,9 +350,6 @@
   >
   <div class="box" style:margin-left="60%" style:background="navy" />
 </section>
-style:transform={`translate3d(0, ${(scroll / speed) * 2.1}px, 0) rotateY(${
-  (scroll / speed) * 2
-}deg)`}
 
 <style>
   :root {
