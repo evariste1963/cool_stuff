@@ -191,6 +191,17 @@
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="20%" />
   <div
+    style:margin-left="20%"
+    style:width="10em"
+    style:height="auto"
+    style:transform={`rotateZ(${(scroll / speed) * 2}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/White_bold_spiral.svg/100px-White_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
+  <div
     class="box"
     style:margin-left="40%"
     style:border-radius="50%"
