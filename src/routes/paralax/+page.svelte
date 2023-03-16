@@ -103,6 +103,19 @@
     style:background="orangered"
     style:margin-left="50%"
   />
+  <div
+    style:left="47.3%"
+    style:top="44%"
+    style:width="6em"
+    style:Z-index="0"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" style:background="brown" />
   <div class="box" style:margin-left="30%" />
@@ -111,6 +124,17 @@
   <div class="box" style:margin-left="55%" style:border-radius="50%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" style:border-radius="50%" />
+  <div
+    style:margin-left="35%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div
     class="box"
     style:margin-left="30%"
@@ -122,10 +146,7 @@
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
   <div
-    class="box"
-    style:transform={`translate3d(0, ${(scroll / speed) * 2.1}px, 0) rotateY(${
-      (scroll / speed) * 2
-    }deg)`}
+    class="box scaler"
     style:background="green"
     style:margin-left="65%"
     style:border-radius="50%"
@@ -137,18 +158,51 @@
   <div class="box" style:margin-left="75%" style:background="aqua" />
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="30%" />
+  <div
+    style:margin-left="75%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div class="box" style:margin-left="25%" style:background="gold" />
   <div class="box" style:margin-left="60%" style:border-radius="50%" />
   <div class="box" style:margin-left="55%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
   <div class="box" style:margin-left="30%" />
+  <div
+    style:margin-left="80%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div class="box" style:margin-left="25%" style:background="gray" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" style:border-radius="50%" />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" />
+  <div
+    style:margin-left="50%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div
     class="box"
     style:margin-left="60%"
@@ -159,12 +213,34 @@
   <div class="box" style:margin-left="90%" />
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="45%" style:background="blueviolet" />
+  <div
+    style:margin-left="60%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div class="box" style:margin-left="35%" style:border-radius="50%" />
   <div class="box" style:margin-left="75%" style:background="aqua" />
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" />
   <div class="box" style:margin-left="30%" />
+  <div
+    style:margin-left="25%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div class="box" style:margin-left="25%" />
   <div class="box" style:margin-left="60%" style:background="tomato" />
   <div class="box" style:margin-left="20%" />
@@ -172,6 +248,17 @@
   <div class="box" style:margin-left="30%" style:border-radius="50%" />
   <div class="box" style:margin-left="25%" />
   <div class="box" style:margin-left="90%" />
+  <div
+    style:margin-left="70%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="45%" style:background="blueviolet" />
   <div class="box" style:margin-left="35%" style:border-radius="50%" />
@@ -187,17 +274,28 @@
   <div class="box" style:margin-left="20%" />
   <div class="box" style:margin-left="40%" style:background="plum" />
   <div class="box" style:margin-left="30%" />
+  <div
+    style:margin-left="40%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div class="box" style:margin-left="25%" style:border-radius="50%" />
   <div class="box" style:margin-left="60%" />
   <div class="box" style:margin-left="20%" />
   <div
-    style:margin-left="20%"
-    style:width="10em"
-    style:height="auto"
-    style:transform={`rotateZ(${(scroll / speed) * 2}deg)`}
+    style:margin-left="65%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
   >
     <img
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/White_bold_spiral.svg/100px-White_bold_spiral.svg.png"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
       alt="spiral"
     /></div
   >
@@ -214,6 +312,17 @@
   <div class="box" style:margin-left="45%" style:background="blueviolet" />
   <div class="box" style:margin-left="35%" style:border-radius="50%" />
   <div class="box" style:margin-left="75%" style:background="aqua" />
+  <div
+    style:margin-left="20%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div class="box" style:margin-left="85%" />
   <div class="box" style:margin-left="25%" style:border-radius="50%" />
   <div class="box" style:margin-left="60%" style:background="maroon" />
@@ -222,8 +331,22 @@
   <div class="box" style:margin-left="40%" style:border-radius="50%" />
   <div class="box" style:margin-left="30%" />
   <div class="box" style:margin-left="25%" />
+  <div
+    style:margin-left="50%"
+    style:width="6em"
+    style:transform-origin=" center"
+    style:transform={`rotateZ(${(scroll / speed) * 12}deg)`}
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Black_bold_spiral.svg/100px-Black_bold_spiral.svg.png"
+      alt="spiral"
+    /></div
+  >
   <div class="box" style:margin-left="60%" style:background="navy" />
 </section>
+style:transform={`translate3d(0, ${(scroll / speed) * 2.1}px, 0) rotateY(${
+  (scroll / speed) * 2
+}deg)`}
 
 <style>
   :root {
@@ -314,5 +437,18 @@
     position: fixed;
     margin-bottom: 100px;
     box-shadow: 0 0 8px 2px rgba(100, 32, 24, 0.8);
+  }
+
+  .scaler {
+    animation: scales 0.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes scales {
+    0% {
+      transform: scale(100%) rotateY(180deg);
+    }
+    100% {
+      transform: scale(200%) rotateY(360deg);
+    }
   }
 </style>
