@@ -1,0 +1,48 @@
+.post {
+    /* container-type: inline-size;
+    container-name:sidebar */
+    /*shorthand version*/
+   
+container: sidebar / inline-size;
+width:70%;
+margin: 2em auto;
+}
+
+.card{
+    display: block;
+    padding:2em;
+    border: 2px solid #353;
+    border-radius: 10px;
+}
+/* Default heading styles for the card title */
+.card h2 {
+  font-size: 2rem;
+
+}
+
+p {
+    
+    font-size: 1.5rem;
+    
+}
+
+/* If the container is larger than 700px */
+@container sidebar (min-width: 700px) {
+    .card {
+        display: flex;
+        margin-top: 20px;
+        padding: 0.5em;
+
+    }
+
+    .post h1 {
+        font-size: clamp(3vmin, 3vmin + 2rem, 4vmin);
+    }
+    .card h2 {
+        font-size: clamp(2.25vmin, 2vmin + 1.5rem, 3.25vmin);
+        padding: 0 0.5em
+    }
+    p {
+        font-size: clamp(1.5vmin, 2vmin + 1rem, 2.5vmin);
+}
+}

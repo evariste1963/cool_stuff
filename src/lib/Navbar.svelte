@@ -4,7 +4,7 @@
 
   let navItems = [
     { page: "Home", path: "/" },
-    { page: "About", path: "about" },
+    { page: "container", path: "container" },
     { page: "paralax", path: "paralax" },
     { page: "scrollDiv", path: "scrollDiv" },
   ];
