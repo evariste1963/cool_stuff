@@ -16,6 +16,6 @@ import './container.css'
 
 
   <style>
-/* css i sseperate as container query workaround*/
+/* css is seperate as container query workaround */
 
   </style>
