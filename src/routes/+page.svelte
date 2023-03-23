@@ -8,7 +8,7 @@
   import ToggleHideBtn from "$lib/ToggleHideBtn.svelte";
   import { scrollRef } from "svelte-scrolling";
   import SKEmbed from "$lib/SKEmbed.svelte";
-  import Container from "$lib/Container.svelte"
+  import Container from "$lib/Container/Container.svelte"
 </script>
 
 <BackToTopBtn />
