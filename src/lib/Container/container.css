@@ -10,16 +10,17 @@
 }
 .card{
     width:90%;
-    margin:5px auto;
+    margin:6px auto;
     padding:2em;
     border: 2px solid #353;
     border-radius: 10px;
+    box-shadow: 6px 6px 6px 0 rgba(97, 108, 110, 0.8);
 }
 
 .card:hover{
-    border:3px solid red;
-    box-shadow: 6px 6px 6px 0 rgba(97, 108, 110, 0.8);
-    background-color: azure;
+    border:2px solid rgb(27, 63, 36);
+    background-color: rgba(57, 119, 119, 0.9);
+    color:#fff
 }
 
 p {
@@ -38,7 +39,7 @@ p {
         display: flex;
         padding: 0.5em;
         width: 30%;
-        margin: 2px;
+        margin: 6px;
     }
 
     .post h1 {
