@@ -8,7 +8,7 @@
   import ToggleHideBtn from "$lib/ToggleHideBtn.svelte";
   import { scrollRef } from "svelte-scrolling";
   import SKEmbed from "$lib/SKEmbed.svelte";
-  import Container from "$lib/Container/Container.svelte"
+  import Container from "$lib/Container/Container.svelte";
 </script>
 
 <BackToTopBtn />
@@ -29,15 +29,14 @@
     <h2>Toggle Button</h2>
     <ToggleHideBtn />
   </div>
-  
+
   <div class="embed">
     <SKEmbed />
   </div>
-   
 </div>
 
 <div style="width:100%">
-<Container />
+  <Container />
 </div>
 <div class="scroll" use:scrollRef={"scroll"} />
 
