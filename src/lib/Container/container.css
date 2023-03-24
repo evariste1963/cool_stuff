@@ -15,10 +15,7 @@ margin: 2em auto;
     border-radius: 10px;
 }
 /* Default heading styles for the card title */
-.card h2 {
-  font-size: 3vmin;
 
-}
 
 p {
     
@@ -36,13 +33,13 @@ p {
     }
 
     .post h1 {
-        font-size: clamp(3vmin, 3vmin + 2rem, 4vmin);
+        font-size: clamp(3cqmin, 3cqmin + 2rem, 4cqmin);
     }
     .card h2 {
-        font-size: clamp(2.25vmin, 2vmin + 1.5rem, 3.25vmin);
+        font-size: clamp(2.25cqmin + 1rem, 2cqmin + 2.5rem, 3.25cqmin + 1rem);
         padding: 0 0.5em
     }
     p {
-        font-size: clamp(1.5vmin, 2vmin + 1rem, 2.5vmin);
+        font-size: clamp(1.5cqmin, 2cqmin + 1rem, 2.5cqmin);
 }
 }
