@@ -1,44 +1,54 @@
 .post {
-    /* container-type: inline-size;
-    container-name:sidebar */
-    /*shorthand version*/
-   
-container: sidebar / inline-size;
-width:70%;
-margin: 2em auto;
+    container: sidebar / inline-size;
+    width:100%;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding:2em 0;
 }
-
+.cont {
+    display:block;
+}
 .card{
-    display: block;
+    width:90%;
+    margin:5px auto;
     padding:2em;
     border: 2px solid #353;
     border-radius: 10px;
 }
-/* Default heading styles for the card title */
 
-p {
-    
-    font-size: calc(14px + min);
-    
+.card:hover{
+    border:3px solid red;
+    box-shadow: 6px 6px 6px 0 rgba(97, 108, 110, 0.8);
+    background-color: azure;
 }
 
-/* If the container is larger than 700px */
-@container sidebar (min-width: 700px) {
+p {
+    font-size: calc(14px + min);
+}
+
+/* If the container is larger than 950px */
+@container sidebar (min-width: 950px) {
+    .post > div {
+        display:flex;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: center;
+    }
     .card {
         display: flex;
-        margin-top: 20px;
         padding: 0.5em;
-
+        width: 30%;
+        margin: 2px;
     }
 
     .post h1 {
         font-size: clamp(3cqmin, 3cqmin + 2rem, 4cqmin);
     }
     .card h2 {
-        font-size: clamp(2.25cqmin + 1rem, 2cqmin + 2.5rem, 3.25cqmin + 1rem);
+        font-size: clamp(1.5cqmin + 1rem, 1cqmin + 0.5rem, 2cqmin + 0.5rem);
         padding: 0 0.5em
     }
     p {
-        font-size: clamp(1.5cqmin, 2cqmin + 1rem, 2.5cqmin);
-}
+        font-size: clamp(1cqmin, 0.5cqmin + 1rem, 1.5cqmin);
+    }
 }
