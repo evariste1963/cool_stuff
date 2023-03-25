@@ -43,6 +43,7 @@
 <style>
   .page {
     margin: 2em;
+    font-size: 1rem;
   }
 
   .embed {
