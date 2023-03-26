@@ -6,7 +6,9 @@
 <div class="post">
   <div class="cont">
     <div class="card">
-      <h2>Card title</h2>
+      <div class="float-left">
+        <h2>Card title</h2>
+      </div>
       <div class="detail">
         <h3 class="subtitle">The Subtitle</h3>
         <p>
@@ -25,7 +27,9 @@
       </div>
     </div>
     <div class="card">
-      <h2>Card title</h2>
+      <div class="float-left">
+        <h2>Card title</h2>
+      </div>
       <div class="detail">
         <h3 class="subtitle">The Subtitle</h3>
         <p>
@@ -46,7 +50,9 @@
     </div>
 
     <div class="card">
-      <h2>Card title</h2>
+      <div class="float-left">
+        <h2>Card title</h2>
+      </div>
       <div class="detail">
         <h3 class="subtitle">The Subtitle</h3>
         <p>
