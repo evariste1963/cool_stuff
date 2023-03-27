@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import { each } from "svelte/internal";
   import "./container.css";
 
   let post;
