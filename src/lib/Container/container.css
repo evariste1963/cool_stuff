@@ -19,11 +19,11 @@
 .card {
   width: 90%;
   margin: 6px auto;
-  padding: 2em;
+  padding: 1em;
   border: 2px solid #353;
   border-radius: 10px;
   box-shadow: 6px 6px 6px 0 rgba(97, 108, 110, 0.8);
-  overflow:auto;
+ /* overflow:auto;*/
 }
 
 .card:hover {
@@ -55,7 +55,7 @@ p {
   }
   .card {
     /* display: flex; */
-    padding: 0.5em;
+    
     width: 30%;
     margin: 6px;
     overflow: auto;
