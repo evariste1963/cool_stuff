@@ -29,10 +29,10 @@
     <h2>Toggle Button</h2>
     <ToggleHideBtn />
   </div>
-
+<!-- 
   <div class="embed">
     <SKEmbed />
-  </div>
+  </div> -->
 </div>
 
 <div style="width:100%">
