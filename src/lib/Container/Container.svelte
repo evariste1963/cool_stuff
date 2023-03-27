@@ -1,13 +1,21 @@
 <script>
   import { onMount } from "svelte";
+  import { each } from "svelte/internal";
   import "./container.css";
 
   let post;
   let detailEl = [];
+  onMount(() => {
+    detailEl = post.querySelectorAll("p");
+    detailEl.forEach(el => {
+      console.log(el.innerText);
+    });
+  });
 </script>
 
-{(detailEl = post.querySelectorAll("p"))}
-{console.log(detailEl)}
+{#each detailEl as el}
+  {(el.style = "background-color:#000")}
+{/each}
 <h1>container queries</h1>
 <div class="post" bind:this={post}>
   <div class="cont">
