@@ -1,9 +1,15 @@
 <script>
+  import { onMount } from "svelte";
   import "./container.css";
+
+  let post;
+  let detailEl = [];
 </script>
 
+{(detailEl = post.querySelectorAll("p"))}
+{console.log(detailEl)}
 <h1>container queries</h1>
-<div class="post">
+<div class="post" bind:this={post}>
   <div class="cont">
     <div class="card">
       <div class="float-left">
