@@ -7,14 +7,16 @@
   onMount(() => {
     detailEl = post.querySelectorAll("p");
     detailEl.forEach(el => {
+      el.style = "font-style:italic"; //for example
       console.log(el.innerText);
     });
   });
 </script>
 
+<!--
 {#each detailEl as el}
   {(el.style = "background-color:#000")}
-{/each}
+{/each}-->
 <h1>container queries</h1>
 <div class="post" bind:this={post}>
   <div class="cont">
