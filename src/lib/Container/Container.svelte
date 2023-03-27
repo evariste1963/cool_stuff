@@ -5,18 +5,16 @@
   let post;
   let detailEl = [];
   onMount(() => {
-    detailEl = post.querySelectorAll("p");
+    detailEl = post.querySelectorAll(".detail p");
     detailEl.forEach(el => {
-      el.style = "font-style:italic"; //for example
-      console.log(el.innerText);
+      if (el.innerHTML.length > 20) {
+        el.classList.add("excerpt");
+        console.log(el.innerHTML.substring(0, 100) + "...");
+      }
     });
   });
 </script>
 
-<!--
-{#each detailEl as el}
-  {(el.style = "background-color:#000")}
-{/each}-->
 <h1>container queries</h1>
 <div class="post" bind:this={post}>
   <div class="cont">
