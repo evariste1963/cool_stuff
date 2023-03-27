@@ -4,12 +4,17 @@
 
   let post;
   let detailEl = [];
+  let ptext;
   onMount(() => {
     detailEl = post.querySelectorAll(".detail p");
     detailEl.forEach(el => {
-      if (el.innerHTML.length > 20) {
+      if (el.innerHTML.length > 300) {
         el.classList.add("excerpt");
         el.innerHTML = el.innerHTML.substring(0, 300) + " ... read on ->";
+        el.onclick = function () {
+          el.classList.remove("excerpt");
+          el.innerHTML = el.innerHTML;
+        };
       }
     });
   });
