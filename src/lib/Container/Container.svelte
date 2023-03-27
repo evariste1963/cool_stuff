@@ -9,7 +9,7 @@
     detailEl.forEach(el => {
       if (el.innerHTML.length > 20) {
         el.classList.add("excerpt");
-        console.log(el.innerHTML.substring(0, 90) + "...");
+        el.innerHTML = el.innerHTML.substring(0, 300) + " ... read on ->";
       }
     });
   });
