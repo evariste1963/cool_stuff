@@ -54,12 +54,11 @@
   onMount(() => {
     detailEl = document.querySelectorAll(".cont p");
     detailEl.forEach(el => {
-      el.classList.add("excerpt");
-      el.innerText = el.innerText.substring(0, 300) + " ... read on ->";
-      el.addEventListener("pointerout", () => {
         el.innerText = el.innerText.substring(0, 300) + " ... read on ->";
-        el.classList.toggle("excerpt");
-      });
+        el.addEventListener("pointerout", () => {
+          el.innerText = el.innerText.substring(0, 300) + " ... read on ->";
+          el.classList.toggle("excerpt");
+        });
       el.addEventListener("pointerover", e => {
         if (e.target.classList.contains("excerpt")) {
           e.target.innerHTML = `Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras
@@ -75,12 +74,7 @@
                                 tortor. Nunc mattis elit quis egestas mollis.`;
 
           e.target.classList.toggle("excerpt");
-        } else {
-          if (e.target.classList.contains("info"))
-            e.target.innerText =
-              e.target.innerText.substring(0, 300) + " ... read on ->";
-          e.target.classList.toggle("excerpt");
-        }
+        } 
       });
     });
   });
@@ -97,7 +91,7 @@
       </div>
       <div class="detail">
         <h3 class="subtitle">{container.subTitle}</h3>
-        <p class="info">
+        <p class="info excerpt">
           {container.details}
         </p>
       </div>
