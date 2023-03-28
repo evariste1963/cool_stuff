@@ -7,7 +7,7 @@
   import ScrollToBtn from "$lib/ScrollToBtn.svelte";
   import ToggleHideBtn from "$lib/ToggleHideBtn.svelte";
   import { scrollRef } from "svelte-scrolling";
-  import SKEmbed from "$lib/SKEmbed.svelte";
+  //import SKEmbed from "$lib/SKEmbed.svelte";
   import Container from "$lib/Container/Container.svelte";
 </script>
 
@@ -46,14 +46,14 @@
     margin: 2em;
     font-size: 1rem;
   }
-
+  /*
   .embed {
     width: 100%;
     height: 800px;
     margin: 4em auto;
     background-color: rgba(57, 119, 119, 0.9);
   }
-
+*/
   h2 {
     margin: 0 1em 0 2em;
   }
