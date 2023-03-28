@@ -6,41 +6,44 @@
   let detailEl = [];
 
   onMount(() => {
-    detailEl = document.querySelectorAll(".detail p");
-
+    detailEl = document.querySelectorAll(".cont p");
     detailEl.forEach(el => {
       el.classList.add("excerpt");
       el.innerText = el.innerText.substring(0, 300) + " ... read on ->";
-      console.log(el.innerText);
+      el.addEventListener("pointerout", () => {
+        el.innerText = el.innerText.substring(0, 300) + " ... read on ->";
+        el.classList.toggle("excerpt");
+      });
     });
-    document.querySelector(".cont").addEventListener(
-      "click",
-      e => {
-        console.log(e);
+    let infoclick = document.querySelectorAll(".cont p");
+    infoclick.forEach(cl => {
+      cl.addEventListener(
+        "pointerover",
+        e => {
+          if (e.target.classList.contains("excerpt")) {
+            e.target.innerHTML = `Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras
+                                    ac augue fringilla, hendrerit dolor ut, porta nisi. Donec vel maximus
+                                    lectus. Proin consectetur condimentum metus, eget tincidunt diam
+                                    molestie vel. Sed libero lorem, hendrerit ac orci vel, malesuada
+                                    sagittis sem. Fusce tempor enim at commodo volutpat. Nullam vehicula,
+                                    sapien quis eleifend vestibulum, neque nunc pharetra nisl, eget
+                                    interdum sem felis vitae ex. Phasellus malesuada diam eu risus mattis,
+                                    sed iaculis lacus vestibulum. Praesent sit amet dolor risus. Cras et
+                                    congue risus. Proin a tortor eu erat tincidunt fringilla. Nulla
+                                    facilisi. Nullam nec dolor in diam tempus tincidunt. Vivamus eget arcu
+                                    tortor. Nunc mattis elit quis egestas mollis.`;
 
-        if (e.target.classList.contains("excerpt")) {
-          e.target.innerHTML = `Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras
-                                  ac augue fringilla, hendrerit dolor ut, porta nisi. Donec vel maximus
-                                  lectus. Proin consectetur condimentum metus, eget tincidunt diam
-                                  molestie vel. Sed libero lorem, hendrerit ac orci vel, malesuada
-                                  sagittis sem. Fusce tempor enim at commodo volutpat. Nullam vehicula,
-                                  sapien quis eleifend vestibulum, neque nunc pharetra nisl, eget
-                                  interdum sem felis vitae ex. Phasellus malesuada diam eu risus mattis,
-                                  sed iaculis lacus vestibulum. Praesent sit amet dolor risus. Cras et
-                                  congue risus. Proin a tortor eu erat tincidunt fringilla. Nulla
-                                  facilisi. Nullam nec dolor in diam tempus tincidunt. Vivamus eget arcu
-                                  tortor. Nunc mattis elit quis egestas mollis.`;
-
-          e.target.classList.toggle("excerpt");
-        } else {
-          if (e.target.classList.contains("info"))
-            e.target.innerText =
-              e.target.innerText.substring(0, 300) + " ... read on ->";
-          e.target.classList.toggle("excerpt");
-        }
-      },
-      false
-    );
+            e.target.classList.toggle("excerpt");
+          } else {
+            if (e.target.classList.contains("info"))
+              e.target.innerText =
+                e.target.innerText.substring(0, 300) + " ... read on ->";
+            e.target.classList.toggle("excerpt");
+          }
+        },
+        false
+      );
+    });
   });
 </script>
 
