@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import { toggle_class } from "svelte/internal";
   import "./container.css";
 
   let post;
@@ -8,54 +7,43 @@
 
   onMount(() => {
     detailEl = post.querySelectorAll(".detail p");
-      detailEl.forEach(el => {
-        el.classList.add("excerpt")
-        el.innerText = el.innerText.substring(0, 300) + " ... read on ->";
-        console.log(el.innerText);
-      
-     });
-    })
+    detailEl.forEach(el => {
+      el.classList.add("excerpt");
+      el.innerText = el.innerText.substring(0, 300) + " ... read on ->";
+      console.log(el.innerText);
+    });
+  });
 
-
-  
- 
-
-    function toggleClass(e) {
-      console.log(e);
-
-      if(!e.target.classList.contains("excerpt")){
-        e.target.innerHTML = e.target.innerHTML.substring(0, 300) + " ... read on ->";
-        e.target.classList.toggle("excerpt")
-    } 
-    else{
-     
-           e.target.innerHTML = `Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras
-          ac augue fringilla, hendrerit dolor ut, porta nisi. Donec vel maximus
-          lectus. Proin consectetur condimentum metus, eget tincidunt diam
-          molestie vel. Sed libero lorem, hendrerit ac orci vel, malesuada
-          sagittis sem. Fusce tempor enim at commodo volutpat. Nullam vehicula,
-          sapien quis eleifend vestibulum, neque nunc pharetra nisl, eget
-          interdum sem felis vitae ex. Phasellus malesuada diam eu risus mattis,
-          sed iaculis lacus vestibulum. Praesent sit amet dolor risus. Cras et
-          congue risus. Proin a tortor eu erat tincidunt fringilla. Nulla
-          facilisi. Nullam nec dolor in diam tempus tincidunt. Vivamus eget arcu
-          tortor. Nunc mattis elit quis egestas mollis.`
-          e.target.classList.toggle("excerpt")
+  function toggleClass(e) {
+    if (!e.target.classList.contains("excerpt")) {
+      e.target.innerHTML =
+        e.target.innerHTML.substring(0, 300) + " ... read on ->";
+      e.target.classList.toggle("excerpt");
+    } else {
+      e.target.innerHTML = `Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras
+        ac augue fringilla, hendrerit dolor ut, porta nisi. Donec vel maximus
+        lectus. Proin consectetur condimentum metus, eget tincidunt diam
+        molestie vel. Sed libero lorem, hendrerit ac orci vel, malesuada
+        sagittis sem. Fusce tempor enim at commodo volutpat. Nullam vehicula,
+        sapien quis eleifend vestibulum, neque nunc pharetra nisl, eget
+        interdum sem felis vitae ex. Phasellus malesuada diam eu risus mattis,
+        sed iaculis lacus vestibulum. Praesent sit amet dolor risus. Cras et
+        congue risus. Proin a tortor eu erat tincidunt fringilla. Nulla
+        facilisi. Nullam nec dolor in diam tempus tincidunt. Vivamus eget arcu
+        tortor. Nunc mattis elit quis egestas mollis.`;
+      e.target.classList.toggle("excerpt");
+    }
   }
-  }
-   
-
-
 </script>
 
 <h1>container queries</h1>
 <div class="post" bind:this={post}>
   <div class="cont">
-    <div class="card" >
+    <div class="card">
       <div class="float-left">
         <h2>Card title</h2>
       </div>
-      <div class="detail" >
+      <div class="detail">
         <h3 class="subtitle">The Subtitle</h3>
         <p on:mousedown={toggleClass}>
           Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras
