@@ -37,6 +37,7 @@
 </script>
 
 <h1>container queries</h1>
+ <!-- put ALL card contents in array of objects-->
 <div class="post" bind:this={post}>
   <div class="cont">
     <div class="card">
@@ -45,7 +46,7 @@
       </div>
       <div class="detail">
         <h3 class="subtitle">The Subtitle</h3>
-        <p on:mousedown={toggleClass}>
+        <p on:mousedown={toggleClass}> <!-- use event delegation on POST class tcjsc lesson 192 17:20 (bankist)-->
           Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras
           ac augue fringilla, hendrerit dolor ut, porta nisi. Donec vel maximus
           lectus. Proin consectetur condimentum metus, eget tincidunt diam
