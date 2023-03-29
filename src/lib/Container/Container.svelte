@@ -60,7 +60,6 @@
         el.classList.toggle("excerpt");
       });
       el.addEventListener("pointerover", e => {
-        console.log(e);
         if (e.target.classList.contains("excerpt")) {
           e.target.innerHTML =
             containers[e.target.classList[0].slice(-1)].details;
@@ -83,7 +82,7 @@
         </div>
         <div class="detail">
           <h3 class="subtitle">{container.subTitle}</h3>
-          <p class="info{i} excerpt">
+          <p class="index{i} excerpt">
             {container.details}
           </p>
         </div>
