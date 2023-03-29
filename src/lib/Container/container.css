@@ -74,7 +74,7 @@ p {
   }
 
   .card h3 {
-    font-size: clamp(0.7cqmin + 0.7rem, 1.2cqmin + 0.7rem, 1.5cqmin + 0.7rem);
+    font-size: clamp(0.5cqmin + 0.7rem, 1.0cqmin + 0.7rem, 1.2cqmin + 0.7rem);
     margin: 1cqi auto;
     margin: 0;
   }
