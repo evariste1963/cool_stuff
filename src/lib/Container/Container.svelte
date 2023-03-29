@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import "./container.css";
+  import { img1, img2, img3 } from "../images";
 
   let post;
   let detailEl = [];
@@ -8,7 +9,7 @@
   let containers = [
     {
       title: "Day Trips",
-      subTitle: "Out amoung the Lions",
+      subTitle: "Out amongst the Lions",
       details:
         "Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras ac augue fringilla, hendrerit dolor ut, porta nisi. Donec vel maximus lectus. Proin consectetur condimentum metus, eget tincidunt diam molestie vel. Sed libero lorem, hendrerit ac orci vel, malesuada sagittis sem. Fusce tempor enim at commodo volutpat. Nullam vehicula, sapien quis eleifend vestibulum, neque nunc pharetra nisl, eget interdum sem felis vitae ex. Phasellus malesuada diam eu risus mattis, sed iaculis lacus vestibulum. Praesent sit amet dolor risus. Cras et congue risus. Proin a tortor eu erat tincidunt fringilla. Nulla facilisi. Nullam nec dolor in diam tempus tincidunt. Vivamus eget arcu tortor. Nunc mattis elit quis egestas mollis.",
     },
@@ -29,10 +30,9 @@
   onMount(() => {
     detailEl = document.querySelectorAll(".cont p");
     detailEl.forEach((el, i) => {
-      el.innerText = containers[i].details.substring(0, 300) + " ... read more";
+      el.innerText = containers[i].details.substring(0, 300);
       el.addEventListener("pointerout", () => {
-        el.innerText =
-          containers[i].details.substring(0, 300) + " ... read more";
+        el.innerText = containers[i].details.substring(0, 300);
         el.classList.toggle("excerpt");
       });
       el.addEventListener("pointerover", e => {
@@ -62,6 +62,7 @@
             {container.details}
           </p>
         </div>
+        <img src={img1} alt="cat" sytle="width:100px" />
       </div>
     {/each}
   </div>
