@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import "./container.css";
-  import { img1, img2, img3 } from "../images";
+  import img1 from "../images/img1.jpg";
 
   let post;
   let detailEl = [];
@@ -48,7 +48,6 @@
 </script>
 
 <h1>container queries</h1>
-<!-- put ALL card contents in array of objects-->
 <div class="post" bind:this={post}>
   <div class="cont">
     {#each containers as container, i}
@@ -56,13 +55,14 @@
         <div class="float-left">
           <h2>{container.title}</h2>
         </div>
+
         <div class="detail">
           <h3 class="subtitle">{container.subTitle}</h3>
+          <img src={img1} alt="cat" class="float-right" />
           <p class="index{i} excerpt">
             {container.details}
           </p>
         </div>
-        <img src={img1} alt="cat" sytle="width:100px" />
       </div>
     {/each}
   </div>
