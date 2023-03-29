@@ -7,7 +7,8 @@
 
   let post;
   let detailEl = [];
-
+  let cardHeights = [];
+  let cardHeight;
   let containers = [
     {
       title: "Day Trips",
@@ -35,6 +36,7 @@
   onMount(() => {
     detailEl = document.querySelectorAll(".cont p");
     detailEl.forEach((el, i) => {
+      cardHeights.push(el.clientHeight )    
       el.innerText = containers[i].details.substring(0, 300);
       el.addEventListener("pointerout", () => {
         el.innerText = containers[i].details.substring(0, 300);
@@ -49,6 +51,11 @@
         }
       });
     });
+    cardHeight = cardHeights.reduce((acc, cur) => {
+      return (cur > acc ? cur : acc)
+    })
+    console.log(cardHeights, cardHeight +'px');
+    
   });
 </script>
 
@@ -56,7 +63,7 @@
 <div class="post" bind:this={post}>
   <div class="cont">
     {#each containers as container, i}
-      <div class="card">
+      <div class="card" style="min-height:{cardHeight * 0.75}px">
         <div class="float-left">
           <h2>{container.title}</h2>
         </div>
