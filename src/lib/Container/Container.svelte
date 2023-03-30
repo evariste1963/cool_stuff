@@ -69,7 +69,7 @@
 <div class="post" bind:this={post}>
   <div class="cont">
     {#each containers as container, i}
-      <div class="card" style="min-height:{cardHeight * 1.6}px">
+      <div class="card" style="min-height:{cardHeight * 1.7}px">
         <div class="float-left">
           <h2>{container.title}</h2>
         </div>

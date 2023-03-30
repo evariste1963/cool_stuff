@@ -58,25 +58,22 @@ p {
 
 
 /* If the container is larger than 950px */
-@container sidebar (min-width: 950px) {
+@container sidebar (min-width: 1160px) {
    .cont {
     display:flex; /* flex incase we need more cards*/
-   justify-content:center;
+    justify-content:center;
     flex-wrap: wrap;
-    margin: auto auto;
-    width:90%;
+    width:100%;
   }
   .card {
     /* display: flex; */ /* float-left requires block display*/
-    width: 32%;
+    width: 30%;
     margin: 6px;
     overflow: auto;
     align-items:center;
+    
   }
 
-  .post h1 {
-    font-size: clamp(3cqmin, 6cqmin + 2rem, 8cqmin);
-  }
 
  .float-left{
     float:left;
@@ -95,18 +92,18 @@ p {
   }
 
   .card h2 {
-    font-size: clamp(0.5cqmin + 0.5rem, 1.5cqmin + 0.7rem, 1.5cqmin + 1rem);
+    font-size: clamp(0.7rem, 1.5cqmin + 0.7rem, 3rem);
     margin: 0;
   }
 
   .card h3 {
-    font-size: clamp(0.5cqmin + 0.7rem, 0.9cqmin + 0.7rem, 1.2cqmin + 0.7rem);
+    font-size: clamp( 0.6rem, 0.9cqmin + 0.7rem, 2.5rem);
     margin: 1cqi auto;
     margin: 0;
     text-align: left
   }
   p {
-    font-size: clamp(0.5cqmin + 0.7rem, 0.3cqmin + 0.7rem, 0.7cqmin + 0.7rem);
+    font-size: clamp(0.5rem, 0.3cqmin + 0.7rem, 2rem);
     margin-top: 0;
   }
 
