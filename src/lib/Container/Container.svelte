@@ -65,11 +65,10 @@
         <div class="float-left">
           <h2>{container.title}</h2>
         </div>
-
         <div class="detail">
           <h3 class="subtitle">{container.subTitle}</h3>
-          <div class="imgBox">
-            <img src={container.image} alt="cat" class="float-right" />
+          <div class="float-right">
+            <img src={container.image} alt="cat" class="contImg" />
           </div>
           <p class="index{i} excerpt">
             {container.details}

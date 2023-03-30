@@ -8,6 +8,7 @@
 .cont {
   display: block;
 }
+
 .card {
   width: 90%;
   height:fit-content; /*this keeps each card at it's own height*/
@@ -17,7 +18,6 @@
   border-radius: 10px;
   box-shadow: 6px 6px 6px 0 rgba(97, 108, 110, 0.8);
  /* overflow:auto;*/
-
 }
 
 .card:hover {
@@ -36,19 +36,18 @@ p {
   cursor: pointer;
 }
 
-.imgBox {
-  float:right;
-  padding-left:10px;
-  top:50%;
-  bottom:50%;
-  
-}
-
-.float-right{
+.contImg {
   width: 20vw; 
   min-width: 150px;
   height: auto; 
   border-radius:10px;
+}
+
+.float-right{
+  float:right;
+  padding-left:10px;
+  top:50%;
+  bottom:50%;
 }
 
 
@@ -79,18 +78,14 @@ p {
     transition: all 0.5s ease-in-out;
   }
 
-  .float-right{
+  .contImg{
     width: 8vw; 
     min-width:100px
   }
 
-
   .card h2 {
     font-size: clamp(1.2cqmin + 0.7rem, 1.5cqmin + 0.7rem, 2cqmin + 0.5rem);
     margin: 0;
-   
-   
-   
   }
 
   .card h3 {
@@ -109,6 +104,5 @@ p {
     font-style: italic;
     color:blue;
     font-weight: bold;
-   
   }
 }
