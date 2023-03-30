@@ -59,6 +59,10 @@ p {
     margin: 0 auto;
     justify-content: center;
   }
+
+  .cont {
+    display:flex; /* flex incase we need more cards*/
+  }
   .card {
     /* display: flex; */ /* float-left requires block display*/
     width: 30%;
