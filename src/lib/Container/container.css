@@ -50,6 +50,12 @@ p {
   top:50%;
   bottom:50%;
 }
+.excerpt::after {
+  content: ' ... read more';
+  font-style: italic;
+  color:blue;
+  font-weight: bold;
+}
 
 
 /* If the container is larger than 950px */
@@ -58,14 +64,15 @@ p {
     display:flex; /* flex incase we need more cards*/
    justify-content:center;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: auto auto;
     width:90%;
   }
   .card {
     /* display: flex; */ /* float-left requires block display*/
-    width: 30%;
+    width: 40%;
     margin: 6px;
     overflow: auto;
+    align-items:center;
   }
 
   .post h1 {
@@ -75,8 +82,10 @@ p {
  .float-left{
     float:left;
     padding: 0.8em 0.8em 0 0;
-    min-width: 5vw;
+    width:5vw;
+    min-width:5em;
     height:auto;
+    min-height: 3em;
     transition: all 0.5s ease-in-out;
   }
 
@@ -87,7 +96,7 @@ p {
   }
 
   .card h2 {
-    font-size: clamp(1.2cqmin + 0.7rem, 1.5cqmin + 0.7rem, 2cqmin + 0.5rem);
+    font-size: clamp(0.5cqmin + 0.5rem, 1.5cqmin + 0.7rem, 1.5cqmin + 1rem);
     margin: 0;
   }
 
@@ -102,10 +111,5 @@ p {
     margin-top: 0;
   }
 
-   .excerpt::after {
-    content: ' ... read more';
-    font-style: italic;
-    color:blue;
-    font-weight: bold;
-  }
+  
 }
