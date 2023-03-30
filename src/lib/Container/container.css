@@ -36,17 +36,21 @@ p {
   cursor: pointer;
 }
 
-
-.float-right{
+.imgBox {
   float:right;
-  padding:0 0 0 0.8em;
+  padding-left:10px;
   top:50%;
   bottom:50%;
+  
+}
+
+.float-right{
   width: 20vw; 
   min-width: 150px;
-  height: auto;  
+  height: auto; 
   border-radius:10px;
 }
+
 
 /* If the container is larger than 950px */
 @container sidebar (min-width: 950px) {

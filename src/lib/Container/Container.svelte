@@ -36,7 +36,7 @@
   onMount(() => {
     detailEl = document.querySelectorAll(".cont p");
     detailEl.forEach((el, i) => {
-      cardHeights.push(el.clientHeight )    
+      cardHeights.push(el.clientHeight);
       el.innerText = containers[i].details.substring(0, 300);
       el.addEventListener("pointerout", () => {
         el.innerText = containers[i].details.substring(0, 300);
@@ -52,10 +52,9 @@
       });
     });
     cardHeight = cardHeights.reduce((acc, cur) => {
-      return (cur > acc ? cur : acc)
-    })
-    console.log(cardHeights, cardHeight +'px');
-    
+      return cur > acc ? cur : acc;
+    });
+    console.log(cardHeights, cardHeight + "px");
   });
 </script>
 
@@ -70,7 +69,9 @@
 
         <div class="detail">
           <h3 class="subtitle">{container.subTitle}</h3>
-          <img src={container.image} alt="cat" class="float-right" />
+          <div class="imgBox">
+            <img src={container.image} alt="cat" class="float-right" />
+          </div>
           <p class="index{i} excerpt">
             {container.details}
           </p>
