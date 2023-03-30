@@ -28,7 +28,7 @@
       title: "Stay Home",
       subTitle: "Behind the fridge",
       details:
-        "Mauris non tellus vulputate, feugiat erat non, pharetra justo. Proin consequat felis diam, malesuada auctor mi convallis sed. Sed gravida faucibus vulputate. Ut id nunc imperdiet, accumsan lacus volutpat, volutpat lectus. Mauris mauris tortor, congue eu lobortis non, tristique in turpis. Praesent sit amet ipsum eu risus varius blandit. Donec blandit ac lorem et dignissim. Nam sem nisl, aliquam a ornare eu, luctus quis enim. Aenean ut felis in neque congue rutrum. Aliquam at velit.",
+        "Mauris non tellus vulputate, feugiat erat non, pharetra justo. Proin consequat felis diam, malesuada auctor mi convallis sed. Sed gravida faucibus vulputate. Ut id nunc imperdiet, accumsan lacus volutpat, volutpat lectus. Mauris mauris tortor, congue eu lobortis non, tristique in turpis. Praesent sit amet ipsum eu risus varius blandit. Donec blandit ac lorem et dignissim. Nam sem nisl, aliquam a ornare eu, luctus quis enim. Aenean ut felis in neque congue rutrum. Aliquam at velit. Curabitur quis dictum nibh, mattis iaculis nibh. In hac habitasse platea dictumst. Nam accumsan libero non enim euismod, a tincidunt libero blandit. Aliquam erat volutpat. Integer ut malesuada diam, non molestie diam. Mauris sit amet imperdiet tellus, vel fringilla lorem. Sed suscipit lacus et orci placerat blandit. Integer pulvinar magna eros, quis ullamcorper lectus aliquam vitae. Mauris id nulla blandit. Curabitur quis dictum nibh, mattis iaculis nibh. In hac habitasse platea dictumst. Nam accumsan libero non enim euismod, a tincidunt libero blandit. Aliquam erat volutpat. Integer ut malesuada diam, non molestie diam. Mauris sit amet imperdiet tellus, vel fringilla lorem. Sed suscipit lacus et orci placerat blandit. Integer pulvinar magna eros, quis ullamcorper lectus aliquam vitae. Mauris id nulla blandit.",
       image: img3,
     },
   ];
@@ -36,8 +36,8 @@
   onMount(() => {
     detailEl = document.querySelectorAll(".cont p");
     detailEl.forEach((el, i) => {
-      cardHeights.push(el.clientHeight);
       el.innerText = containers[i].details.substring(0, 300);
+      cardHeights.push(el.clientHeight);
       el.addEventListener("pointerout", () => {
         el.innerText = containers[i].details.substring(0, 300);
         el.classList.toggle("excerpt");
@@ -54,7 +54,6 @@
     cardHeight = cardHeights.reduce((acc, cur) => {
       return cur > acc ? cur : acc;
     });
-    console.log(cardHeights, cardHeight + "px");
   });
 </script>
 
@@ -62,7 +61,7 @@
 <div class="post" bind:this={post}>
   <div class="cont">
     {#each containers as container, i}
-      <div class="card" style="min-height:{cardHeight * 0.75}px">
+      <div class="card" style="min-height:{cardHeight * 1.5}px">
         <div class="float-left">
           <h2>{container.title}</h2>
         </div>
