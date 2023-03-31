@@ -60,6 +60,7 @@
 
   .btns {
     display: flex;
+    max-width: 100vw;
     align-items: center;
     padding: 1em 0;
     border-top: 2px solid rgba(97, 108, 110, 0.7);

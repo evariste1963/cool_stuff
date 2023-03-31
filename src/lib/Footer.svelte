@@ -1,13 +1,17 @@
 <footer>
-  <p class="footer">
-    coded by <span class="this-me">this.me</span>
-  </p>
+  <div class="footer">
+    <p>
+      coded by <span class="this-me">this.me</span>
+    </p>
+  </div>
 </footer>
 
 <style>
   footer {
+    display: flex;
     margin-top: auto;
-    width: 100vw;
+    bottom: 0;
+    width: 100%;
     height: 4rem;
     background: rgba(97, 108, 110, 0.88);
     box-shadow: 0px -1px 10px 0 rgb(0 0 0);
@@ -16,6 +20,16 @@
     font-weight: bolder;
     font-style: italic;
     z-index: 999;
+  }
+
+  .footer {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+  }
+  p {
+    margin: 0 auto;
   }
 
   .this-me {

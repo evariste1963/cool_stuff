@@ -4,7 +4,7 @@
 
   let navItems = [
     { page: "Home", path: "/" },
-    { page: "container", path: "container" },
+    { page: "disorder", path: "disorder" },
     { page: "paralax", path: "paralax" },
     { page: "scrollDiv", path: "scrollDiv" },
   ];
@@ -32,7 +32,7 @@
 <style>
   nav {
     position: sticky;
-    width: 100vw;
+    max-width: 100vw;
     display: flex;
     top: 0;
     z-index: 999;
