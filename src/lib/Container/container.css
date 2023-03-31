@@ -38,9 +38,9 @@ p {
 }
 
 .contImg {
-  width: 20vw; 
-  min-width:50px;
-  height: 20vw; 
+  width: 15vw; 
+  min-width:40px;
+  height: 15vw; 
    border-radius:10px;
 }
 
