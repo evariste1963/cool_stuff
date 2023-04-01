@@ -43,7 +43,7 @@
 
 <style>
   .page {
-    margin: 2em;
+    margin: 2em 4em;
     font-size: 1rem;
   }
   /*
