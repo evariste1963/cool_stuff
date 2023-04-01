@@ -7,6 +7,7 @@
 }
 .cont {
   display: block;
+  width:90vw;
  
 }
 
@@ -58,16 +59,17 @@ p {
 
 
 /* If the container is larger than 950px */
-@container sidebar (min-width: 1160px) {
-   .cont {
+@container sidebar (min-width: 750px) {
+  .cont {
     display:flex; /* flex incase we need more cards*/
     justify-content:center;
     flex-wrap: wrap;
     width:100%;
+   
   }
   .card {
     /* display: flex; */ /* float-left requires block display*/
-    width: 30%;
+    width: 20vw;
     margin: 6px;
     overflow: auto;
     align-items:center;
