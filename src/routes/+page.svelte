@@ -43,7 +43,7 @@
 
 <style>
   .page {
-    margin: 2em 4em;
+    margin: 2em;
     font-size: 1rem;
   }
   /*
@@ -61,6 +61,7 @@
   .btns {
     display: flex;
     max-width: 100vw;
+    overflow: auto;
     align-items: center;
     padding: 1em 0;
     border-top: 2px solid rgba(97, 108, 110, 0.7);

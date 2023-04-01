@@ -7,19 +7,19 @@
 }
 .cont {
   display: block;
-  width:90vw;
- 
+  width: 90%;
+  margin: 0 auto;
 }
 
 .card {
   width: 90%;
-  height:fit-content; /*this keeps each card at it's own height*/
+  height: fit-content; /*this keeps each card at it's own height*/
   margin: 6px auto;
   padding: 1em;
   border: 2px solid #353;
   border-radius: 10px;
   box-shadow: 6px 6px 6px 0 rgba(97, 108, 110, 0.8);
- /* overflow:auto;*/
+  /* overflow:auto;*/
 }
 
 .card:hover {
@@ -39,58 +39,53 @@ p {
 }
 
 .contImg {
-  width: 15vw; 
-  min-width:40px;
-  height: 15vw; 
-   border-radius:10px;
+  width: 15vw;
+  min-width: 40px;
+  height: 15vw;
+  border-radius: 10px;
 }
 
-.float-right{
-  float:right;
-  padding-left:10px;
-  
+.float-right {
+  float: right;
+  padding-left: 10px;
 }
 .excerpt::after {
-  content: ' ... read more';
+  content: " ... read more";
   font-style: italic;
-  color:blue;
+  color: blue;
   font-weight: bold;
 }
-
 
 /* If the container is larger than 950px */
 @container sidebar (min-width: 750px) {
   .cont {
-    display:flex; /* flex incase we need more cards*/
-    justify-content:center;
+    display: flex; /* flex incase we need more cards*/
+    justify-content: center;
     flex-wrap: wrap;
-    width:100%;
-   
+    width: 100%;
   }
   .card {
     /* display: flex; */ /* float-left requires block display*/
     width: 30vw;
     margin: 6px;
     overflow: auto;
-    align-items:center;
-    
+    align-items: center;
   }
 
-
- .float-left{
-    float:left;
+  .float-left {
+    float: left;
     padding: 0 0.8em 0 0;
-    width:5vmin;
-    min-width:5em;
-    height:auto;
+    width: 5vmin;
+    min-width: 5em;
+    height: auto;
     min-height: 3em;
     transition: all 0.5s ease-in-out;
   }
 
-  .contImg{
-    width: 6vw; 
+  .contImg {
+    width: 6vw;
     height: auto;
-    min-width:100px
+    min-width: 100px;
   }
 
   .card h2 {
@@ -99,15 +94,13 @@ p {
   }
 
   .card h3 {
-    font-size: clamp( 0.6rem, 0.9cqmin + 0.7rem, 2.5rem);
+    font-size: clamp(0.6rem, 0.9cqmin + 0.7rem, 2.5rem);
     margin: 1cqi auto;
     margin: 0;
-    text-align: left
+    text-align: left;
   }
   p {
     font-size: clamp(0.5rem, 0.3cqmin + 0.7rem, 2rem);
     margin-top: 0;
   }
-
-  
 }
