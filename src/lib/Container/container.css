@@ -12,7 +12,7 @@
 }
 
 .card {
-  width: 90%;
+  width: 100%;
   height: fit-content; /*this keeps each card at it's own height*/
   margin: 6px auto;
   padding: 1em;
