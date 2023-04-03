@@ -21,7 +21,7 @@
     text-decoration: none;
     padding: 1rem 1rem;
     border-radius: 0.7rem;
-    margin: 0 2rem 0 0;
+    margin: 0;
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(97, 108, 110, 0.7);
     cursor: pointer;

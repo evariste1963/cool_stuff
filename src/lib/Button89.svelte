@@ -10,7 +10,7 @@
     --s: 0.45em;
     --color: #242529;
     width: 10em;
-    margin: 0 2rem 0 0;
+    margin: 0;
     text-decoration: none;
     padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
     color: var(--color);

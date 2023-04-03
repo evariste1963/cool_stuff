@@ -17,17 +17,22 @@
 
   <SvelteScolling />
   <div class="btns">
-    <h2>Button-89</h2>
-    <Button89 />
-
-    <h2>Slider Button</h2>
-    <SliderBtn />
-
-    <h2>Scroll To Button</h2>
-    <ScrollToBtn />
-
-    <h2>Toggle Button</h2>
-    <ToggleHideBtn />
+    <div class="btn-container">
+      <h2>Button-89</h2>
+      <Button89 />
+    </div>
+    <div class="btn-container">
+      <h2>Slider Button</h2>
+      <SliderBtn />
+    </div>
+    <div class="btn-container">
+      <h2>Scroll To Button</h2>
+      <ScrollToBtn />
+    </div>
+    <div class="btn-container">
+      <h2>Toggle Button</h2>
+      <ToggleHideBtn />
+    </div>
   </div>
   <!-- 
   <div class="embed">
@@ -54,12 +59,22 @@
     background-color: rgba(57, 119, 119, 0.9);
   }
 */
+
+  .btn-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 1vmin 0;
+    min-width: 450px;
+    font-size: clamp(0.5rem, 1cqmin + 0.5rem, 1rem);
+  }
   h2 {
-    margin: 0 1em 0 2em;
+    margin: 0 1vmin;
   }
 
   .btns {
     display: flex;
+    flex-wrap: wrap;
     max-width: 100vw;
     overflow: auto;
     align-items: center;
