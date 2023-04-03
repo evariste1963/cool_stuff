@@ -15,6 +15,8 @@ console.log(offsets);
 
  })
 
+ //look in scrollDiv for more clues \\
+
 </script>
 <svelte:window bind:scrollY={y}/>
 {console.log(y)}
@@ -30,3 +32,5 @@ console.log(offsets);
         margin:0;
     }
 </style>
+
+
