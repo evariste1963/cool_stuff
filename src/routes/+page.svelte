@@ -43,7 +43,7 @@
   <div style="width:100%">
     <Container />
   </div>
-  <div class="slideshow">
+  <div class="slideshow" style="height:100vh">
     <SlideShow />
   </div>
   <div style="height:100vh"
