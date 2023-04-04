@@ -4,6 +4,8 @@
 	box-sizing: border-box;
 	font-family: Ink free, cursive, sans-serif;
 	padding: 0;
+	margin:0;
+	text-decoration: none;
 }
 
 body {

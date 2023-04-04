@@ -6,6 +6,7 @@
   import SvelteScolling from "../lib/SvelteScolling.svelte";
   import ScrollToBtn from "$lib/ScrollToBtn.svelte";
   import ToggleHideBtn from "$lib/ToggleHideBtn.svelte";
+  import SlideShow from "$lib/SlideShow.svelte";
   import { scrollRef } from "svelte-scrolling";
   //import SKEmbed from "$lib/SKEmbed.svelte";
   import Container from "$lib/Container/Container.svelte";
@@ -41,6 +42,9 @@
 
   <div style="width:100%">
     <Container />
+  </div>
+  <div class="slideshow">
+    <SlideShow />
   </div>
   <div style="height:100vh"
     ><h1>**** Attribute_Selectors to go in here? **** </h1></div
