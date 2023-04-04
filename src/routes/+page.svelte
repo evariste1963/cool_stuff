@@ -43,7 +43,7 @@
   <div style="width:100%">
     <Container />
   </div>
-  <div class="slideshow" style="height:100vh">
+  <div class="slideshow" >
     <SlideShow />
   </div>
   <div style="height:100vh"
@@ -92,5 +92,13 @@
   .scroll {
     height: 100vh;
     width: 100%;
+  }
+
+  .slideshow {
+    margin: 2em auto;
+    height: auto;
+    background: rgba(57, 119, 119, 0.9);
+    border-top: 2px solid rgba(97, 108, 110, 0.7);
+    border-bottom: 2px solid rgba(97, 108, 110, 0.7);
   }
 </style>

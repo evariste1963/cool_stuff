@@ -3,40 +3,41 @@ import img1 from '$lib/images/img1.jpg'
 import img2 from '$lib/images/img2.jpg'
 import img3 from '$lib/images/img3.jpeg'
 import img4 from '$lib/images/img4.jpg'
+
+let slideArr = [img1, img2, img3, img4]
 </script>
 
 
 <div class="slider">
     <figure>
+        {#each slideArr as slide}
         <div class="slide">
-            <img src={img1} alt="the ninkinonk">
+            <img src={slide} alt="catseyes" width="400" height="400">
         </div>
-        <div class="slide">
-            <img src={img2} alt="Noo Noos">
-        </div>
-        <div class="slide">
-            <img src={img3} alt="little bear">
-        </div>
-        <div class="slide">
-            <img src={img4} alt="Reuben">
-        </div>
+        {/each}
+       
     </figure>
 </div>
 
 
 <style>
 .slider {
-    overflow:hidden;
-    height: 350px;
+    overflow: hidden;
+    height: auto; 
+    width: 40%;
+    margin: 0 auto;
+    
  }
 
- .slider figure div {
+.slider figure div {
     width: 25%;
     float: left;
+  
  }
 .slider figure img {
     width: 100%;
     float: left;
+    object-fit: cover; 
 }
 
 .slider figure {
@@ -44,7 +45,7 @@ import img4 from '$lib/images/img4.jpg'
     width: 400%;
     margin: 0;
     left:0;
-    animation: 30s slidify infinite;
+    animation: 30s slidify infinite ease-in-out;
 }
 
 @keyframes slidify{
@@ -52,35 +53,35 @@ import img4 from '$lib/images/img4.jpg'
         left: 0%
     }
 
-    12% {
+    14% {
         left: 0%;
     }
 
-    24% {
+    16% {
         left: -100%
     }
 
-    36% {
+    30% {
         left: -100%
     }
 
-    38% {
+    32% {
         left: -200%
     }
 
-    50% {
+    46% {
         left: -200%;
     }
 
-    52% {
+    48% {
         left: -300%;
     }
 
-    64% {
+    62% {
         left: -300%
     }
 
-    66% {
+    64% {
         left: -200%
     }
 
@@ -88,15 +89,15 @@ import img4 from '$lib/images/img4.jpg'
         left: -200%
     }
 
-    90% {
-        left: -100%
-    }
-
-    92% {
+    80% {
         left: -100%
     }
 
     94% {
+        left: -100%
+    }
+
+    96% {
         left: 0%;
     }
     
