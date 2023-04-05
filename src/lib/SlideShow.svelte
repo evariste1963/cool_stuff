@@ -1,107 +1,99 @@
 <script>
-import img1 from '$lib/images/img1.jpg'
-import img2 from '$lib/images/img2.jpg'
-import img3 from '$lib/images/img3.jpeg'
-import img4 from '$lib/images/img4.jpg'
+  import img1 from "$lib/images/img1.jpg";
+  import img2 from "$lib/images/img2.jpg";
+  import img3 from "$lib/images/img3.jpeg";
+  import img4 from "$lib/images/img4.jpg";
 
-let slideArr = [img1, img2, img3, img4]
+  let slideArr = [img1, img2, img3, img4];
 </script>
 
-
 <div class="slider">
-    <figure>
-        {#each slideArr as slide}
-        <div class="slide">
-            <img src={slide} alt="catseyes" width="400" height="400">
-        </div>
-        {/each}
-       
-    </figure>
+  <figure>
+    {#each slideArr as slide}
+      <div class="slide">
+        <img src={slide} alt="catseyes" width="250" height="250" />
+      </div>
+    {/each}
+  </figure>
 </div>
 
-
 <style>
-.slider {
+  .slider {
     overflow: hidden;
-    height: auto; 
-    width: 40%;
+    height: auto;
+    width: 25%;
     margin: 0 auto;
-    
- }
+  }
 
-.slider figure div {
+  .slider figure div {
     width: 25%;
     float: left;
-  
- }
-.slider figure img {
+  }
+  .slider figure img {
     width: 100%;
     float: left;
-    object-fit: cover; 
-}
+    object-fit: cover;
+  }
 
-.slider figure {
+  .slider figure {
     position: relative;
     width: 400%;
     margin: 0;
-    left:0;
+    left: 0;
     animation: 30s slidify infinite ease-in-out;
-}
+  }
 
-@keyframes slidify{
+  @keyframes slidify {
     0% {
-        left: 0%
+      left: 0%;
     }
 
     14% {
-        left: 0%;
+      left: 0%;
     }
 
     16% {
-        left: -100%
+      left: -100%;
     }
 
     30% {
-        left: -100%
+      left: -100%;
     }
 
     32% {
-        left: -200%
+      left: -200%;
     }
 
     46% {
-        left: -200%;
+      left: -200%;
     }
 
     48% {
-        left: -300%;
+      left: -300%;
     }
 
     62% {
-        left: -300%
+      left: -300%;
     }
 
     64% {
-        left: -200%
+      left: -200%;
     }
 
     78% {
-        left: -200%
+      left: -200%;
     }
 
     80% {
-        left: -100%
+      left: -100%;
     }
 
     94% {
-        left: -100%
+      left: -100%;
     }
 
     96% {
-        left: 0%;
+      left: 0%;
     }
-    
-
-}
-
+  }
 </style>
