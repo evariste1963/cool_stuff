@@ -3,15 +3,18 @@
   import img2 from "$lib/images/img2.jpg";
   import img3 from "$lib/images/img3.jpeg";
   import img4 from "$lib/images/img4.jpg";
-
+  
   let slideArr = [img1, img2, img3, img4];
+ 
 </script>
 
 <div class="slider">
   <figure>
     {#each slideArr as slide}
       <div class="slide">
+        <a href={slide}  target="_blank" rel="noreferrer">
         <img src={slide} alt="catseyes" width="100" height="250" />
+      </a>
       </div>
     {/each}
   </figure>
