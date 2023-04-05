@@ -40,7 +40,7 @@
     width: 400%;
     margin: 0;
     left: 0;
-    animation: 30s slidify infinite ease-in-out;
+    animation: 25s slidify infinite ease-in-out;
   }
 
   @keyframes slidify {
