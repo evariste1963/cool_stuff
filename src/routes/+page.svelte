@@ -43,11 +43,11 @@
   <div style="width:100%">
     <Container />
   </div>
-  <div class="slideshow" >
+  <div class="slideshow">
     <SlideShow />
   </div>
   <div style="height:100vh"
-    ><h1>**** Attribute_Selectors to go in here? **** </h1></div
+    ><br /><br /><h1>**** Attribute_Selectors to go in here? **** </h1></div
   >
 </div>
 <div class="scroll" use:scrollRef={"scroll"} />
@@ -95,7 +95,7 @@
   }
 
   .slideshow {
-    margin: 2em auto;
+    margin: 0.5em auto;
     height: auto;
     background: rgba(57, 119, 119, 0.9);
     border-top: 2px solid rgba(97, 108, 110, 0.7);
