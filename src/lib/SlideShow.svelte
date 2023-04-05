@@ -11,7 +11,7 @@
   <figure>
     {#each slideArr as slide}
       <div class="slide">
-        <img src={slide} alt="catseyes" width="250" height="250" />
+        <img src={slide} alt="catseyes" width="100" height="250" />
       </div>
     {/each}
   </figure>
