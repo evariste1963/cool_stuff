@@ -3,18 +3,17 @@
   import img2 from "$lib/images/img2.jpg";
   import img3 from "$lib/images/img3.jpeg";
   import img4 from "$lib/images/img4.jpg";
-  
+
   let slideArr = [img1, img2, img3, img4];
- 
 </script>
 
 <div class="slider">
   <figure>
     {#each slideArr as slide}
       <div class="slide">
-        <a href={slide}  target="_blank" rel="noreferrer">
-        <img src={slide} alt="catseyes" width="100" height="250" />
-      </a>
+        <a href={slide} target="_blank" rel="noreferrer">
+          <img src={slide} alt="catseyes" width="100" height="250" />
+        </a>
       </div>
     {/each}
   </figure>
@@ -51,51 +50,51 @@
       left: 0%;
     }
 
-    14% {
+    15% {
       left: 0%;
     }
 
-    16% {
-      left: -100%;
-    }
-
-    30% {
+    17% {
       left: -100%;
     }
 
     32% {
-      left: -200%;
-    }
-
-    46% {
-      left: -200%;
-    }
-
-    48% {
-      left: -300%;
-    }
-
-    62% {
-      left: -300%;
-    }
-
-    64% {
-      left: -200%;
-    }
-
-    78% {
-      left: -200%;
-    }
-
-    80% {
       left: -100%;
     }
 
-    94% {
+    34% {
+      left: -200%;
+    }
+
+    49% {
+      left: -200%;
+    }
+
+    51% {
+      left: -300%;
+    }
+
+    66% {
+      left: -300%;
+    }
+
+    68% {
+      left: -200%;
+    }
+
+    83% {
+      left: -200%;
+    }
+
+    85% {
       left: -100%;
     }
 
-    96% {
+    98% {
+      left: -100%;
+    }
+
+    100% {
       left: 0%;
     }
   }
