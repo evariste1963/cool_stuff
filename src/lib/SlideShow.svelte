@@ -3,14 +3,19 @@
   import img2 from "$lib/images/img2.jpg";
   import img3 from "$lib/images/img3.jpeg";
   import img4 from "$lib/images/img4.jpg";
+  import img5 from "$lib/images/img5.jpg";
 
-  let slideArr = [img1, img2, img3, img4];
+  let slideArr = [img1, img2, img3, img4, img5];
+  let width = 100 /slideArr.length
+  let figureWidth = 100 *slideArr.length
+  console.log(width,figureWidth);
+  
 </script>
 
-<div class="slider">
-  <figure>
+<div class="slider" style="width:{width}%">
+  <figure style = "width:{figureWidth}%">
     {#each slideArr as slide}
-      <div class="slide">
+      <div class="slide" style="width:{width}%">
         <a href={slide} target="_blank" rel="noreferrer">
           <img src={slide} alt="catseyes" width="100" height="250" />
         </a>
@@ -23,12 +28,13 @@
   .slider {
     overflow: hidden;
     height: auto;
-    width: 25%;
+    /*width: 25%; done as js var in html*/
     margin: 0 auto;
   }
 
   .slider figure div {
-    width: 25%;
+    /*width: 25%; done as js var in html*/
+    margin: 0 auto;
     float: left;
   }
   .slider figure img {
@@ -39,7 +45,7 @@
 
   .slider figure {
     position: relative;
-    width: 400%;
+    /* width: 500%; */
     margin: 0;
     left: 0;
     animation: 25s slidify infinite ease-in-out;
