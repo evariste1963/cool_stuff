@@ -12,6 +12,7 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.13.0",
 		"svelte": "^3.57.0",
+		"svelte-carousel": "^1.0.25",
 		"vite": "^4.0.0"
 	},
 	"type": "module",

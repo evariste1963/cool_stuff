@@ -5,13 +5,47 @@
   import img4 from "$lib/images/img4.jpg";
   import img5 from "$lib/images/img5.jpg";
 
+  import Carousel from 'svelte-carousel';
+  import { browser } from '$app/environment';
+
+  let carousel; // for calling methods of the carousel instance
+  
+  const handleNextClick = () => {
+    carousel.goToNext()
+  }
+
   let slideArr = [img1, img2, img3, img4, img5];
   let width = 100 /slideArr.length + "%"
   let figureWidth = 100 *slideArr.length +"%"
-    
+    //**** TRY USING SVELTE CAROUSEL INSTEAD...  ****\\\\\
 </script>
 
-<div class="slider" style="width:{width}">
+{#if browser}
+<div class="slider" style="width:{figureWidth}">
+  <!-- <figure style = "width:{figureWidth}"> -->
+  <Carousel
+    bind:this={carousel}
+    autoplay
+  autoplayDuration={2000}
+  pauseOnFocus
+  >
+ 
+  {#each slideArr as slide}
+   <div class="slide" style="width:{width}">
+      <a href={slide} target="_blank" rel="noreferrer">
+        <img src={slide} alt="catseyes" width="100" height="250" />
+      </a>
+    </div>
+  {/each}
+
+  </Carousel>
+<!-- </figure> -->
+</div>
+{/if}
+
+<button on:click={handleNextClick}>Next</button>
+
+<!-- <div class="slider" style="width:{width}">
   <figure style = "width:{figureWidth}">
     {#each slideArr as slide}
       <div class="slide" style="width:{width}">
@@ -21,7 +55,7 @@
       </div>
     {/each}
   </figure>
-</div>
+</div> -->
 
 <style>
   .slider {
@@ -42,15 +76,15 @@
     object-fit: cover;
   }
 
-  .slider figure {
+  /* .slider figure {
     position: relative;
-    /* width: 500%; */
+    
     margin: 0;
     left: 0;
-    animation: 25s slidify infinite ease-in-out;
-  }
+    /animation: 25s slidify infinite ease-in-out; 
+  } */
 
-/* umber of % points = num of imgs * 3 + n+1 --> n=1 for 4, 2 fo5, 3 for 6 etc*/
+/* number of % points = num of imgs * 3 + n+1 --> n=1 for 4, 2 for 5, 3 for 6 etc*/
 
   @keyframes slidify {
     0% {
