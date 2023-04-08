@@ -97,8 +97,8 @@
   .slideshow {
     margin: 0.5em auto;
     height: auto;
-    background: rgba(57, 119, 119, 0.9);
-    border-top: 2px solid rgba(97, 108, 110, 0.7);
+    /* background: rgba(57, 119, 119, 0.9); */
+    /* border-top: 2px solid rgba(97, 108, 110, 0.7); */
     border-bottom: 2px solid rgba(97, 108, 110, 0.7);
   }
 </style>

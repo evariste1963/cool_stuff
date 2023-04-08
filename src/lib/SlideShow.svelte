@@ -21,26 +21,28 @@
 </script>
 
 {#if browser}
-<div class="slider" style="width:{figureWidth}">
+<!-- <div class="slider" style="width:{figureWidth}"> -->
   <!-- <figure style = "width:{figureWidth}"> -->
   <Carousel
     bind:this={carousel}
     autoplay
-  autoplayDuration={2000}
-  pauseOnFocus
+    autoplayDuration={2000}
+    pauseOnFocus
+    autoplayProgressVisible
+    swiping
   >
  
   {#each slideArr as slide}
-   <div class="slide" style="width:{width}">
-      <a href={slide} target="_blank" rel="noreferrer">
-        <img src={slide} alt="catseyes" width="100" height="250" />
-      </a>
-    </div>
+   <!-- <div class="slide" style="width:{width}"> -->
+      <!-- <a href={slide} target="_blank" rel="noreferrer"> -->
+        <img src={slide} alt="catseyes" width="100" height="400" />
+      <!-- </a> -->
+    <!-- </div> -->
   {/each}
 
   </Carousel>
 <!-- </figure> -->
-</div>
+<!-- </div> -->
 {/if}
 
 <button on:click={handleNextClick}>Next</button>
