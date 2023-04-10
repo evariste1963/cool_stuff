@@ -1,5 +1,4 @@
 <script>
-  //import "../app.css";
   import Button89 from "$lib/Button89.svelte";
   import SliderBtn from "$lib/SliderBtn.svelte";
   import BackToTopBtn from "../lib/BackToTopBtn.svelte";
@@ -43,9 +42,12 @@
 
   <div class="slideshows">
     <h1>Carousels</h1>
+    <h2 style="width:100%; text-align:center">Svelte Carousel</h2>
     <div class="scar" style=" width: 27em; height: auto; margin:0 auto">
+      
     <SvelteCarousel />
   </div>
+  <h2 style="width:100%; text-align:center">Slide Carousel</h2>
     <SlideShow />
   </div>
   <div style="height:100vh"
@@ -64,14 +66,14 @@
     margin: 2em;
     font-size: 1rem;
   }
-  /*
+  
   .embed {
     width: 100%;
     height: 800px;
     margin: 4em auto;
     background-color: rgba(57, 119, 119, 0.9);
   }
-*/
+
 
   .btn-container {
     display: flex;
@@ -105,8 +107,7 @@
     margin: 0 auto;
     height: auto;
     padding: 1em 0;
-    /* background: rgba(57, 119, 119, 0.9); */
-     border-top: 2px solid rgba(97, 108, 110, 0.7); 
+    border-top: 2px solid rgba(97, 108, 110, 0.7); 
     border-bottom: 2px solid rgba(97, 108, 110, 0.7);
   }
 </style>
