@@ -8,8 +8,9 @@
   import ToggleHideBtn from "$lib/ToggleHideBtn.svelte";
   import SlideShow from "$lib/SlideShow.svelte";
   import { scrollRef } from "svelte-scrolling";
-  //import SKEmbed from "$lib/SKEmbed.svelte";
+  import SKEmbed from "$lib/SKEmbed.svelte";
   import Container from "$lib/Container/Container.svelte";
+  import SvelteCarousel from "$lib/SvelteCarousel.svelte";
 </script>
 
 <BackToTopBtn />
@@ -35,21 +36,27 @@
       <ToggleHideBtn />
     </div>
   </div>
-  <!-- 
-  <div class="embed">
-    <SKEmbed />
-  </div> -->
 
   <div style="width:100%">
     <Container />
   </div>
-  <div class="slideshow">
+
+  <div class="slideshows">
+    <h1>Carousels</h1>
+    <div class="scar" style=" width: 27em; height: auto; margin:0 auto">
+    <SvelteCarousel />
+  </div>
     <SlideShow />
   </div>
   <div style="height:100vh"
     ><br /><br /><h1>**** Attribute_Selectors to go in here? **** </h1></div
   >
 </div>
+  
+<div class="embed">
+  <SKEmbed />
+</div>
+
 <div class="scroll" use:scrollRef={"scroll"} />
 
 <style>
@@ -94,11 +101,12 @@
     width: 100%;
   }
 
-  .slideshow {
-    margin: 0.5em auto;
+  .slideshows {
+    margin: 0 auto;
     height: auto;
+    padding: 1em 0;
     /* background: rgba(57, 119, 119, 0.9); */
-    /* border-top: 2px solid rgba(97, 108, 110, 0.7); */
+     border-top: 2px solid rgba(97, 108, 110, 0.7); 
     border-bottom: 2px solid rgba(97, 108, 110, 0.7);
   }
 </style>

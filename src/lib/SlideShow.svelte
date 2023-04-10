@@ -5,41 +5,11 @@
   import img4 from "$lib/images/img4.jpg";
   import img5 from "$lib/images/img5.jpg";
 
-  import Carousel from 'svelte-carousel';
-  import { browser } from '$app/environment';
-
-  let carousel; // for calling methods of the carousel instance
-  
-  const handleNextClick = () => {
-    carousel.goToNext()
-  }
-
   let slideArr = [img1, img2, img3, img4, img5];
   let width = 100 /slideArr.length + "%"
   let figureWidth = 100 *slideArr.length +"%"
     
 </script>
-
-{#if browser}
-  <Carousel
-    bind:this={carousel}
-    autoplay
-    autoplayDuration={2000}
-    pauseOnFocus
-    autoplayProgressVisible
-    swiping
-    particlesToShow={3}
-    particlesToScroll={1}
-  >
-    {#each slideArr as slide}
-      <img src={slide} alt="catseyes" width="100" height="400" />
-    {/each}
-
-  </Carousel>
-
-<div style="text-align:center; padding:1em;">
-<button style="padding:0.35em 1.5em; border-radius:1em" on:click={handleNextClick}>Next</button>
-</div>
 
 <!-- non-svelte carousel  -->
 <div class="slider" style="width:{width}">
@@ -53,13 +23,13 @@
     {/each}
   </figure>
 </div>
-{/if}
+
 <style>
   .slider {
     overflow: hidden;
     height: auto;
     /*width: 25%; done as js var in html*/
-    margin: 2em auto;
+    margin: 0 auto;
   }
 
   .slider figure div {
