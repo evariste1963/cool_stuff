@@ -17,12 +17,10 @@
   let slideArr = [img1, img2, img3, img4, img5];
   let width = 100 /slideArr.length + "%"
   let figureWidth = 100 *slideArr.length +"%"
-    //**** TRY USING SVELTE CAROUSEL INSTEAD...  ****\\\\\
+    
 </script>
 
 {#if browser}
-<!-- <div class="slider" style="width:{figureWidth}"> -->
-  <!-- <figure style = "width:{figureWidth}"> -->
   <Carousel
     bind:this={carousel}
     autoplay
@@ -30,24 +28,21 @@
     pauseOnFocus
     autoplayProgressVisible
     swiping
+    particlesToShow={3}
+    particlesToScroll={1}
   >
- 
-  {#each slideArr as slide}
-   <!-- <div class="slide" style="width:{width}"> -->
-      <!-- <a href={slide} target="_blank" rel="noreferrer"> -->
-        <img src={slide} alt="catseyes" width="100" height="400" />
-      <!-- </a> -->
-    <!-- </div> -->
-  {/each}
+    {#each slideArr as slide}
+      <img src={slide} alt="catseyes" width="100" height="400" />
+    {/each}
 
   </Carousel>
-<!-- </figure> -->
-<!-- </div> -->
-{/if}
 
-<button on:click={handleNextClick}>Next</button>
+<div style="text-align:center; padding:1em;">
+<button style="padding:0.35em 1.5em; border-radius:1em" on:click={handleNextClick}>Next</button>
+</div>
 
-<!-- <div class="slider" style="width:{width}">
+<!-- non-svelte carousel  -->
+<div class="slider" style="width:{width}">
   <figure style = "width:{figureWidth}">
     {#each slideArr as slide}
       <div class="slide" style="width:{width}">
@@ -57,20 +52,21 @@
       </div>
     {/each}
   </figure>
-</div> -->
-
+</div>
+{/if}
 <style>
   .slider {
     overflow: hidden;
     height: auto;
     /*width: 25%; done as js var in html*/
-    margin: 0 auto;
+    margin: 2em auto;
   }
 
   .slider figure div {
     /*width: 25%; done as js var in html*/
     margin: 0 auto;
     float: left;
+    border-radius:2em
   }
   .slider figure img {
     width: 100%;
@@ -78,13 +74,13 @@
     object-fit: cover;
   }
 
-  /* .slider figure {
+  .slider figure {
     position: relative;
     
     margin: 0;
     left: 0;
-    /animation: 25s slidify infinite ease-in-out; 
-  } */
+    animation: 25s slidify infinite ease-in-out; 
+  }
 
 /* number of % points = num of imgs * 3 + n+1 --> n=1 for 4, 2 for 5, 3 for 6 etc*/
 
