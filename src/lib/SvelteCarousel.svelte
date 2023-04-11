@@ -13,14 +13,14 @@
   let carouselArr = [img1, img2, img3, img4, img5];
 
   const handleNextClick = () => {
-    carousel.goToPrev({ animated: true });
-  };
-
-  const handlePrevClick = () => {
     carousel.goToNext({ animated: true });
   };
 
-  export let imagesToShow;
+  const handlePrevClick = () => {
+    carousel.goToPrev({ animated: true });
+  };
+
+  export let imagesToShow=1
 </script>
 
 {#if browser}
@@ -28,15 +28,16 @@
     bind:this={carousel}
     arrows={true}
     autoplay
-    autoplayDuration={2000}
+    autoplayDuration={3000}
     pauseOnFocus
     autoplayProgressVisible
-    autoplayDirection={"prev"}
+    autoplayDirection={"next"}
     swiping
     dots={true}
     bind:particlesToShow={imagesToShow}
     particlesToScroll={1}
   >
+  
     {#each carouselArr as slide}
       <img src={slide} alt="catseyes" width="300" height="250" />
     {/each}
