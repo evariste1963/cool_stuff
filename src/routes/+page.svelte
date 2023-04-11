@@ -10,6 +10,8 @@
   import SKEmbed from "$lib/SKEmbed.svelte";
   import Container from "$lib/Container/Container.svelte";
   import SvelteCarousel from "$lib/SvelteCarousel.svelte";
+
+  let imagesToShow = 3;
 </script>
 
 <BackToTopBtn />
@@ -43,11 +45,16 @@
   <div class="slideshows">
     <h1>Carousels</h1>
     <h2 style="width:100%; text-align:center">Svelte Carousel</h2>
-    <div class="scar" style=" width: 27em; height: auto; margin:0 auto">
-      <SvelteCarousel />
+    <div
+      class="svelteCarousel"
+      style=" width:{imagesToShow * 27}em; height: auto; margin:0 auto"
+    >
+      <SvelteCarousel {imagesToShow} />
     </div>
-    <h2 style="width:100%; text-align:center">Slide Carousel</h2>
-    <SlideShow />
+    <div class="slideCarousel">
+      <h2 style="width:100%; text-align:center">Slide Carousel</h2>
+      <SlideShow />
+    </div>
   </div>
   <div style="height:100vh"
     ><br /><br /><h1>**** CCC MASK/CLIPPING to go in here? **** </h1></div
