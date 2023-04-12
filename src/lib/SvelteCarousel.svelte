@@ -20,7 +20,7 @@
     carousel.goToPrev({ animated: true });
   };
 
-  export let imagesToShow = 1;
+  export let imagesToShow = 2;
 </script>
 
 {#if browser}

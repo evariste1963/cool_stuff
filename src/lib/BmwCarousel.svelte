@@ -66,6 +66,7 @@
 </script>
 
 <!-- non-svelte bmw carousel  -->
+
 <div class="bmwSlider">
   <figure>
     {#each images as image (image.id)}
