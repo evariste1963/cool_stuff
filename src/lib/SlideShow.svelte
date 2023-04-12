@@ -6,14 +6,13 @@
   import img5 from "$lib/images/img5.jpg";
 
   let slideArr = [img1, img2, img3, img4, img5];
-  let width = 100 /slideArr.length + "%"
-  let figureWidth = 100 *slideArr.length +"%"
-    
+  let width = 100 / slideArr.length + "%";
+  let figureWidth = 100 * slideArr.length + "%";
 </script>
 
 <!-- non-svelte carousel  -->
 <div class="slider" style="width:{width}">
-  <figure style = "width:{figureWidth}">
+  <figure style="width:{figureWidth}">
     {#each slideArr as slide}
       <div class="slide" style="width:{width}">
         <a href={slide} target="_blank" rel="noreferrer">
@@ -36,7 +35,7 @@
     /*width: 25%; done as js var in html*/
     margin: 0 auto;
     float: left;
-    border-radius:2em
+    border-radius: 2em;
   }
   .slider figure img {
     width: 100%;
@@ -46,13 +45,13 @@
 
   .slider figure {
     position: relative;
-    
+
     margin: 0;
     left: 0;
-    animation: 25s slidify infinite ease-in-out; 
+    animation: 25s slidify infinite ease-in-out;
   }
 
-/* number of % points = num of imgs * 3 + n+1 --> n=1 for 4, 2 for 5, 3 for 6 etc*/
+  /* number of % points = num of imgs * 3 + n+1 --> n=1 for 4, 2 for 5, 3 for 6 etc*/
 
   @keyframes slidify {
     0% {
@@ -118,7 +117,6 @@
     96% {
       left: 0%;
     }
-  
   }
 
   /* @keyframes slidify {

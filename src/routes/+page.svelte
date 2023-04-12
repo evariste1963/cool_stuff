@@ -10,9 +10,9 @@
   import SKEmbed from "$lib/SKEmbed.svelte";
   import Container from "$lib/Container/Container.svelte";
   import SvelteCarousel from "$lib/SvelteCarousel.svelte";
+  import BmwCarousel from "$lib/BmwCarousel.svelte";
 
-  let imagesToShow=3
-
+  let imagesToShow = 3;
 </script>
 
 <BackToTopBtn />
@@ -45,20 +45,31 @@
 
   <div class="slideshows">
     <h1>Carousels</h1>
-      <div style="display:flex; align-items:center; width:100%; justify-content:center">
-        <h2 style="text-align:center; ">Svelte Carousel</h2>
-        <input type="number" style="padding: 1em; margin:0.5em;  " bind:value={imagesToShow} min=1 max=4>Number of images to show
-      </div>
+    <div
+      style="display:flex; align-items:center; width:100%; justify-content:center"
+    >
+      <h2 style="text-align:center; ">Svelte Carousel</h2>
+      <input
+        type="number"
+        style="padding: 1em; margin:0.5em;  "
+        bind:value={imagesToShow}
+        min="1"
+        max="4"
+      />Number of images to show
+    </div>
     <div
       class="svelteCarousel"
       style=" width:{imagesToShow * 27}vw; height: auto; margin:0 auto"
     >
-    
       <SvelteCarousel {imagesToShow} />
     </div>
     <div class="slideCarousel">
       <h2 style="width:100%; text-align:center">Slide Carousel</h2>
       <SlideShow />
+    </div>
+    <div class="slideCarousel">
+      <h2 style="width:100%; text-align:center">BMW Carousel</h2>
+      <BmwCarousel />
     </div>
   </div>
   <div style="height:100vh"
