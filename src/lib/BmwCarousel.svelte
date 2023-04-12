@@ -43,8 +43,10 @@
 </script>
 
 <!-- non-svelte carousel  -->
-<div class="slider" style="width:{width}">
-  <figure style="width:{figureWidth}">
+<div class="bmwSlider" style="width:{width}">
+  <figure
+    style="width:{figureWidth}; align-items:center; justify-content:center; overflow:hidden"
+  >
     {#each images as image (image.id)}
       <div
         class="image-box"
@@ -78,7 +80,7 @@
 </div>
 
 <style>
-  .slider {
+  .bmwSlider {
     overflow: hidden;
     height: auto;
     /*width: 25%; done as js var in html*/
@@ -91,13 +93,13 @@
     float: left;
     border-radius: 2em;
   }
-  .slider figure img {
+  .bmwSlider figure img {
     width: 100%;
     float: left;
     object-fit: cover;
   }
 
-  .slider figure {
+  .bmwSlider figure {
     position: relative;
 
     margin: 0;

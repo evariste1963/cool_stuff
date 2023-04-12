@@ -67,8 +67,9 @@
       <h2 style="width:100%; text-align:center">Slide Carousel</h2>
       <SlideShow />
     </div>
-    <div class="slideCarousel">
-      <h2 style="width:100%; text-align:center">BMW Carousel</h2>
+    <div class="bmwCarousel">
+      <h2 style="width:100%; text-align:center; margin-top:2em">BMW Carousel</h2
+      >
       <BmwCarousel />
     </div>
   </div>
@@ -129,7 +130,7 @@
 
   .slideshows {
     margin: 0 auto;
-    height: 100vh;
+    height: auto;
     padding: 1em 0;
     border-top: 2px solid rgba(97, 108, 110, 0.7);
     border-bottom: 2px solid rgba(97, 108, 110, 0.7);
