@@ -12,7 +12,7 @@
   import SvelteCarousel from "$lib/SvelteCarousel.svelte";
   import BmwCarousel from "$lib/BmwCarousel.svelte";
 
-  let imagesToShow = 3;
+  let imagesToShow = 2;
 </script>
 
 <BackToTopBtn />
