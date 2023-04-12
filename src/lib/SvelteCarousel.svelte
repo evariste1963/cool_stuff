@@ -20,7 +20,7 @@
     carousel.goToPrev({ animated: true });
   };
 
-  export let imagesToShow=1
+  export let imagesToShow = 1;
 </script>
 
 {#if browser}
@@ -37,15 +37,12 @@
     bind:particlesToShow={imagesToShow}
     particlesToScroll={1}
   >
-  
     {#each carouselArr as slide}
       <img src={slide} alt="catseyes" width="300" height="250" />
     {/each}
   </Carousel>
 
-  <div
-    style="text-align:center; padding:1em; border-bottom: 2px solid rgba(97, 108, 110, 0.7); margin-bottom:1em"
-  >
+  <div style="text-align:center; padding:1em;  margin-bottom:1em">
     <button
       style="padding:0.35em 1.5em; border-radius:1em"
       on:click={handlePrevClick}>Prev</button

@@ -29,6 +29,7 @@
     height: auto;
     /*width: 25%; done as js var in html*/
     margin: 0 auto;
+    padding-bottom: 2em;
   }
 
   .slider figure div {

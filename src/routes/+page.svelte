@@ -59,16 +59,21 @@
     </div>
     <div
       class="svelteCarousel"
-      style=" width:{imagesToShow * 27}vw; height: auto; margin:0 auto"
+      style=" width:{imagesToShow *
+        27}vw; height: auto; margin:0 auto;  border-bottom: 2px solid rgba(97, 108, 110, 0.7);"
     >
       <SvelteCarousel {imagesToShow} />
     </div>
-    <div class="slideCarousel">
+    <div
+      class="slideCarousel"
+      style=" border-bottom: 2px solid rgba(97, 108, 110, 0.7);"
+    >
       <h2 style="width:100%; text-align:center">Slide Carousel</h2>
       <SlideShow />
     </div>
     <div class="bmwCarousel">
-      <h2 style="width:100%; text-align:center; margin-top:2em">BMW Carousel</h2
+      <h2 style="width:100%; text-align:center; margin-top:2em;"
+        >BMW Carousel</h2
       >
       <BmwCarousel />
     </div>
