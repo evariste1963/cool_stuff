@@ -38,7 +38,7 @@
     particlesToScroll={1}
   >
     {#each carouselArr as slide}
-      <img src={slide} alt="catseyes" width="300" height="250" />
+      <img src={slide} alt="catseyes" width="250" height="275" />
     {/each}
   </Carousel>
 
@@ -53,3 +53,9 @@
     >
   </div>
 {/if}
+
+<style>
+  button {
+    cursor: pointer;
+  }
+</style>

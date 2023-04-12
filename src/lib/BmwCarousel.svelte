@@ -17,26 +17,36 @@
   ];
 
   let autoplay = true;
-  let autoplaySpeed = 3000;
+  let autoplaySpeed = 2000;
   let interval;
+  let buttonOn = true;
 
   const directionLeft = e => {
-    const transitioningImage = images[images.length - 1];
-    document.getElementById(transitioningImage.id).style.opacity = 0;
-    images = [images[images.length - 1], ...images.slice(0, images.length - 1)];
-    setTimeout(
-      () => (document.getElementById(transitioningImage.id).style.opacity = 1),
-      500
-    );
+    if (buttonOn) {
+      buttonOn = false;
+      const transitioningImage = images[images.length - 1];
+      document.getElementById(transitioningImage.id).style.opacity = 0;
+      images = [
+        images[images.length - 1],
+        ...images.slice(0, images.length - 1),
+      ];
+      setTimeout(() => {
+        document.getElementById(transitioningImage.id).style.opacity = 1;
+        buttonOn = true;
+      }, 500);
+    }
   };
   const directionRight = e => {
-    const transitioningImage = images[0];
-    document.getElementById(transitioningImage.id).style.opacity = 0;
-    images = [...images.slice(1, images.length), images[0]];
-    setTimeout(
-      () => (document.getElementById(transitioningImage.id).style.opacity = 1),
-      500
-    );
+    if (buttonOn) {
+      buttonOn = false;
+      const transitioningImage = images[0];
+      document.getElementById(transitioningImage.id).style.opacity = 0;
+      images = [...images.slice(1, images.length), images[0]];
+      setTimeout(() => {
+        document.getElementById(transitioningImage.id).style.opacity = 1;
+        buttonOn = true;
+      }, 500);
+    }
   };
 
   const startAutoPlay = () => {
@@ -74,11 +84,15 @@
   <div style="text-align:center; padding:1em; margin-bottom:1em">
     <button
       style="padding:0.35em 1.5em; border-radius:1em"
-      on:click={directionLeft}>Prev</button
+      on:click={directionLeft}
+      on:pointerover={stopAutoPlay}
+      on:pointerout={startAutoPlay}>Prev</button
     >
     <button
       style="padding:0.35em 1.5em; border-radius:1em; "
-      on:click={directionRight}>Next</button
+      on:click={directionRight}
+      on:pointerover={stopAutoPlay}
+      on:pointerout={startAutoPlay}>Next</button
     >
   </div>
 </div>
@@ -116,11 +130,16 @@
   .bmwSlider figure img {
     width: 100%;
     object-fit: cover;
+    cursor: pointer;
   }
 
   .bmwSlider figure {
     position: relative;
     margin: 0;
     left: 0;
+  }
+
+  button {
+    cursor: pointer;
   }
 </style>
