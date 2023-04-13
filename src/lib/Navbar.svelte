@@ -17,8 +17,9 @@
       <a
         href={navItem.path}
         class:selected={$page.route.id.includes(navItem.path)}
-        data-sveltekit-preload-data>{navItem.page}</a
-      >
+        data-sveltekit-preload-data
+        >{navItem.page}
+      </a>
     {:else}
       <a
         href={navItem.path}

@@ -13,7 +13,7 @@ onMount(() => {
 */
 </script>
 
-<div class="card">
+<div class="cards">
   <div class="card__inner not-flipped" on:click={() => {
     const cardEl = document.querySelector(".card__inner");
     cardEl.classList.toggle('not-flipped')}
@@ -61,7 +61,7 @@ body {
   width: 100%;
   min-height: 100vh;
 }
-  .card {
+  .cards {
     margin: 100px auto 0;
     width: 400px;
     height: 600px;
