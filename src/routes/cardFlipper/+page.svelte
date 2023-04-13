@@ -2,17 +2,22 @@
  import img1 from '$lib/images/img1.jpg'
  import {onMount} from 'svelte'
 
+ /*
+
 onMount(() => {
     const cardEl = document.querySelector(".card__inner");
-    cardEl.addEventListener('click', (e) => {cardEl.classList.toggle('is-flipped')}
+    cardEl.addEventListener('click', (e) => {cardEl.classList.toggle('not-flipped')}
     )
   }
 )
-
+*/
 </script>
 
 <div class="card">
-  <div class="card__inner is-flipped" >
+  <div class="card__inner not-flipped" on:click={() => {
+    const cardEl = document.querySelector(".card__inner");
+    cardEl.classList.toggle('not-flipped')}
+  } >
     <div class="card__face card__face--front">
       <h2>this.me</h2>
     </div>
@@ -73,7 +78,7 @@ body {
     
   }
 
-  .card__inner.is-flipped {
+  .card__inner:not(.not-flipped) {
     transform: rotateY(180deg);
   }
 
@@ -153,7 +158,7 @@ body {
     color: #fff;
     font-size: 32px;
     font-weight: 900;
-    text-transform: uppercase;
+   /* text-transform: uppercase;*/
     text-align: center;
   }
 
