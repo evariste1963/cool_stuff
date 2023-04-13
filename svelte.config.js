@@ -14,10 +14,11 @@ const config = {
 		// 	// plugins: []
 		//   }
 		// this is to get disable: 'visible, non-interactive elements with an on:click event must be accompanied by an on:keydown, on:keyup, or on:keypress event' warnings
-		// onwarn: (warning, handler) => {
-		// 	if (warning.code === 'a11y-click-events-have-key-events') return
-		// 	handler(warning)}
-	}
+		
+	},
+	onwarn: (warning, handler) => {
+		if (warning.code === 'a11y:visible, non-interactive elements with an on:click ') return
+		handler(warning)}
 };
 
 export default config;

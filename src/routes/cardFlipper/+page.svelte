@@ -1,6 +1,6 @@
 <script>
-//  import img1 from '$lib/images/img1.jpg'
-import ImageArray  from '$lib/ImageArray.svelte';
+ import img1 from '$lib/images/img1.jpg'
+
 //  import {onMount} from 'svelte'
 
  /*
@@ -12,13 +12,12 @@ onMount(() => {
   }
 )
 */
-console.log(ImageArray);
-
 
 </script>
 
 <div class="cards">
-  <div class="card__inner not-flipped" on:click={() => {
+  <div class="card__inner not-flipped" 
+    on:click={() => {
     const cardEl = document.querySelector(".card__inner");
     cardEl.classList.toggle('not-flipped')}
   } >
@@ -28,7 +27,7 @@ console.log(ImageArray);
     <div class="card__face card__face--back">
       <div class="card__content">
         <div class="card__header">
-          <img src={ImageArray[1]} alt="" class="pp" />
+          <img src={img1} alt="" class="pp" />
           <h2 style='font-style:italic'>this.me</h2>
         </div>
         <div class="card__body">
@@ -60,11 +59,12 @@ console.log(ImageArray);
   padding: 0;
 }
 
-body {
+/* body {
   font-family: montserrat, sans-serif;
   width: 100%;
   min-height: 100vh;
-}
+} */
+
   .cards {
     margin: 100px auto 0;
     width: 400px;
@@ -84,6 +84,15 @@ body {
 
   .card__inner:not(.not-flipped) {
     transform: rotateY(180deg);
+  }
+
+  /* the following 2 rules are to prevent the outlie when using keyboard to flip card */
+  .card__inner:focus{
+    outline: none !important;
+  }
+
+.card__inner:focus-within{
+    outline: none !important;
   }
 
   .card__face {
