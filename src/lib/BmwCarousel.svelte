@@ -1,6 +1,5 @@
 <script>
   import { onDestroy } from "svelte";
-
   import { flip } from "svelte/animate";
   import img1 from "$lib/images/img1.jpg";
   import img2 from "$lib/images/img2.jpg";
@@ -17,7 +16,7 @@
   ];
 
   let autoplay = true;
-  let autoplaySpeed = 2000;
+  let autoplaySpeed = 3000;
   let interval;
   let buttonOn = true;
 

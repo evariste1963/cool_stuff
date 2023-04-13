@@ -10,7 +10,18 @@
 
   let carousel; // for calling methods of the carousel instance
 
-  let carouselArr = [img1, img2, img3, img4, img5];
+  let carouselArr = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+  ];
 
   const handleNextClick = () => {
     carousel.goToNext({ animated: true });
@@ -21,6 +32,7 @@
   };
 
   export let imagesToShow;
+  $: imagesToScroll = imagesToShow > 2 ? imagesToShow - 1 : 1;
 </script>
 
 {#if browser}
@@ -35,7 +47,7 @@
     swiping
     dots={true}
     bind:particlesToShow={imagesToShow}
-    particlesToScroll={1}
+    bind:particlesToScroll={imagesToScroll}
   >
     {#each carouselArr as slide}
       <img src={slide} alt="catseyes" width="250" height="275" />

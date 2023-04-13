@@ -54,13 +54,13 @@
         style="padding: 1em; margin:0.5em;  "
         bind:value={imagesToShow}
         min="1"
-        max="4"
+        max="5"
       />Number of images to show
     </div>
     <div
       class="svelteCarousel"
       style=" width:{imagesToShow *
-        27}vw; height: auto; margin:0 auto;  border-bottom: 2px solid rgba(97, 108, 110, 0.7);"
+        22}vw; height: auto; margin:0 auto;  border-bottom: 2px solid rgba(97, 108, 110, 0.7);"
     >
       <SvelteCarousel {imagesToShow} />
     </div>
