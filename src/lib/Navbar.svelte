@@ -7,6 +7,7 @@
     { page: "disorder", path: "disorder" },
     { page: "paralax", path: "paralax" },
     { page: "scrollDiv", path: "scrollDiv" },
+    { page: "cardFlipper", path: "cardFlipper" },
   ];
 </script>
 
