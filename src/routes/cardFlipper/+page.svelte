@@ -1,6 +1,7 @@
 <script>
- import img1 from '$lib/images/img1.jpg'
- import {onMount} from 'svelte'
+//  import img1 from '$lib/images/img1.jpg'
+import ImageArray  from '$lib/ImageArray.svelte';
+//  import {onMount} from 'svelte'
 
  /*
 
@@ -11,6 +12,9 @@ onMount(() => {
   }
 )
 */
+console.log(ImageArray);
+
+
 </script>
 
 <div class="cards">
@@ -24,7 +28,7 @@ onMount(() => {
     <div class="card__face card__face--back">
       <div class="card__content">
         <div class="card__header">
-          <img src={img1} alt="" class="pp" />
+          <img src={ImageArray[1]} alt="" class="pp" />
           <h2 style='font-style:italic'>this.me</h2>
         </div>
         <div class="card__body">
