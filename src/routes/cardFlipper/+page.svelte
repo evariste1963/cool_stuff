@@ -6,22 +6,19 @@ onMount(() => {
     const cardEl = document.querySelector(".card__inner");
     cardEl.addEventListener('click', (e) => {cardEl.classList.toggle('is-flipped')}
     )
-    }
+  }
 )
-
-
-
 
 </script>
 
 <div class="card">
-  <div class="card__inner" >
+  <div class="card__inner is-flipped" >
     <div class="card__face card__face--front">
       <h2>this.me</h2>
     </div>
     <div class="card__face card__face--back">
       <div class="card__content">
-        <div class="card__header">s
+        <div class="card__header">
           <img src={img1} alt="" class="pp" />
           <h2 style='font-style:italic'>this.me</h2>
         </div>
@@ -73,6 +70,7 @@ body {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
+    
   }
 
   .card__inner.is-flipped {
@@ -91,6 +89,7 @@ body {
   }
 
   .card__face--front {
+   
     background-image: linear-gradient(
       to bottom right,
       var(--primary),
@@ -136,6 +135,7 @@ body {
     );
     z-index: -1;
     border-radius: 0px 0px 50% 0px;
+    
   }
 
   .pp {
