@@ -16,7 +16,6 @@ onMount(() => {
   function toggleCard(e) {
     const cardEl = document.querySelector(".card__inner");
     cardEl.classList.toggle("not-flipped");
-    console.log(e);
   }
 </script>
 
