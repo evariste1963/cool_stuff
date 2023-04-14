@@ -2,9 +2,7 @@
   import { onDestroy } from "svelte";
   import { flip } from "svelte/animate";
 
-  const imgs = import.meta.glob("$lib/images/**/*.*");
-
-  let imgsArr = Object.keys(imgs);
+  const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
 
   let images = [
     { path: imgsArr[0], id: "img1" },

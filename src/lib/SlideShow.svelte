@@ -1,7 +1,5 @@
 <script>
-  const imgs = import.meta.glob("$lib/images/**/*.*");
-
-  let slideArr = Object.keys(imgs);
+  let slideArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
   let width = 100 / slideArr.length + "%";
   let figureWidth = 100 * slideArr.length + "%";
 </script>

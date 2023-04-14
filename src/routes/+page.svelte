@@ -11,6 +11,7 @@
   import Container from "$lib/Container/Container.svelte";
   import SvelteCarousel from "$lib/SvelteCarousel.svelte";
   import BmwCarousel from "$lib/BmwCarousel.svelte";
+  import FlipCard from "$lib/FlipCard.svelte"
 
   let imagesToShow = 2;
 </script>
@@ -79,6 +80,9 @@
     </div>
   </div>
 
+  <div class="flippers">
+    <FlipCard />
+  </div>
   <div style="height:100vh"
     ><br /><br /><h1>**** CCC MASK/CLIPPING to go in here? **** </h1></div
   >
