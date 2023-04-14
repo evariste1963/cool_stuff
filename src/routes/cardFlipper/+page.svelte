@@ -1,18 +1,6 @@
 <script>
   import img1 from "$lib/images/img1.jpg";
 
-  //  import {onMount} from 'svelte'
-
-  /*
-
-onMount(() => {
-    const cardEl = document.querySelector(".card__inner");
-    cardEl.addEventListener('click', (e) => {cardEl.classList.toggle('not-flipped')}
-    )
-  }
-)
-*/
-
   function toggleCard(e) {
     const cardEl = document.querySelector(".card__inner");
     cardEl.classList.toggle("not-flipped");
@@ -56,17 +44,6 @@ onMount(() => {
     --dark: #212121;
     --light: #f3f3f3;
   }
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  /* body {
-  font-family: montserrat, sans-serif;
-  width: 100%;
-  min-height: 100vh;
-} */
 
   .cards {
     margin: 100px auto 0;
