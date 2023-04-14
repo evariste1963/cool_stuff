@@ -65,7 +65,7 @@
   
     .cards {
       margin: 4em auto 0;
-      width: 12em;
+      width: 14em;
       height: 20em;
       perspective: 1000px;
     }

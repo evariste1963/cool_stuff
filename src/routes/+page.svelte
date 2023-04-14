@@ -80,9 +80,9 @@
     </div>
   </div>
 
-  <div class="flippers">
+  
     <FlipCard />
-  </div>
+  
   <div style="height:100vh"
     ><br /><br /><h1>**** CCC MASK/CLIPPING to go in here? **** </h1></div
   >
