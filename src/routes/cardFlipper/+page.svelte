@@ -1,9 +1,9 @@
 <script>
- import img1 from '$lib/images/img1.jpg'
+  import img1 from "$lib/images/img1.jpg";
 
-//  import {onMount} from 'svelte'
+  //  import {onMount} from 'svelte'
 
- /*
+  /*
 
 onMount(() => {
     const cardEl = document.querySelector(".card__inner");
@@ -13,14 +13,19 @@ onMount(() => {
 )
 */
 
+  function toggleCard(e) {
+    const cardEl = document.querySelector(".card__inner");
+    cardEl.classList.toggle("not-flipped");
+    console.log(e);
+  }
 </script>
 
 <div class="cards">
-  <div class="card__inner not-flipped" 
-    on:click={() => {
-    const cardEl = document.querySelector(".card__inner");
-    cardEl.classList.toggle('not-flipped')}
-  } >
+  <div
+    class="card__inner not-flipped"
+    on:click={toggleCard}
+    on:keydown={toggleCard}
+  >
     <div class="card__face card__face--front">
       <h2>this.me</h2>
     </div>
@@ -28,7 +33,7 @@ onMount(() => {
       <div class="card__content">
         <div class="card__header">
           <img src={img1} alt="" class="pp" />
-          <h2 style='font-style:italic'>this.me</h2>
+          <h2 style="font-style:italic">this.me</h2>
         </div>
         <div class="card__body">
           <h3>JavaScript Wizard</h3>
@@ -46,20 +51,19 @@ onMount(() => {
 </div>
 
 <style>
+  :root {
+    --primary: #ffce00;
+    --secondary: #fe4880;
+    --dark: #212121;
+    --light: #f3f3f3;
+  }
 
-:root {
-  --primary: #FFCE00;
-  --secondary: #FE4880;
-  --dark: #212121;
-  --light: #F3F3F3;
-}
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* body {
+  /* body {
   font-family: montserrat, sans-serif;
   width: 100%;
   min-height: 100vh;
@@ -79,7 +83,6 @@ onMount(() => {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
-    
   }
 
   .card__inner:not(.not-flipped) {
@@ -87,11 +90,11 @@ onMount(() => {
   }
 
   /* the following 2 rules are to prevent the outlie when using keyboard to flip card */
-  .card__inner:focus{
+  .card__inner:focus {
     outline: none !important;
   }
 
-.card__inner:focus-within{
+  .card__inner:focus-within {
     outline: none !important;
   }
 
@@ -107,7 +110,6 @@ onMount(() => {
   }
 
   .card__face--front {
-   
     background-image: linear-gradient(
       to bottom right,
       var(--primary),
@@ -153,7 +155,6 @@ onMount(() => {
     );
     z-index: -1;
     border-radius: 0px 0px 50% 0px;
-    
   }
 
   .pp {
@@ -171,7 +172,7 @@ onMount(() => {
     color: #fff;
     font-size: 32px;
     font-weight: 900;
-   /* text-transform: uppercase;*/
+    /* text-transform: uppercase;*/
     text-align: center;
   }
 
