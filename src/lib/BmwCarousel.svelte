@@ -1,18 +1,17 @@
 <script>
   import { onDestroy } from "svelte";
   import { flip } from "svelte/animate";
-  import img1 from "$lib/images/img1.jpg";
-  import img2 from "$lib/images/img2.jpg";
-  import img3 from "$lib/images/img3.jpeg";
-  import img4 from "$lib/images/img4.jpg";
-  import img5 from "$lib/images/img5.jpg";
+
+  const imgs = import.meta.glob("$lib/images/**/*.*");
+
+  let imgsArr = Object.keys(imgs);
 
   let images = [
-    { path: img1, id: "img1" },
-    { path: img2, id: "img2" },
-    { path: img3, id: "img3" },
-    { path: img4, id: "img4" },
-    { path: img5, id: "img5" },
+    { path: imgsArr[0], id: "img1" },
+    { path: imgsArr[1], id: "img2" },
+    { path: imgsArr[2], id: "img3" },
+    { path: imgsArr[3], id: "img4" },
+    { path: imgsArr[4], id: "img5" },
   ];
 
   let autoplay = true;

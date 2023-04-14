@@ -1,5 +1,7 @@
 <script>
-  import img1 from "$lib/images/img1.jpg";
+  const imgs = import.meta.glob("$lib/images/**/*.*");
+
+  let imageArr = Object.keys(imgs);
 
   function toggleCard(e) {
     const cardEl = document.querySelector(".card__inner");
@@ -19,7 +21,7 @@
     <div class="card__face card__face--back">
       <div class="card__content">
         <div class="card__header">
-          <img src={img1} alt="" class="pp" />
+          <img src={imageArr[1]} alt="" class="pp" />
           <h2 style="font-style:italic">this.me</h2>
         </div>
         <div class="card__body">

@@ -1,27 +1,15 @@
 <script>
-  import img1 from "$lib/images/img1.jpg";
-  import img2 from "$lib/images/img2.jpg";
-  import img3 from "$lib/images/img3.jpeg";
-  import img4 from "$lib/images/img4.jpg";
-  import img5 from "$lib/images/img5.jpg";
-
   import Carousel from "svelte-carousel";
   import { browser } from "$app/environment";
 
+  const imgs = import.meta.glob("$lib/images/**/*.*");
+
   let carousel; // for calling methods of the carousel instance
 
-  let carouselArr = [
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
-  ];
+  let carouselArr = Object.keys(imgs).concat(
+    Object.keys(imgs),
+    Object.keys(imgs)
+  );
 
   const handleNextClick = () => {
     carousel.goToNext({ animated: true });

@@ -1,11 +1,7 @@
 <script>
-  import img1 from "$lib/images/img1.jpg";
-  import img2 from "$lib/images/img2.jpg";
-  import img3 from "$lib/images/img3.jpeg";
-  import img4 from "$lib/images/img4.jpg";
-  import img5 from "$lib/images/img5.jpg";
+  const imgs = import.meta.glob("$lib/images/**/*.*");
 
-  let slideArr = [img1, img2, img3, img4, img5];
+  let slideArr = Object.keys(imgs);
   let width = 100 / slideArr.length + "%";
   let figureWidth = 100 * slideArr.length + "%";
 </script>
