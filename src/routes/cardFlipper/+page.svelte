@@ -21,7 +21,7 @@
     <div class="card__face card__face--back">
       <div class="card__content">
         <div class="card__header">
-          <img src={imageArr[1]} alt="" class="pp" />
+          <img src={imageArr[0]} alt="" class="pp" />
           <h2 style="font-style:italic">this.me</h2>
         </div>
         <div class="card__body">
