@@ -34,7 +34,10 @@
   
   function toggleCard(i) {
     const cards = document.querySelectorAll(".card__inner");
-    cards[i].classList.toggle("not-flipped");
+        cards.forEach(card => {
+            if(card != cards[i]) card.classList.add("not-flipped")
+            })
+            cards[i].classList.toggle("not-flipped");
   }
    
 </script>
@@ -54,7 +57,7 @@
         <div class="card__content">
           <div class="card__header">
             <img src={card.image} alt="" class="pp" />
-            <h2 style="font-style:italic">{card.title}</h2>
+            <h2>{card.title}</h2>
           </div>
           <div class="card__body">
             <h3>{card.subTitle}</h3>
@@ -187,7 +190,7 @@
   
     .card__header h2 {
       color: #fff;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       font-weight: 900;
       /* text-transform: uppercase;*/
       text-align: center;
