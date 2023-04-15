@@ -1,42 +1,65 @@
 <script>
-    const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
-    
+  const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
    
-    function toggleCard(e) {
-    const cardEl = document.querySelectorAll(".card__inner");
-    cardEl.forEach((el,i)=>{
-        el.classList.toggle("not-flipped");
-    })
-   
+  let cardsArr = [
+    {
+      title: "Day Trips",
+      subTitle: "Out amongst the Lions",
+      details:
+        "Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras ac augue fringilla, hendrerit dolor ut, porta nisi. Donec vel maximus lectus. Proin consectetur condimentum metus, eget tincidunt diam molestie vel. Sed libero lorem, hendrerit ac orci vel, malesuada sagittis sem. Fusce tempor enim at commodo volutpat. Nullam vehicula, sapien quis eleifend vestibulum, neque nunc pharetra nisl, eget interdum sem felis vitae ex. ",
+      image: imgsArr[0],
+    },
+    {
+      title: "Space Travel",
+      subTitle: "Bathe amid the Stars",
+      details:
+        "Curabitur quis dictum nibh, mattis iaculis nibh. In hac habitasse platea dictumst. Nam accumsan libero non enim euismod, a tincidunt libero blandit. Aliquam erat volutpat. Integer ut malesuada diam, non molestie diam. Mauris sit amet imperdiet tellus, vel fringilla lorem. Sed suscipit lacus et orci placerat blandit. <br><br>Integer pulvinar magna eros, quis ullamcorper lectus aliquam vitae. Mauris id nulla blandit. Curabitur quis dictum nibh, mattis iaculis nibh.",
+      image: imgsArr[1],
+    },
+    {
+      title: "Run Wild",
+      subTitle: "Beat the Retreat",
+      details:
+        "Mauris non tellus vulputate, feugiat erat non, pharetra justo. Proin consequat felis diam, malesuada auctor mi convallis sed. Sed gravida faucibus vulputate. Ut id nunc imperdiet, accumsan lacus volutpat, volutpat lectus. Mauris mauris tortor, congue eu lobortis non, tristique in turpis. Praesent sit amet ipsum eu risus varius blandit. <br><br>Donec blandit ac lorem et dignissim. Nam sem nisl, aliquam a ornare eu, luctus quis enim. Aenean ut felis in neque congue rutrum. Aliquam at velit.",
+      image: imgsArr[2],
+    },
+    {
+      title: "Stay Home",
+      subTitle: "Behind the fridge",
+      details:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris rhoncus aenean vel elit. Nibh sed pulvinar proin gravida hendrerit lectus a. Semper risus in hendrerit gravida rutrum quisque non tellus. Risus feugiat in ante metus dictum at. Erat nam at lectus urna duis. <br><br>Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet. Habitant morbi tristique senectus et netus et.Faucibus turpis in eu mi bibendum neque egestas congue quisque.",
+      image: imgsArr[3],
+    },
+  ];
+  
+  function toggleCard(i) {
+    const cards = document.querySelectorAll(".card__inner");
+    cards[i].classList.toggle("not-flipped");
   }
-
+   
 </script>
 
 <div class="flippers">
-{#each imgsArr as img, i}
+{#each cardsArr as card, i}
 <div class="cards">
     <div
       class="card__inner not-flipped"
-      on:click={toggleCard}
-      on:keydown={toggleCard}
+      on:click={() =>toggleCard(i)}
+      on:keydown={() =>toggleCard(i)}
     >
       <div class="card__face card__face--front">
-        <h2>this.me</h2>
+        <h2>{card.title}</h2>
       </div>
       <div class="card__face card__face--back">
         <div class="card__content">
           <div class="card__header">
-            <img src={img} alt="" class="pp" />
-            <h2 style="font-style:italic">this.me</h2>
+            <img src={card.image} alt="" class="pp" />
+            <h2 style="font-style:italic">{card.title}</h2>
           </div>
           <div class="card__body">
-            <h3>JavaScript Wizard</h3>
+            <h3>{card.subTitle}</h3>
             <p
-              >Lorem ipsum <strong>dolor</strong> sit amet, consectetur
-              <strong>adipiscing</strong>
-              elit. Sed id erat a magna lobortis dictum. Nunc est arcu,
-              <strong>lacinia</strong>
-              quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p
+              >{card.details}</p
             >
           </div>
         </div>
@@ -65,8 +88,8 @@
   
     .cards {
       margin: 4em auto 0;
-      width: 14em;
-      height: 20em;
+      width: 18em;
+      height: 25em;
       perspective: 1000px;
     }
   
