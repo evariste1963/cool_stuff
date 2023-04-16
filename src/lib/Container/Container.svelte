@@ -1,11 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import "./container.css";
-  import img1 from "../images/img1.jpg";
-  import img2 from "../images/img2.jpg";
-  import img3 from "../images/img3.jpeg";
-  import img4 from "../images/img4.jpg";
-
+ 
   const imgs = Object.keys(import.meta.glob("$lib/images/**/*.*"));
   
   let post;
@@ -17,7 +13,7 @@
       title: "Day Trips",
       subTitle: "Out amongst the Lions",
       details:
-        "Donec accumsan ullamcorper diam nec finibus. Etiam et ante justo. Cras ac augue fringilla, hendrerit dolor ut, porta nisi. Donec vel maximus lectus. Proin consectetur condimentum metus, eget tincidunt diam molestie vel. Sed libero lorem, hendrerit ac orci vel, malesuada sagittis sem. Fusce tempor enim at commodo volutpat. Nullam vehicula, sapien quis eleifend vestibulum, neque nunc pharetra nisl, eget interdum sem felis vitae ex. Phasellus malesuada diam eu risus mattis, sed iaculis lacus vestibulum. <br><br>Praesent sit amet dolor risus. Cras et congue risus. Proin a tortor eu erat tincidunt fringilla. Nulla facilisi. Nullam nec dolor in diam tempus tincidunt. Vivamus eget arcu tortor. Nunc mattis elit quis egestas mollis.",
+        "Donec accumsan ullamcorper diam nec finibus. Etiamet ante justo. Cras ac augue fringilla, hendrerit dolor ut, porta nisi. Donec vel maximus lectus. Proin consectetur condimentum metus, eget tincidunt diam molestie vel. Sed libero lorem, hendrerit ac orci vel, malesuada sagittis sem. Fusce tempor enim at commodo volutpat. Nullam vehicula, sapien quis eleifend vestibulum, neque nunc pharetra nisl, eget interdum sem felis vitae ex. Phasellus malesuada diam eu risus mattis, sed iaculis lacus vestibulum. <br><br>Praesent sit amet dolor risus. Cras et congue risus. Proin a tortor eu erat tincidunt fringilla. Nulla facilisi. Nullam nec dolor in diam tempus tincidunt. Vivamus eget arcu tortor. Nunc mattis elit quis egestas mollis.",
       image: imgs[0],
     },
     {
