@@ -79,9 +79,10 @@
       <BmwCarousel />
     </div>
   </div>
-
+<div style="height:100vh; border-bottom: 2px solid rgba(97, 108, 110, 0.7); ">
+  <FlipCard />
+</div>
   
-    <FlipCard />
   
   <div style="height:100vh"
     ><br /><br /><h1>**** CCC MASK/CLIPPING to go in here? **** </h1></div

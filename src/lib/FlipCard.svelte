@@ -51,6 +51,7 @@
       on:keydown={() =>toggleCard(i)}
     >
       <div class="card__face card__face--front">
+        <img src={card.image} alt="" class="pp front-img" />
         <h2>{card.title}</h2>
       </div>
       <div class="card__face card__face--back">
@@ -130,15 +131,17 @@
     }
   
     .card__face--front {
-      background-image: linear-gradient(
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(
         to bottom right,
         var(--primary),
         var(--secondary)
       );
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
+
   
     .card__face--front h2 {
       color: #fff;
@@ -186,6 +189,13 @@
       background-color: #fff;
       border: 5px solid #fff;
       object-fit: cover;
+    }
+
+    
+    .front-img {
+        width:8em;
+        height: 8em;
+        margin: 2em auto;
     }
   
     .card__header h2 {
