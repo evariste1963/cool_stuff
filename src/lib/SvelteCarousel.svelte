@@ -28,11 +28,12 @@
     bind:this={carousel}
     arrows={true}
     autoplay
-    autoplayDuration={3000}
+    autoplayDuration={2000}
     pauseOnFocus
     autoplayProgressVisible
     autoplayDirection={"next"}
     swiping
+    duration={2000}
     dots={true}
     bind:particlesToShow={imagesToShow}
     bind:particlesToScroll={imagesToScroll}

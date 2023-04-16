@@ -16,6 +16,7 @@
   let autoplaySpeed = 3000;
   let interval;
   let buttonOn = true;
+  let duration = 700
 
   const directionLeft = e => {
     if (buttonOn) {
@@ -29,7 +30,7 @@
       setTimeout(() => {
         document.getElementById(transitioningImage.id).style.opacity = 1;
         buttonOn = true;
-      }, 500);
+      }, {duration});
     }
   };
   const directionRight = e => {
@@ -41,7 +42,7 @@
       setTimeout(() => {
         document.getElementById(transitioningImage.id).style.opacity = 1;
         buttonOn = true;
-      }, 500);
+      }, {duration});
     }
   };
 
@@ -74,7 +75,7 @@
         height="250"
         on:pointerover={stopAutoPlay}
         on:pointerout={startAutoPlay}
-        animate:flip={{ duration: 500 }}
+        animate:flip={{ duration }}
       />
     {/each}
   </figure>

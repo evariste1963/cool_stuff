@@ -43,7 +43,7 @@
 
     margin: 0;
     left: 0;
-    animation: 25s slidify infinite ease-in-out;
+    animation: 35s slidify infinite ease-in-out;
   }
 
   /* number of % points = num of imgs * 3 + n+1 --> n=1 for 4, 2 for 5, 3 for 6 etc*/
