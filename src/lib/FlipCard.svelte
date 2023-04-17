@@ -32,13 +32,14 @@
       image: imgsArr[3],
     },
   ];
-
-  //toggle card & untoggle the currrently toggled card if applicable
+  //Pass in currently selected card index
   function toggleCard(i) {
     const cards = document.querySelectorAll(".card__inner");
+    //untoggle the currrently toggled cards that are not currently selected card -- i
     cards.forEach(card => {
       if (card != cards[i]) card.classList.add("not-flipped");
     });
+    //toggle selected card
     cards[i].classList.toggle("not-flipped");
   }
 </script>
@@ -51,10 +52,12 @@
         on:click={() => toggleCard(i)}
         on:keydown={() => toggleCard(i)}
       >
+        <!-- front of card-->
         <div class="card__face card__face--front">
           <img src={card.image} alt="" class="pp front-img" />
           <h2>{card.title}</h2>
         </div>
+        <!-- back of card-->
         <div class="card__face card__face--back">
           <div class="card__content">
             <div class="card__header">
@@ -63,6 +66,7 @@
             </div>
             <div class="card__body">
               <h3>{card.subTitle}</h3>
+              <!-- ensure text is displayed with inline html styling -->
               <p>{@html card.details}</p>
             </div>
           </div>
@@ -74,12 +78,13 @@
 
 <style>
   :root {
-    --primary: #ffce00;
-    --secondary: #fe4880;
+    --primary: #a7d3fc;
+    --secondary: #240736;
     --dark: #212121;
     --light: #f3f3f3;
   }
 
+  /*row of cards*/
   .flippers {
     display: flex;
     align-items: center;
@@ -89,6 +94,7 @@
     margin: 0 auto;
   }
 
+  /*place CSS for each card -- external*/
   .cards {
     margin: auto 1vw;
     width: 18em;
@@ -96,6 +102,7 @@
     perspective: 1000px;
   }
 
+  /*for each card -- internal % transitioning*/
   .card__inner {
     width: 100%;
     height: 100%;
@@ -105,7 +112,7 @@
     position: relative;
   }
 
-  /*rotate card that does not have the .not-flipped class*/
+  /*rotate card that does not have the .not-flipped class -- i.e. selected card*/
   .card__inner:not(.not-flipped) {
     transform: rotateY(180deg);
   }
@@ -129,7 +136,7 @@
     backface-visibility: hidden;
     overflow: hidden;
     border-radius: 16px;
-    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 6px 6px 8px 0px rgba(0, 0, 0, 0.4);
   }
 
   .card__face--front {
@@ -140,6 +147,7 @@
     background-image: linear-gradient(
       to bottom right,
       var(--primary),
+      40%,
       var(--secondary)
     );
   }
@@ -151,7 +159,7 @@
 
   .card__face--back {
     background-color: var(--light);
-    /*rotate back of card initially*/
+    /*rotate back of card to initially*/
     transform: rotateY(180deg);
   }
 
