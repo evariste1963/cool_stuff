@@ -16,17 +16,21 @@
   let autoplay = true;
   let autoplaySpeed = 3000;
   let interval;
+  //buttonOn is used to prevent button being repeatedly pressed too quickly -- i.e. must be slower than setTimeOut delay time
   let buttonOn = true;
 
   const directionLeft = e => {
     if (buttonOn) {
       buttonOn = false;
+      //grab last image in Array and set opacity to 0
       const transitioningImage = images[images.length - 1];
       document.getElementById(transitioningImage.id).style.opacity = 0;
+      //move last image in Array to front of Array
       images = [
         images[images.length - 1],
         ...images.slice(0, images.length - 1),
       ];
+      //Delay resetting of opcacity to 1 so the image has time to move (flip) to front of Array
       setTimeout(() => {
         document.getElementById(transitioningImage.id).style.opacity = 1;
         buttonOn = true;
