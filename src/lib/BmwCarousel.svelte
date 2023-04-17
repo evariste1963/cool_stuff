@@ -66,6 +66,10 @@
   onDestroy(() => {
     stopAutoPlay();
   });
+
+  let elem = document.querySelector(".bmwSlider");
+  //let rect = elem.getBoundingClientRect();
+  //console.log(rect);
 </script>
 
 <!-- non-svelte bmw carousel  -->
