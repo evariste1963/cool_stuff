@@ -150,7 +150,6 @@
       40%,
       var(--secondary)
     );
-    transform: scale(1);
     transition: transform 0.3s ease-in-out;
   }
 
