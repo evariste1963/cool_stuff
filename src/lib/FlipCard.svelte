@@ -1,6 +1,6 @@
 <script>
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
-   
+
   let cardsArr = [
     {
       title: "Day Trips",
@@ -31,197 +31,192 @@
       image: imgsArr[3],
     },
   ];
-  
+
   function toggleCard(i) {
     const cards = document.querySelectorAll(".card__inner");
-        cards.forEach(card => {
-            if(card != cards[i]) card.classList.add("not-flipped")
-            })
-            cards[i].classList.toggle("not-flipped");
+    cards.forEach(card => {
+      if (card != cards[i]) card.classList.add("not-flipped");
+    });
+    cards[i].classList.toggle("not-flipped");
   }
-   
 </script>
 
 <div class="flippers">
-{#each cardsArr as card, i}
-<div class="cards">
-    <div
-      class="card__inner not-flipped"
-      on:click={() =>toggleCard(i)}
-      on:keydown={() =>toggleCard(i)}
-    >
-      <div class="card__face card__face--front">
-        <img src={card.image} alt="" class="pp front-img" />
-        <h2>{card.title}</h2>
-      </div>
-      <div class="card__face card__face--back">
-        <div class="card__content">
-          <div class="card__header">
-            <img src={card.image} alt="" class="pp" />
-            <h2>{card.title}</h2>
-          </div>
-          <div class="card__body">
-            <h3>{card.subTitle}</h3>
-            <p
-              >{@html card.details}</p
-            >
+  {#each cardsArr as card, i}
+    <div class="cards">
+      <div
+        class="card__inner not-flipped"
+        on:click={() => toggleCard(i)}
+        on:keydown={() => toggleCard(i)}
+      >
+        <div class="card__face card__face--front">
+          <img src={card.image} alt="" class="pp front-img" />
+          <h2>{card.title}</h2>
+        </div>
+        <div class="card__face card__face--back">
+          <div class="card__content">
+            <div class="card__header">
+              <img src={card.image} alt="" class="pp" />
+              <h2>{card.title}</h2>
+            </div>
+            <div class="card__body">
+              <h3>{card.subTitle}</h3>
+              <p>{@html card.details}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-{/each}
-
+  {/each}
 </div>
 
 <style>
-    :root {
-      --primary: #ffce00;
-      --secondary: #fe4880;
-      --dark: #212121;
-      --light: #f3f3f3;
-    }
+  :root {
+    --primary: #ffce00;
+    --secondary: #fe4880;
+    --dark: #212121;
+    --light: #f3f3f3;
+  }
 
-    .flippers {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width:85vw;
-        height:100%;
-        margin:0 auto
-    }
-  
-    .cards {
-      margin: auto 1vw;
-      width: 18em;
-      height: 25em;
-      perspective: 1000px;
-    }
-  
-    .card__inner {
-      width: 100%;
-      height: 100%;
-      transition: transform 1s;
-      transform-style: preserve-3d;
-      cursor: pointer;
-      position: relative;
-    }
-  
-    .card__inner:not(.not-flipped) {
-      transform: rotateY(180deg);
-    }
-  
-    /* the following 2 rules are to prevent the outlie when using keyboard to flip card */
-    .card__inner:focus {
-      outline: none !important;
-    }
-  
-    .card__inner:focus-within {
-      outline: none !important;
-    }
-  
-    .card__face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.4);
-    }
-  
-    .card__face--front {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top:3em;
-        background-image: linear-gradient(
-        to bottom right,
-        var(--primary),
-        var(--secondary)
-      );
-    }
+  .flippers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85vw;
+    height: 100%;
+    margin: 0 auto;
+  }
 
-  
-    .card__face--front h2 {
-      color: #fff;
-      font-size: 32px;
-    }
-  
-    .card__face--back {
-      background-color: var(--light);
-      transform: rotateY(180deg);
-    }
-  
-    .card__content {
-      width: 100%;
-      height: 100%;
-    }
-  
-    .card__header {
-      position: relative;
-      padding: 10px 10px 20px;
-    }
-  
-    .card__header:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: linear-gradient(
-        to bottom left,
-        var(--primary) 10%,
-        var(--secondary) 115%
-      );
-      z-index: -1;
-      border-radius: 0px 0px 50% 0px;
-    }
-  
-    .pp {
-      display: block;
-      width: 6em;
-      height: 6em;
-      margin: 0 auto 0.5em;
-      border-radius: 50%;
-      background-color: #fff;
-      border: 5px solid #fff;
-      object-fit: cover;
-    }
+  .cards {
+    margin: auto 1vw;
+    width: 18em;
+    height: 25em;
+    perspective: 1000px;
+  }
 
-    
-    .front-img {
-        width:8em;
-        height: 8em;
-        margin: 2em auto;
-    }
-  
-    .card__header h2 {
-      color: #fff;
-      font-size: 1.6rem;
-      font-weight: 900;
-      /* text-transform: uppercase;*/
-      text-align: center;
-    }
-  
-    .card__body {
-      padding: 1em;
-    }
-  
-    .card__body h3 {
-      color: var(--dark);
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5em;
-    }
-  
-    .card__body p {
-      color: var(--dark);
-      font-size: 0.8rem;
-      line-height: 1.1;
-    }
-  </style>
-  
+  .card__inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .card__inner:not(.not-flipped) {
+    transform: rotateY(180deg);
+  }
+
+  /* the following 2 rules are to prevent the outlie when using keyboard to flip card */
+  .card__inner:focus {
+    outline: none !important;
+  }
+
+  .card__inner:focus-within {
+    outline: none !important;
+  }
+
+  .card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .card__face--front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3em;
+    background-image: linear-gradient(
+      to bottom right,
+      var(--primary),
+      var(--secondary)
+    );
+  }
+
+  .card__face--front h2 {
+    color: #fff;
+    font-size: 32px;
+  }
+
+  .card__face--back {
+    background-color: var(--light);
+    transform: rotateY(180deg);
+  }
+
+  .card__content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card__header {
+    position: relative;
+    padding: 10px 10px 20px;
+  }
+
+  .card__header:after {
+    content: "";
+    /* neither display property seems to make any difference
+    /*display: block;*/
+    /*display: flex;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+      to bottom left,
+      var(--primary) 10%,
+      var(--secondary) 115%
+    );
+    z-index: -1;
+    border-radius: 0px 0px 50% 0px;
+  }
+
+  .pp {
+    display: block;
+    width: 6em;
+    height: 6em;
+    margin: 0 auto 0.5em;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid #fff;
+    object-fit: cover;
+  }
+
+  .front-img {
+    width: 8em;
+    height: 8em;
+    margin: 2em auto;
+  }
+
+  .card__header h2 {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 900;
+    /* text-transform: uppercase;*/
+    text-align: center;
+  }
+
+  .card__body {
+    padding: 1em;
+  }
+
+  .card__body h3 {
+    color: var(--dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+  }
+
+  .card__body p {
+    color: var(--dark);
+    font-size: 0.8rem;
+    line-height: 1.1;
+  }
+</style>

@@ -1,6 +1,7 @@
 <script>
   import { onDestroy } from "svelte";
   import { flip } from "svelte/animate";
+  import { sineInOut } from "svelte/easing";
 
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
 
@@ -16,7 +17,6 @@
   let autoplaySpeed = 3000;
   let interval;
   let buttonOn = true;
-  let duration = 700
 
   const directionLeft = e => {
     if (buttonOn) {
@@ -30,7 +30,7 @@
       setTimeout(() => {
         document.getElementById(transitioningImage.id).style.opacity = 1;
         buttonOn = true;
-      }, {duration});
+      }, 700);
     }
   };
   const directionRight = e => {
@@ -42,7 +42,7 @@
       setTimeout(() => {
         document.getElementById(transitioningImage.id).style.opacity = 1;
         buttonOn = true;
-      }, {duration});
+      }, 700);
     }
   };
 
@@ -75,7 +75,7 @@
         height="250"
         on:pointerover={stopAutoPlay}
         on:pointerout={startAutoPlay}
-        animate:flip={{ duration }}
+        animate:flip={{ duration: 900, easing: sineInOut }}
       />
     {/each}
   </figure>
@@ -129,6 +129,7 @@
     width: 100%;
     object-fit: cover;
     cursor: pointer;
+    margin-right: 0.5vw;
   }
 
   .bmwSlider figure {
