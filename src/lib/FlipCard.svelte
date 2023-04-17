@@ -1,4 +1,5 @@
 <script>
+  //import all image files from directory
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
 
   let cardsArr = [
@@ -32,6 +33,7 @@
     },
   ];
 
+  //toggle card & untoggle the currrently toggled card if applicable
   function toggleCard(i) {
     const cards = document.querySelectorAll(".card__inner");
     cards.forEach(card => {
@@ -103,6 +105,7 @@
     position: relative;
   }
 
+  /*rotate card that does not have the .not-flipped class*/
   .card__inner:not(.not-flipped) {
     transform: rotateY(180deg);
   }
@@ -112,6 +115,7 @@
     outline: none !important;
   }
 
+  /*ensure that no outline is present on focus*/
   .card__inner:focus-within {
     outline: none !important;
   }
@@ -120,6 +124,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    /*hide otherside of card*/
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
@@ -146,6 +151,7 @@
 
   .card__face--back {
     background-color: var(--light);
+    /*rotate back of card initially*/
     transform: rotateY(180deg);
   }
 
