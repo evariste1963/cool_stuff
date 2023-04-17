@@ -51,11 +51,13 @@
   };
 
   const startAutoPlay = () => {
+    //set interval = to the animation, which will auto run it
     if (autoplay) {
       interval = setInterval(directionLeft, autoplaySpeed);
     }
   };
   const stopAutoPlay = () => {
+    //set interval to nothing -- remove animation
     clearInterval(interval);
   };
   if (autoplay) {
