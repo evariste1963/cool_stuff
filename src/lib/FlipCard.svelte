@@ -155,8 +155,6 @@
 
   .card__face--front:hover {
     transform: scale(1.08);
-    
-    
   }
 
   .card__face--front h2 {
@@ -167,8 +165,7 @@
   .card__face--back {
     background-color: var(--light);
     /*rotate back of card to initially*/
-    transform: rotateY(180deg) scale(1.08);
-    
+    transform: rotateY(180deg) /*scale(1.08)*/;
   }
 
   .card__content {
@@ -217,7 +214,7 @@
     margin: 2em auto;
   }
 
-   .card__header h2 {
+  .card__header h2 {
     color: #fff;
     font-size: 1.6rem;
     font-weight: 900;
