@@ -154,7 +154,7 @@
   }
 
   .card__face--front:hover {
-    transform: scale(1.08);
+    transform: scale(1.03);
   }
 
   .card__face--front h2 {
