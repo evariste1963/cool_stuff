@@ -3,6 +3,20 @@
   import Navbar from "$lib/Navbar.svelte";
   import Footer from "$lib/Footer.svelte";
   import Loader from "../lib/Loader.svelte";
+  import { fade } from 'svelte/transition';
+	import { cubicIn, cubicOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
+
+  export let data;
+
+  // dynamic destructured alternative
+	//$: ({pathname} = data)
+
+	const duration = 500;
+	const delay = duration + 50;
+
+	const transitionIn = { easing: cubicOut, duration, delay };
+	const transitionOut = { easing: cubicIn, duration };
 
   const pageLoader = () => {
     pageIsLoaded = true;
@@ -26,6 +40,11 @@
   </div>
 {:else}
   <Navbar />
-  <slot />
+  {#key data.pathname}
+		<!-- {#key pathname}-->
+		<div class="transition" in:fade={transitionIn} out:fade={transitionOut}>
+			<slot />
+		</div>
+	{/key}
   <Footer />
 {/if}
