@@ -136,7 +136,11 @@
     backface-visibility: hidden;
     overflow: hidden;
     border-radius: 16px;
-    box-shadow: 6px 6px 8px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  .card__face:hover {
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.6);
   }
 
   .card__face--front {
