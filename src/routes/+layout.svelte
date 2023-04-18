@@ -6,6 +6,12 @@
   import { fade } from 'svelte/transition';
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
+  import { disableScrollHandling } from '$app/navigation';
+  import { onMount } from 'svelte';
+
+  onMount(async () => {
+    disableScrollHandling();
+});
 
   export let data;
 

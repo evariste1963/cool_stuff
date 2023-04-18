@@ -1,18 +1,18 @@
 <script>
-  import { onMount } from "svelte";
+  
+  import { disableScrollHandling } from '$app/navigation';
+  import { onMount } from 'svelte';
 
   let sections
   let offsets = []
   let y
    
-  onMount(() => {
-sections = document.querySelectorAll('.section')
-sections.forEach((section, i) =>{
-     offsets.push(section.getBoundingClientRect().top)
-} )
-console.log(offsets);
-
-
+  onMount(async() => {
+    disableScrollHandling();
+    sections = document.querySelectorAll('.section')
+    sections.forEach((section, i) =>{
+      offsets.push(section.getBoundingClientRect().top)
+    })
  })
 
  //look in scrollDiv for more clues \\
