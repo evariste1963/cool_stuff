@@ -34,7 +34,7 @@
       setTimeout(() => {
         document.getElementById(transitioningImage.id).style.opacity = 1;
         buttonOn = true;
-      }, 700);
+      }, 1000);
     }
   };
   const directionRight = e => {
@@ -46,7 +46,7 @@
       setTimeout(() => {
         document.getElementById(transitioningImage.id).style.opacity = 1;
         buttonOn = true;
-      }, 700);
+      }, 900);
     }
   };
 
@@ -81,8 +81,6 @@
         id={image.id}
         src={image.path}
         alt="catseyes"
-        width="100"
-        height="250"
         on:pointerover={stopAutoPlay}
         on:pointerout={startAutoPlay}
         animate:flip={{ duration: 900, easing: sineInOut }}
@@ -111,7 +109,7 @@
     position: relative;
     flex-direction: column;
     overflow-x: hidden;
-    width: 50%;
+    width: 42vw;
     margin: 0 auto;
   }
 
@@ -122,24 +120,24 @@
     -webkit-mask: linear-gradient(
       to right,
       transparent,
-      black 30%,
-      black 70%,
+      black 25%,
+      black 75%,
       transparent
     );
     mask: linear-gradient(
       to right,
       transparent,
-      black 30%,
-      black 70%,
+      black 25%,
+      black 75%,
       transparent
     );
   }
 
   .bmwSlider figure img {
-    width: 100%;
     object-fit: cover;
     cursor: pointer;
-    margin-right: 0.5vw;
+    margin-right: 0.2vw;
+    width: 14vw;
   }
 
   .bmwSlider figure {
