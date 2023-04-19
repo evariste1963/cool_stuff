@@ -158,7 +158,7 @@
   }
 
   .card__face--front:hover {
-    transform: scale(1.03);
+    transform: scale(1.03) translateY(-5%);
   }
 
   .card__face--front h2 {
