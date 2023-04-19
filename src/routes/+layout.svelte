@@ -12,11 +12,12 @@
   // dynamic destructured alternative
   //$: ({pathname} = data)
 
-  const duration = 1000;
+  const durationIn = 1000;
+  const durationOut = 1000;
   const delay = 200;
 
-  const transitionIn = { easing: cubicOut, duration, delay };
-  const transitionOut = { easing: cubicIn, duration };
+  const transitionIn = { easing: cubicOut, durationIn, delay };
+  const transitionOut = { easing: cubicIn, durationOut };
 
   const pageLoader = () => {
     pageIsLoaded = true;
