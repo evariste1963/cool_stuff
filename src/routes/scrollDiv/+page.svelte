@@ -1,7 +1,7 @@
 <script>
   // https://github.com/doomd
   import { onMount } from "svelte";
-  import { disableScrollHandling } from '$app/navigation';
+  import { disableScrollHandling } from "$app/navigation";
 
   let box;
 
@@ -18,9 +18,10 @@
     yScroll = box.scrollHeight;
   }
 
-  onMount(async() => {
-    disableScrollHandling();
-    scrollPos()});
+  onMount(async () => {
+    /*disableScrollHandling();*/
+    scrollPos();
+  });
 </script>
 
 <h2

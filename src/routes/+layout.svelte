@@ -3,26 +3,20 @@
   import Navbar from "$lib/Navbar.svelte";
   import Footer from "$lib/Footer.svelte";
   import Loader from "../lib/Loader.svelte";
-  import { fade } from 'svelte/transition';
-	import { cubicIn, cubicOut } from 'svelte/easing';
-	import { fly } from 'svelte/transition';
-  import { disableScrollHandling } from '$app/navigation';
-  import { onMount } from 'svelte';
-
-  onMount(async () => {
-    disableScrollHandling();
-});
+  import { fade } from "svelte/transition";
+  import { cubicIn, cubicOut } from "svelte/easing";
+  import { fly } from "svelte/transition";
 
   export let data;
 
   // dynamic destructured alternative
-	//$: ({pathname} = data)
+  //$: ({pathname} = data)
 
-	const duration = 500;
-	const delay = duration + 50;
+  const duration = 1000;
+  const delay = 200;
 
-	const transitionIn = { easing: cubicOut, duration, delay };
-	const transitionOut = { easing: cubicIn, duration };
+  const transitionIn = { easing: cubicOut, duration, delay };
+  const transitionOut = { easing: cubicIn, duration };
 
   const pageLoader = () => {
     pageIsLoaded = true;
@@ -47,13 +41,10 @@
 {:else}
   <Navbar />
   {#key data.pathname}
-		<!-- {#key pathname}-->
-		<div class="transition" in:fade={transitionIn} out:fade={transitionOut}>
-			<slot />
-		</div>
-	{/key}
+    <!-- {#key pathname}-->
+    <div class="transition" in:fade={transitionIn}>
+      <slot />
+    </div>
+  {/key}
   <Footer />
 {/if}
-
-
-

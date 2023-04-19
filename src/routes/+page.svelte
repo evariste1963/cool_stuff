@@ -12,13 +12,15 @@
   import SvelteCarousel from "$lib/SvelteCarousel.svelte";
   import BmwCarousel from "$lib/BmwCarousel.svelte";
   import FlipCard from "$lib/FlipCard.svelte";
+  import { afterNavitgate, beforeNavigate } from "$app/navigation";
 
-  import { disableScrollHandling } from '$app/navigation';
-  import { onMount } from 'svelte';
+  import { disableScrollHandling } from "$app/navigation";
+  import { onMount } from "svelte";
 
-  onMount(async () => {
+  /*  onMount(async () => {
     disableScrollHandling();
-});
+    
+  });*/
 
   let imagesToShow = 2;
 </script>

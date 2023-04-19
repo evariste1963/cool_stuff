@@ -1,11 +1,11 @@
 <script>
   const imgs = import.meta.glob("$lib/images/**/*.*");
-  import { disableScrollHandling } from '$app/navigation';
+  /* import { disableScrollHandling } from '$app/navigation';
   import { onMount } from 'svelte';
 
   onMount(async () => {
     disableScrollHandling();
-});
+});*/
 
   let imageArr = Object.keys(imgs);
 
@@ -16,35 +16,35 @@
 </script>
 
 <section>
-<div class="cards" >
-  <div
-    class="card__inner not-flipped"
-    on:click={toggleCard}
-    on:keydown={toggleCard}
-  >
-    <div class="card__face card__face--front">
-      <h2>this.me</h2>
-    </div>
-    <div class="card__face card__face--back">
-      <div class="card__content">
-        <div class="card__header">
-          <img src={imageArr[0]} alt="" class="pp" />
-          <h2 style="font-style:italic">this.me</h2>
-        </div>
-        <div class="card__body">
-          <h3>JavaScript Wizard</h3>
-          <p
-            >Lorem ipsum <strong>dolor</strong> sit amet, consectetur
-            <strong>adipiscing</strong>
-            elit. Sed id erat a magna lobortis dictum. Nunc est arcu,
-            <strong>lacinia</strong>
-            quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p
-          >
+  <div class="cards">
+    <div
+      class="card__inner not-flipped"
+      on:click={toggleCard}
+      on:keydown={toggleCard}
+    >
+      <div class="card__face card__face--front">
+        <h2>this.me</h2>
+      </div>
+      <div class="card__face card__face--back">
+        <div class="card__content">
+          <div class="card__header">
+            <img src={imageArr[0]} alt="" class="pp" />
+            <h2 style="font-style:italic">this.me</h2>
+          </div>
+          <div class="card__body">
+            <h3>JavaScript Wizard</h3>
+            <p
+              >Lorem ipsum <strong>dolor</strong> sit amet, consectetur
+              <strong>adipiscing</strong>
+              elit. Sed id erat a magna lobortis dictum. Nunc est arcu,
+              <strong>lacinia</strong>
+              quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p
+            >
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
 <style>
@@ -53,7 +53,7 @@
     --secondary: #fe4880;
     --dark: #212121;
     --light: #f3f3f3;
-    width:100vw
+    width: 100vw;
   }
 
   .cards {
