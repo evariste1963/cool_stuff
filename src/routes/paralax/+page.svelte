@@ -1,11 +1,4 @@
 <script>
-  /* import { disableScrollHandling } from '$app/navigation';
-  import { onMount } from 'svelte';
-
-  onMount(async () => {
-    disableScrollHandling();
-});*/
-
   let scroll;
   let speed = 4;
 </script>

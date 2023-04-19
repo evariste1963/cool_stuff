@@ -5,19 +5,19 @@
   import Loader from "../lib/Loader.svelte";
   import { fade } from "svelte/transition";
   import { cubicIn, cubicOut } from "svelte/easing";
-  import { fly } from "svelte/transition";
+  import { fly, scale } from "svelte/transition";
 
   export let data;
 
   // dynamic destructured alternative
   //$: ({pathname} = data)
 
-  const durationIn = 1000;
-  const durationOut = 1000;
-  const delay = 200;
+  const durationIn = 500;
+  const durationOut = 300;
+  const delay = 100;
 
   const transitionIn = { easing: cubicOut, durationIn, delay };
-  const transitionOut = { easing: cubicIn, durationOut };
+  const transitionOut = { y: -1000, durationOut };
 
   const pageLoader = () => {
     pageIsLoaded = true;
