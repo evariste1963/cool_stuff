@@ -104,8 +104,8 @@
   }
 
   .embed {
-    width: 100%;
-    height: 800px;
+    max-width: 80%;
+    max-height: 100vh;
     margin: 4em auto;
     background-color: rgba(57, 119, 119, 0.9);
   }

@@ -28,7 +28,7 @@
   >Binding scrollTop (vertical) of scrollable elements to variables in Svelte</h2
 >
 <div class="firstDiv" />
-<div style="width:100%; margin:2em auto;">
+<div style="max-width:100vw; margin:2em auto;">
   <div
     class="box"
     bind:this={box}
@@ -53,7 +53,7 @@
     >
   </div>
 </div>
-<div style="height:100vh; background:#757" />
+<div style="height:100vh; background:#757; max-width:100vw" />
 
 <style>
   .sect {
