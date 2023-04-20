@@ -43,12 +43,16 @@
 
 <style>
   :root {
-    --primary: #ffce00;
-    --secondary: #fe4880;
+    --primary: #a7d3fc;
+    --secondary: #240736;
     --dark: #212121;
     --light: #f3f3f3;
     /*ensure botom scroll does is not instigated*/
     max-width: 100vw;
+  }
+
+  section {
+    height: 100vh
   }
 
   .cards {
