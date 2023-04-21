@@ -12,7 +12,7 @@
   import SvelteCarousel from "$lib/SvelteCarousel.svelte";
   import BmwCarousel from "$lib/BmwCarousel.svelte";
   import FlipCard from "$lib/FlipCard.svelte";
-
+  import ExpandingCards from "$lib/ExpandingCards.svelte";
   let imagesToShow = 2;
 </script>
 
@@ -83,6 +83,9 @@
     <FlipCard />
   </div>
 
+  <div style="height:100vh">
+    <ExpandingCards />
+  </div>
   <div style="height:100vh"
     ><br /><br /><h1>**** CCC MASK/CLIPPING to go in here? **** </h1></div
   >
