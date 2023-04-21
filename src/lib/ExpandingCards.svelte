@@ -34,17 +34,17 @@
 
 <section
   id="cardGrid"
-  style="display:grid; gird-template-columns: repeat(4, 1fr); grid-template-rows: 100px 1fr; width:90vw; height:200px "
+  style="display:grid; gird-template-columns: repeat(4, 1fr); grid-template-rows: 300px 1fr; column-gap:1px; width:90vw; align-items:center; justify-content:center; height:auto; margin:2em auto "
 >
   {#each cardsArr as card, i}
     <div
-      class="card"
-      style="width:100px; height: 150px; grid-column-start:{i + 1}"
+      class="gridCard"
+      style="display:flex; flex-direction:column; width:300px; height: 200px; grid-column-start:{i +
+        1}; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
     >
       <h1>{card.title}</h1>
-      <img src={card.image} alt={card.title} width="100" height="250" />
+      <img src={card.image} alt={card.title} width="100" height="100" />
       <h2>{card.subTitle}</h2>
-      <p>{card.details}</p>
     </div>
   {/each}
 </section>
