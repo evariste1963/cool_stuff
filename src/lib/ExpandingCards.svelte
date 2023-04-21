@@ -34,7 +34,7 @@
 
 <section
   id="cardGrid"
-  style="display:grid; gird-template-columns: repeat(4, 1fr); grid-template-rows: 300px 1fr; column-gap:1px; width:90vw; align-items:center; justify-content:center; height:auto; margin:2em auto "
+  style="display:grid; gird-template-columns: repeat(auto-fit, minmax(min(100%, max(10rem,100%/4)),1fr));  gap:2.5rem; width:90vw; align-items:center; justify-content:center; height:auto; margin:2em auto "
 >
   {#each cardsArr as card, i}
     <div
@@ -48,3 +48,4 @@
     </div>
   {/each}
 </section>
+
