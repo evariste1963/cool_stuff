@@ -30,17 +30,29 @@
       image: imgsArr[3],
     },
   ];
+  
+  function featureCard(i){
+    const cards = document.querySelectorAll(".gridCard");
+    cards.forEach((card)=>{
+      
+      if (card != cards[i]) card.classList.remove("featured");
+      
+    })
+    cards[i].classList.toggle('featured')
+  }
 </script>
 
+
+<!-- this can also be done with FLIP -->
 <section
   id="cardGrid"
-  style="display:grid; gird-template-columns: repeat(auto-fit, minmax(min(100%, max(10rem,100%/4)),1fr));  gap:2.5rem; position:relative; width:90vw; align-items:center; justify-content:center; height:auto; margin:2em auto "
+    
 >
   {#each cardsArr as card, i}
-    <div
-      class="gridCard"
-      style="display:flex; flex-direction:column; position:relative; width:300px; height: 200px; grid-column-start:{i +
-        1}; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
+    <div class="gridCard featured"
+      on:click={()=> featureCard(i)}
+      on:keydown={()=> featureCard(i)}
+        style="display:flex; flex-direction:column;  height: 200px; ; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
     >
       <h1>{card.title}</h1>
       <img src={card.image} alt={card.title} width="100" height="100" />
@@ -48,3 +60,22 @@
     </div>
   {/each}
 </section>
+
+
+<style>
+
+  #cardGrid {
+    display:grid; 
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, max(10rem,100%/4)),1fr));
+    gap:1.5rem; 
+    width:90vw; 
+   grid-row:2;
+  }
+
+  .featured{
+    order:-1;
+    grid-column:1 / -1;
+
+  
+  }
+</style>
