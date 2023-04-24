@@ -34,12 +34,12 @@
 
 <section
   id="cardGrid"
-  style="display:grid; gird-template-columns: repeat(auto-fit, minmax(min(100%, max(10rem,100%/4)),1fr));  gap:2.5rem; width:90vw; align-items:center; justify-content:center; height:auto; margin:2em auto "
+  style="display:grid; gird-template-columns: repeat(auto-fit, minmax(min(100%, max(10rem,100%/4)),1fr));  gap:2.5rem; position:relative; width:90vw; align-items:center; justify-content:center; height:auto; margin:2em auto "
 >
   {#each cardsArr as card, i}
     <div
       class="gridCard"
-      style="display:flex; flex-direction:column; width:300px; height: 200px; grid-column-start:{i +
+      style="display:flex; flex-direction:column; position:relative; width:300px; height: 200px; grid-column-start:{i +
         1}; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
     >
       <h1>{card.title}</h1>
@@ -48,4 +48,3 @@
     </div>
   {/each}
 </section>
-
