@@ -1,5 +1,4 @@
 <script>
-  
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
   let cardsArr = [
     {
@@ -51,34 +50,35 @@
         "Mauris non <strong>tellus</strong> vulputate, feugiat erat non, pharetra justo. Proin consequat <strong>felis diam</strong>, malesuada auctor mi convallis sed. Sed <strong>gravida</strong> faucibus vulputate. Mauris mauris <strong>tortor</strong>,  Praesent sit amet <strong>ipsum</strong> eu risus varius blandit. <br><br>Donec blandit ac lorem et dignissim. Nam sem nisl, aliquam a ornare eu, luctus <strong>quis enim</strong>. Aenean ut felis in neque congue rutrum. Aliquam <strong>at</strong> velit.",
       image: imgsArr[2],
     },
-    
   ];
 
   function featureCard(i) {
     const cards = document.querySelectorAll(".gridCard");
-    const detail = document.querySelectorAll("p");
+
     cards.forEach(card => {
-      if (card != cards[i]) card.classList.add("not_featured");
+      if (card != cards[i]) {
+        card.classList.add("not_featured");
+        card.classList.add("hidden");
+      }
     });
+    cards[i].classList.remove("hidden");
     cards[i].classList.remove("not_featured");
-    detail[i].classList.remove(".hidden")
   }
 </script>
 
 <!-- this can also be done with FLIP -->
 <section id="cardGrid">
-  {#each cardsArr as card , i}
-    <div 
-      class="gridCard not_featured"
+  {#each cardsArr as card, i}
+    <div
+      class="gridCard not_featured hidden"
       on:click={() => featureCard(i)}
       on:keydown={() => featureCard(i)}
-      
-      style="display:flex; flex-direction:column;  height: 200px; ; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
+      style="display:flex; flex-direction:column;  height: auto; padding:1em ; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
     >
       <h1>{card.title}</h1>
       <img src={card.image} alt={card.title} width="100" height="100" />
       <h2>{card.subTitle}</h2>
-      <p class="details hidden">{card.details}</p>
+      <p class="details">{card.details}</p>
     </div>
   {/each}
 </section>
@@ -91,22 +91,22 @@
       minmax(min(100%, max(10rem, 100%/4)), 1fr)
     );
     gap: 0.5em;
-    width: 60vw;
+    width: 70vw;
     margin: 1em auto;
     grid-row: 2;
   }
-
 
   .gridCard:not(.not_featured) {
     order: -1;
     grid-column: 1 / -1;
   }
 
-  .details{
-    display:none
+  .details {
+    display: none;
   }
 
-  .details:not(.hidden) {
-    display:flex
+  .gridCard:not(.hidden) > p {
+    display: flex;
+    font-size: 1rem;
   }
 </style>
