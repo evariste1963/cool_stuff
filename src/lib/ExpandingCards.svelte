@@ -73,7 +73,7 @@
       class="gridCard not_featured hidden"
       on:click={() => featureCard(i)}
       on:keydown={() => featureCard(i)}
-      style="display:flex; flex-direction:column;  height: auto; padding:1em ; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
+      style="display:flex; flex-direction:column;  height:15em; padding:1em ; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
     >
       <h1>{card.title}</h1>
       <img src={card.image} alt={card.title} width="100" height="100" />
