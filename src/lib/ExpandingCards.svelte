@@ -78,7 +78,7 @@
       <h1>{card.title}</h1>
       <img src={card.image} alt={card.title} width="100" height="100" />
       <h2>{card.subTitle}</h2>
-      <p class="details">{card.details}</p>
+      <p class="details">{@html card.details}</p>
     </div>
   {/each}
 </section>
@@ -106,7 +106,7 @@
   }
 
   .gridCard:not(.hidden) > p {
-    display: flex;
+    display: inline;
     font-size: 1rem;
   }
 </style>
