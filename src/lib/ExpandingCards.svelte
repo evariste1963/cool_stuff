@@ -81,12 +81,12 @@
       on:click={() => featureCard(i)}
       on:keydown={() => featureCard(i)}
     >
-    <div class="disp">
+    <div class="card_body">
       <div>
       <h1>{card.title}</h1>
       <img src={card.image} alt={card.title} width="100" height="100" />
     </div>
-    <div class="featured_text">
+    <div class="body_text">
       <h2>{card.subTitle}</h2>
     
       <p class="details">{@html card.details}</p>
@@ -133,7 +133,7 @@
     padding-left: 1em;
   }
 
-  .gridCard:not(.not_featured) .disp {
+  .gridCard:not(.not_featured) .card_body {
     display:flex;
     align-items:center;
     
@@ -143,7 +143,7 @@
     display: none;
   }
 
-  .gridCard:not(.hidden) .featured_text{
+  .gridCard:not(.hidden) .body_text{
     padding-left:2em
   }
 
