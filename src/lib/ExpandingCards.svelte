@@ -2,6 +2,7 @@
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
   let cardsArr = [
     {
+      id: 1,
       title: "Day Trips",
       subTitle: "Out amongst the Lions",
       details:
@@ -9,6 +10,7 @@
       image: imgsArr[0],
     },
     {
+      id: 2,
       title: "Space Travel",
       subTitle: "Bathe amid the Stars",
       details:
@@ -16,6 +18,7 @@
       image: imgsArr[1],
     },
     {
+      id: 3,
       title: "Run Wild",
       subTitle: "Beat the Retreat",
       details:
@@ -23,6 +26,7 @@
       image: imgsArr[2],
     },
     {
+      id: 4,
       title: "Stay Home",
       subTitle: "Behind the fridge",
       details:
@@ -30,6 +34,7 @@
       image: imgsArr[3],
     },
     {
+      id: 5,
       title: "Day Trips",
       subTitle: "Out amongst the Lions",
       details:
@@ -37,6 +42,7 @@
       image: imgsArr[0],
     },
     {
+      id: 6,
       title: "Space Travel",
       subTitle: "Bathe amid the Stars",
       details:
@@ -44,6 +50,7 @@
       image: imgsArr[1],
     },
     {
+      id: 7,
       title: "Run Wild",
       subTitle: "Beat the Retreat",
       details:
@@ -61,8 +68,8 @@
         card.classList.add("hidden");
       }
     });
-    cards[i].classList.remove("hidden");
-    cards[i].classList.remove("not_featured");
+    cards[i].classList.toggle("hidden");
+    cards[i].classList.toggle("not_featured");
   }
 </script>
 
@@ -73,7 +80,7 @@
       class="gridCard not_featured hidden"
       on:click={() => featureCard(i)}
       on:keydown={() => featureCard(i)}
-      style="display:flex; flex-direction:column;  height:15em; padding:1em ; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
+      style="display:flex; flex-direction:column;  height:auto; padding:1em ; align-items:center; justify-content:center; text-align:center; border: solid 1px #252"
     >
       <h1>{card.title}</h1>
       <img src={card.image} alt={card.title} width="100" height="100" />
