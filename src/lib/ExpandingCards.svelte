@@ -114,6 +114,10 @@
     border: solid 1px #252;
   }
 
+  .not_featured:hover {
+    transform: scale(1.02);
+  }
+
   .gridCard:not(.not_featured) {
     order: -1;
     grid-column: 1 / -1;
