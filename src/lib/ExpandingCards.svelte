@@ -59,8 +59,9 @@
     },
   ];
 
-  function featureCard(i) {
+  function featureCard(i,e) {
     const cards = document.querySelectorAll(".gridCard");
+console.log(e);
 
     cards.forEach(card => {
       if (card != cards[i]) {
@@ -78,8 +79,8 @@
   {#each cardsArr as card, i}
     <div
       class="gridCard not_featured hidden"
-      on:click={() => featureCard(i)}
-      on:keydown={() => featureCard(i)}
+      on:click={(e) => featureCard(i, e)}
+      on:keydown={(e) => featureCard(i, e)}
     >
     <div class="card_body">
       <div>
