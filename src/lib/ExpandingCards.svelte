@@ -81,11 +81,18 @@
       on:click={() => featureCard(i)}
       on:keydown={() => featureCard(i)}
     >
+    <div class="disp">
+      <div>
       <h1>{card.title}</h1>
       <img src={card.image} alt={card.title} width="100" height="100" />
+    </div>
+    <div class="featured_text">
       <h2>{card.subTitle}</h2>
+    
       <p class="details">{@html card.details}</p>
     </div>
+  </div>
+  </div>
   {/each}
 </section>
 
@@ -97,7 +104,7 @@
       minmax(min(100%, max(10rem, 100%/4)), 1fr)
     );
     gap: 0.5em;
-    width: 70vw;
+    width: 60vw;
     margin: 1em auto;
     grid-row: 2;
   }
@@ -121,15 +128,38 @@
   .gridCard:not(.not_featured) {
     order: -1;
     grid-column: 1 / -1;
-    min-height: 20em;
+    min-height: 15em;
+    display:flex;
+    padding-left: 1em;
   }
 
-  .details {
+  .gridCard:not(.not_featured) .disp {
+    display:flex;
+    align-items:center;
+    
+  }
+
+    .details {
     display: none;
   }
 
-  .gridCard:not(.hidden) > p {
-    display: inline;
+  .gridCard:not(.hidden) .featured_text{
+    padding-left:2em
+  }
+
+  .gridCard:not(.hidden) p {
+    display: block;
+    text-align:justify;
+   
     font-size: 1rem;
+  }
+
+  .gridCard:not(.hidden) img {
+    width:150px;
+    height:auto;
+  }
+
+  .gridCard:not(.hidden) h2 {
+    text-align: left
   }
 </style>
