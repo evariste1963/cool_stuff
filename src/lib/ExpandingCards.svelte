@@ -127,7 +127,7 @@
   }
 
   img {
-    border-radius: 0.5em;
+    border-radius: 0.7em;
   }
 
   .not_featured:hover {
@@ -137,12 +137,9 @@
   .gridCard:not(.not_featured) {
     order: -1;
     grid-column: 1 / -1;
-    min-height: 15em;
+    min-height: 18em;
     display: flex;
     padding-left: 1em;
-  }
-  .gridCard:not(.not_featured) .title-image {
-    width: 100%;
   }
 
   .gridCard:not(.not_featured) .card_body {
@@ -165,7 +162,7 @@
   }
 
   .gridCard:not(.hidden) img {
-    width: 15em;
+    width: 12em;
     height: auto;
   }
 
