@@ -168,6 +168,7 @@
 
   .gridCard:not(.hidden) h1 {
     font-size: 1.8rem;
+    padding-bottom: 0.5em;
   }
 
   .gridCard:not(.hidden) h2 {
