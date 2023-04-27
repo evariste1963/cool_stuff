@@ -59,9 +59,9 @@
     },
   ];
 
-  function featureCard(i,e) {
+  function featureCard(i, e) {
     const cards = document.querySelectorAll(".gridCard");
-console.log(e);
+    console.log(e);
 
     cards.forEach(card => {
       if (card != cards[i]) {
@@ -79,21 +79,21 @@ console.log(e);
   {#each cardsArr as card, i}
     <div
       class="gridCard not_featured hidden"
-      on:click={(e) => featureCard(i, e)}
-      on:keydown={(e) => featureCard(i, e)}
+      on:click={e => featureCard(i, e)}
+      on:keydown={e => featureCard(i, e)}
     >
-    <div class="card_body">
-      <div>
-      <h1>{card.title}</h1>
-      <img src={card.image} alt={card.title} width="100" height="100" />
+      <div class="card_body">
+        <div class="title-image">
+          <h1>{card.title}</h1>
+          <img src={card.image} alt={card.title} width="100" height="100" />
+        </div>
+        <div class="body_text">
+          <h2>{card.subTitle}</h2>
+
+          <p class="details">{@html card.details}</p>
+        </div>
+      </div>
     </div>
-    <div class="body_text">
-      <h2>{card.subTitle}</h2>
-    
-      <p class="details">{@html card.details}</p>
-    </div>
-  </div>
-  </div>
   {/each}
 </section>
 
@@ -114,12 +114,20 @@ console.log(e);
     display: flex;
     flex-direction: column;
     height: auto;
-
+    cursor: pointer;
     padding: 1em;
     align-items: center;
     justify-content: center;
     text-align: center;
     border: solid 1px #252;
+  }
+
+  h2 {
+    font-size: 100%;
+  }
+
+  img {
+    border-radius: 0.5em;
   }
 
   .not_featured:hover {
@@ -130,37 +138,43 @@ console.log(e);
     order: -1;
     grid-column: 1 / -1;
     min-height: 15em;
-    display:flex;
+    display: flex;
     padding-left: 1em;
+  }
+  .gridCard:not(.not_featured) .title-image {
+    width: 100%;
   }
 
   .gridCard:not(.not_featured) .card_body {
-    display:flex;
-    align-items:center;
-    
+    display: flex;
+    align-items: center;
   }
 
-    .details {
+  .gridCard:not(.not_featured) .body_text {
+    padding: 0 1em;
+  }
+
+  .details {
     display: none;
-  }
-
-  .gridCard:not(.hidden) .body_text{
-    padding-left:2em
   }
 
   .gridCard:not(.hidden) p {
     display: block;
-    text-align:justify;
-   
+    text-align: justify;
     font-size: 1rem;
   }
 
   .gridCard:not(.hidden) img {
-    width:150px;
-    height:auto;
+    width: 15em;
+    height: auto;
+  }
+
+  .gridCard:not(.hidden) h1 {
+    font-size: 1.8rem;
   }
 
   .gridCard:not(.hidden) h2 {
-    text-align: left
+    text-align: left;
+    font-size: 120%;
   }
 </style>
