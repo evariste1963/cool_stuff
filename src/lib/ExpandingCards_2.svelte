@@ -77,13 +77,13 @@
 
 <!-- this can also be done with FLIP -->
 <section id="cardGrid">
-  {#each cardsArr as card (card.id)}
+  {#each cardsArr as card (card)}
     <div
     animate:flip
       class="gridCard not_featured hidden"
-      on:click={e => featureCard(card.id)}
+      on:click={() => featureCard(card.id)}
      
-      on:keydown={e => featureCard(card.id)}
+      on:keydown={() => featureCard(card.id)}
      
     >
       <div class="card_body">
