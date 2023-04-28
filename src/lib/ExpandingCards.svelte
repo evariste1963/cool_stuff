@@ -61,7 +61,6 @@
 
   function featureCard(i, e) {
     const cards = document.querySelectorAll(".gridCard");
-    console.log(e);
 
     cards.forEach(card => {
       if (card != cards[i]) {
@@ -151,6 +150,22 @@
     border-radius: 0.7em;
   }
 
+  .gridCard:not(.not_featured):before {
+    border-radius: 1.7em 1.7em 0 0;
+  }
+
+  .gridCard:not(.not_featured):hover:after {
+    content: "X";
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 9;
+    cursor: pointer;
+  }
+
   .gridCard.not_featured:hover:before {
     top: -1.5%;
     left: -1.5%;
@@ -167,10 +182,7 @@
     background: #222;
     color: #fff;
     border-radius: 1.7em 1.7em 0 0;
-  }
-
-  .gridCard:not(.not_featured):before {
-    border-radius: 1.7em 1.7em 0 0;
+    cursor: default;
   }
 
   .gridCard:not(.not_featured) img {
@@ -189,6 +201,7 @@
 
   .details {
     display: none;
+    cursor: default;
   }
 
   .gridCard:not(.hidden) p {
