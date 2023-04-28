@@ -103,7 +103,6 @@
 </section>
 
 <style>
-  /*the main grid container*/
   #cardGrid {
     display: grid;
     grid-template-columns: repeat(
@@ -114,12 +113,11 @@
     width: 60vw;
     margin: 1em auto;
     grid-row: 2;
-    padding: 0.5em;
-    border: 3px solid #222;
+    padding: 1em;
+    border: 4px solid #222;
     border-radius: 1.7em 1.7em 0 0;
   }
 
-  /*each gird Card*/
   .gridCard {
     position: relative;
     display: flex;
@@ -132,7 +130,6 @@
     text-align: center;
   }
 
-  /*animated grid Card background box*/
   .gridCard:before {
     content: "";
     position: absolute;
@@ -144,18 +141,8 @@
     background: rgba(255, 255, 255, 1);
     border: solid 1px #252;
   }
-
-  /*only non-featured Cards are animated*/
   .gridCard.not_featured:before {
     transition: all 0.3s ease;
-  }
-
-  /*non-featured Cards animtion*/
-  .gridCard.not_featured:hover:before {
-    top: -1.5%;
-    left: -1.5%;
-    right: -1.5%;
-    bottom: -1.5%;
   }
 
   h2 {
@@ -166,12 +153,29 @@
     border-radius: 0.7em;
   }
 
-  /*featured Card background box formattingr*/
   .gridCard:not(.not_featured):before {
     border-radius: 1.7em 1.7em 0 0;
   }
 
-/*featured card formatting*/
+  .gridCard:not(.not_featured):hover:after {
+    content: "X";
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 9;
+    cursor: pointer;
+  }
+
+  .gridCard.not_featured:hover:before {
+    top: -1.5%;
+    left: -1.5%;
+    right: -1.5%;
+    bottom: -1.5%;
+  }
+
   .gridCard:not(.not_featured) {
     order: -1;
     grid-column: 1 / -1;
@@ -189,7 +193,6 @@
     border: 1px solid #fff;
   }
 
-  /*featured card layout-- flex*/
   .gridCard:not(.not_featured) .card_body {
     display: flex;
     align-items: center;
@@ -199,34 +202,17 @@
     padding: 0 1em;
   }
 
-  
-/*featured Card close cross visible on hover*/
-.gridCard:not(.not_featured):hover:after {
-    content: "X";
-    color: #fff;
-    font-size: 2rem;
-    font-weight: bold;
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    z-index: 9;
-    cursor: pointer;
-  }
-
-/*non-featured cards detials hidden*/
   .details {
     display: none;
     cursor: default;
   }
 
-  /*featured Card details visible*/
   .gridCard:not(.hidden) p {
     display: block;
     text-align: justify;
     font-size: 1rem;
   }
 
-  /*featured card formatting*/
   .gridCard:not(.hidden) img {
     width: 12em;
     height: auto;
