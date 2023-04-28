@@ -85,7 +85,13 @@
       <div class="card_body">
         <div class="title-image">
           <h1>{card.title}</h1>
-          <img src={card.image} alt={card.title} width="100" height="100" />
+          <img
+            style="border-radius:2.7em 0.7em"
+            src={card.image}
+            alt={card.title}
+            width="130"
+            height="130"
+          />
         </div>
         <div class="body_text">
           <h2>{card.subTitle}</h2>
@@ -110,9 +116,8 @@
     grid-row: 2;
   }
 
-
   .gridCard {
-    position:relative;
+    position: relative;
     display: flex;
     flex-direction: column;
     height: auto;
@@ -122,21 +127,22 @@
     justify-content: center;
     text-align: center;
   }
-  
+
   .gridCard:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: -1;
-    background: rgba(255,255,255,1);
-    border:solid 1px #252;
-    /* border-radius: 6px; */
-    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 1);
+    border: solid 1px #252;
   }
-  
+  .gridCard.not_featured:before {
+    transition: all 0.3s ease;
+  }
+
   h2 {
     font-size: 100%;
   }
@@ -146,11 +152,11 @@
   }
 
   .gridCard.not_featured:hover:before {
-    top:-1.5%;
-    left:-1.5%;
-    right:-1.5%;
-    bottom:-1.5%;
-  } 
+    top: -1.5%;
+    left: -1.5%;
+    right: -1.5%;
+    bottom: -1.5%;
+  }
 
   .gridCard:not(.not_featured) {
     order: -1;
@@ -158,9 +164,19 @@
     min-height: 18em;
     display: flex;
     padding-left: 1em;
-    
+    background: #222;
+    color: #fff;
+    border-radius: 1.7em 1.7em 0 0;
   }
-  
+
+  .gridCard:not(.not_featured):before {
+    border-radius: 1.7em 1.7em 0 0;
+  }
+
+  .gridCard:not(.not_featured) img {
+    padding: 0.5em;
+    border: 1px solid #fff;
+  }
 
   .gridCard:not(.not_featured) .card_body {
     display: flex;
