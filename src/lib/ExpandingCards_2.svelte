@@ -1,4 +1,6 @@
 <script>
+   import { flip } from 'svelte/animate'
+   import { crossfade } from 'svelte/transition'
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
   let cardsArr = [
     {
@@ -59,27 +61,30 @@
     },
   ];
 
-  function featureCard(i, e) {
+  function featureCard(cardid) {
     const cards = document.querySelectorAll(".gridCard");
-
-    cards.forEach(card => {
-      if (card != cards[i]) {
-        card.classList.add("not_featured");
-        card.classList.add("hidden");
+    cardsArr.forEach((card, i) => {
+      
+      if (card.id != cardid) {
+       cards[i].classList.add("not_featured");
+       cards[i].classList.add("hidden");
       }
     });
-    cards[i].classList.toggle("hidden");
-    cards[i].classList.toggle("not_featured");
+    cards[cardid-1].classList.toggle("hidden");
+    cards[cardid-1].classList.toggle("not_featured");
   }
 </script>
 
 <!-- this can also be done with FLIP -->
 <section id="cardGrid">
-  {#each cardsArr as card, i}
+  {#each cardsArr as card (card.id)}
     <div
+    animate:flip
       class="gridCard not_featured hidden"
-      on:click={e => featureCard(i, e)}
-      on:keydown={e => featureCard(i, e)}
+      on:click={e => featureCard(card.id)}
+     
+      on:keydown={e => featureCard(card.id)}
+     
     >
       <div class="card_body">
         <div class="title-image">
@@ -103,6 +108,7 @@
 </section>
 
 <style>
+  /*the main grid container*/
   #cardGrid {
     display: grid;
     grid-template-columns: repeat(
@@ -118,6 +124,7 @@
     border-radius: 1.7em 1.7em 0 0;
   }
 
+  /*each gird Card*/
   .gridCard {
     position: relative;
     display: flex;
@@ -130,6 +137,7 @@
     text-align: center;
   }
 
+  /*animated grid Card background box*/
   .gridCard:before {
     content: "";
     position: absolute;
@@ -141,8 +149,18 @@
     background: rgba(255, 255, 255, 1);
     border: solid 1px #252;
   }
+
+  /*only non-featured Cards are animated*/
   .gridCard.not_featured:before {
     transition: all 0.3s ease;
+  }
+
+  /*non-featured Cards animtion*/
+  .gridCard.not_featured:hover:before {
+    top: -1.5%;
+    left: -1.5%;
+    right: -1.5%;
+    bottom: -1.5%;
   }
 
   h2 {
@@ -153,29 +171,12 @@
     border-radius: 0.7em;
   }
 
+  /*featured Card background box formattingr*/
   .gridCard:not(.not_featured):before {
     border-radius: 1.7em 1.7em 0 0;
   }
 
-  .gridCard:not(.not_featured):hover:after {
-    content: "X";
-    color: #fff;
-    font-size: 2rem;
-    font-weight: bold;
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    z-index: 9;
-    cursor: pointer;
-  }
-
-  .gridCard.not_featured:hover:before {
-    top: -1.5%;
-    left: -1.5%;
-    right: -1.5%;
-    bottom: -1.5%;
-  }
-
+/*featured card formatting*/
   .gridCard:not(.not_featured) {
     order: -1;
     grid-column: 1 / -1;
@@ -193,6 +194,7 @@
     border: 1px solid #fff;
   }
 
+  /*featured card layout-- flex*/
   .gridCard:not(.not_featured) .card_body {
     display: flex;
     align-items: center;
@@ -202,17 +204,34 @@
     padding: 0 1em;
   }
 
+  
+/*featured Card close cross visible on hover*/
+.gridCard:not(.not_featured):hover:after {
+    content: "X";
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 9;
+    cursor: pointer;
+  }
+
+/*non-featured cards detials hidden*/
   .details {
     display: none;
     cursor: default;
   }
 
+  /*featured Card details visible*/
   .gridCard:not(.hidden) p {
     display: block;
     text-align: justify;
     font-size: 1rem;
   }
 
+  /*featured card formatting*/
   .gridCard:not(.hidden) img {
     width: 12em;
     height: auto;

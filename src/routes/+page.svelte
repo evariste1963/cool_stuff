@@ -14,6 +14,7 @@
   import FlipCard from "$lib/FlipCard.svelte";
   import ExpandingCards from "$lib/ExpandingCards.svelte";
   import ExpandingCards_2 from "$lib/ExpandingCards_2.svelte";
+ 
   let imagesToShow = 2;
 </script>
 
@@ -84,9 +85,9 @@
     <FlipCard />
   </div>
 
-  <div style="height:100vh">
+  <!-- <div style="height:100vh">
     <ExpandingCards />
-  </div>
+  </div> -->
   
   <div style="height:100vh">
     <ExpandingCards_2 />
