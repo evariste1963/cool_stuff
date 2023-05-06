@@ -1,8 +1,8 @@
 <script>
-   import { flip } from 'svelte/animate'
-   import { crossfade } from 'svelte/transition'
+  import { flip } from "svelte/animate";
+  import { crossfade } from "svelte/transition";
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
-  let cardsArr = [
+  let cardsArray = [
     {
       id: 1,
       title: "Day Trips",
@@ -60,31 +60,68 @@
       image: imgsArr[1],
     },
   ];
+  // setup for card ordering --> manipulate cardsArra to change positions
+  let cardsArra = [...cardsArray];
+  let cardsArr = cardsArra.slice(1);
+  let topCard = cardsArra.slice(0, 1);
+  console.log(
+    "cardsArra: ",
+    cardsArra,
+    "cardsArr: ",
+    cardsArr,
+    "topcard: ",
+    topCard
+  );
 
+  // chnge this code so that cardsArr and topCard are swapped in their own arrays
   function featureCard(cardid) {
     const cards = document.querySelectorAll(".gridCard");
     cardsArr.forEach((card, i) => {
-      
       if (card.id != cardid) {
-       cards[i].classList.add("not_featured");
-       cards[i].classList.add("hidden");
+        cards[i].classList.add("not_featured");
+        cards[i].classList.add("hidden");
       }
     });
-    cards[cardid-1].classList.toggle("hidden");
-    cards[cardid-1].classList.toggle("not_featured");
+    cards[cardid - 1].classList.toggle("hidden");
+    cards[cardid - 1].classList.toggle("not_featured");
+    console.log(cardsArra[cardid - 1]);
   }
 </script>
 
 <!-- this can also be done with FLIP -->
 <section id="cardGrid">
+  {#each topCard as card (card)}
+    <div
+      animate:flip
+      class="gridCard"
+      on:click={() => featureCard(card.id)}
+      on:keydown={() => featureCard(card.id)}
+    >
+      <div class="card_body">
+        <div class="title-image">
+          <h1>{card.title}</h1>
+          <img
+            style="border-radius:2.7em 0.7em"
+            src={card.image}
+            alt={card.title}
+            width="130"
+            height="130"
+          />
+        </div>
+        <div class="body_text">
+          <h2>{card.subTitle}</h2>
+
+          <p class="details">{@html card.details}</p>
+        </div>
+      </div>
+    </div>
+  {/each}
   {#each cardsArr as card (card)}
     <div
-    animate:flip
+      animate:flip
       class="gridCard not_featured hidden"
       on:click={() => featureCard(card.id)}
-     
       on:keydown={() => featureCard(card.id)}
-     
     >
       <div class="card_body">
         <div class="title-image">
@@ -176,7 +213,7 @@
     border-radius: 1.7em 1.7em 0 0;
   }
 
-/*featured card formatting*/
+  /*featured card formatting*/
   .gridCard:not(.not_featured) {
     order: -1;
     grid-column: 1 / -1;
@@ -204,9 +241,8 @@
     padding: 0 1em;
   }
 
-  
-/*featured Card close cross visible on hover*/
-.gridCard:not(.not_featured):hover:after {
+  /*featured Card close cross visible on hover*/
+  .gridCard:not(.not_featured):hover:after {
     content: "X";
     color: #fff;
     font-size: 2rem;
@@ -218,7 +254,7 @@
     cursor: pointer;
   }
 
-/*non-featured cards detials hidden*/
+  /*non-featured cards detials hidden*/
   .details {
     display: none;
     cursor: default;
