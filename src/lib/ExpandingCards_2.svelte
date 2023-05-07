@@ -2,6 +2,9 @@
   import { flip } from "svelte/animate";
   import { crossfade } from "svelte/transition";
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
+
+const [send, receive] = crossfade({duration:500})
+
   let cardsArray = [
     {
       id: 1,
@@ -37,7 +40,7 @@
     },
     {
       id: 5,
-      title: "Reaserch",
+      title: "Research",
       subTitle: "Taming the shrews",
       details:
         "Donec accumsan <strong>ullamcorper</strong> diam nec finibus. Etiam et ante justo. Cras ac augue fringilla, <strong>hendrerit</strong> dolor ut, porta nisi.<br><br>Fusce <strong>tempor</strong> enim at commodo volutpat. Nullam vehicula, sapien quis eleifend vestibulum, <strong>neque</strong> nunc pharetra nisl, eget interdum sem felis vitae ex. ",
@@ -45,7 +48,7 @@
     },
     {
       id: 6,
-      title: "Space Travel",
+      title: "Time Men",
       subTitle: "Bathe amid the Stars",
       details:
         "Curabitur quis dictum nibh, <strong>mattis</strong> iaculis nibh. In hac habitasse platea dictumst. Nam <strong>accumsan</strong> libero non enim euismod, a <strong>tincidunt</strong> libero blandit. Mauris sit <strong>amet</strong> imperdiet tellus, vel fringilla <strong>lorem</strong>. Sed suscipit lacus et orci placerat blandit. <br><br>Integer pulvinar <strong>magna</strong> eros, quis ullamcorper lectus aliquam vitae. Mauris id nulla blandit. Curabitur quis dictum nibh, mattis iaculis nibh.",
@@ -53,7 +56,7 @@
     },
     {
       id: 7,
-      title: "Run Wild",
+      title: "Inca Roads",
       subTitle: "Beat the Retreat",
       details:
         "Mauris non <strong>tellus</strong> vulputate, feugiat erat non, pharetra justo. Proin consequat <strong>felis diam</strong>, malesuada auctor mi convallis sed. Sed <strong>gravida</strong> faucibus vulputate. Mauris mauris <strong>tortor</strong>,  Praesent sit amet <strong>ipsum</strong> eu risus varius blandit. <br><br>Donec blandit ac lorem et dignissim. Nam sem nisl, aliquam a ornare eu, luctus <strong>quis enim</strong>. Aenean ut felis in neque congue rutrum. Aliquam <strong>at</strong> velit.",
@@ -62,40 +65,50 @@
   ];
   // setup for card ordering --> manipulate cardsArra to change positions
   let cardsArra = [...cardsArray];
-  let cardsArr = cardsArra.slice(1);
-  let topCard = cardsArra.slice(0, 1);
-  console.log(
-    "cardsArra: ",
-    cardsArra,
-    "cardsArr: ",
-    cardsArr,
-    "topcard: ",
-    topCard
-  );
+  $: cardsArr = cardsArra.slice(1);
+  $: topCard = cardsArra.slice(0, 1);
+  // console.log(
+  //   "cardsArra: ",
+  //   cardsArra,
+  //   "cardsArr: ",
+  //   cardsArr,
+  //   "topcard: ",
+  //   topCard
+  // );
 
   // chnge this code so that cardsArr and topCard are swapped in their own arrays
+  // function featureCard(cardid) {
+  //   const cards = document.querySelectorAll(".gridCard");
+  //   cardsArr.forEach((card, i) => {
+  //     if (card.id != cardid) {
+  //       cards[i].classList.add("not_featured");
+  //       cards[i].classList.add("hidden");
+  //     }
+  //   });
+  //   cards[cardid - 1].classList.toggle("hidden");
+  //   cards[cardid - 1].classList.toggle("not_featured");
+  //   console.log(cardsArra[cardid - 1]);
+  // }
+
   function featureCard(cardid) {
-    const cards = document.querySelectorAll(".gridCard");
-    cardsArr.forEach((card, i) => {
-      if (card.id != cardid) {
-        cards[i].classList.add("not_featured");
-        cards[i].classList.add("hidden");
+    cardsArr = cardsArr.filter(card => card.id !== cardid)
+    cardsArr.push(topCard[0])
+    topCard = cardsArra.filter(card => card.id === cardid)
+    
+    console.log(cardsArr, topCard);
       }
-    });
-    cards[cardid - 1].classList.toggle("hidden");
-    cards[cardid - 1].classList.toggle("not_featured");
-    console.log(cardsArra[cardid - 1]);
-  }
+
 </script>
 
-<!-- this can also be done with FLIP -->
+
 <section id="cardGrid">
   {#each topCard as card (card)}
     <div
-      animate:flip
+      animate:flip={{duration: 1900}}
+      in:receive
+      out:send
       class="gridCard"
-      on:click={() => featureCard(card.id)}
-      on:keydown={() => featureCard(card.id)}
+      
     >
       <div class="card_body">
         <div class="title-image">
@@ -118,7 +131,9 @@
   {/each}
   {#each cardsArr as card (card)}
     <div
-      animate:flip
+    animate:flip={{duration: 600}}
+    in:receive
+    out:send
       class="gridCard not_featured hidden"
       on:click={() => featureCard(card.id)}
       on:keydown={() => featureCard(card.id)}
@@ -175,7 +190,7 @@
   }
 
   /*animated grid Card background box*/
-  .gridCard:before {
+ .gridCard:before {
     content: "";
     position: absolute;
     top: 0;
@@ -185,7 +200,7 @@
     z-index: -1;
     background: rgba(255, 255, 255, 1);
     border: solid 1px #252;
-  }
+  } 
 
   /*only non-featured Cards are animated*/
   .gridCard.not_featured:before {
@@ -193,12 +208,12 @@
   }
 
   /*non-featured Cards animtion*/
-  .gridCard.not_featured:hover:before {
+   .gridCard.not_featured:hover:before {
     top: -1.5%;
     left: -1.5%;
     right: -1.5%;
     bottom: -1.5%;
-  }
+  } 
 
   h2 {
     font-size: 100%;
@@ -243,7 +258,7 @@
 
   /*featured Card close cross visible on hover*/
   .gridCard:not(.not_featured):hover:after {
-    content: "X";
+    content: "";
     color: #fff;
     font-size: 2rem;
     font-weight: bold;
