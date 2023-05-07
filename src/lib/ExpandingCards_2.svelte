@@ -90,13 +90,12 @@ const [send, receive] = crossfade({duration:500})
   //   console.log(cardsArra[cardid - 1]);
   // }
 
-  function featureCard(cardid) {
+  async function featureCard(cardid) {
     cardsArr = cardsArr.filter(card => card.id !== cardid)
     cardsArr.push(topCard[0])
     topCard = cardsArra.filter(card => card.id === cardid)
     
-    console.log(cardsArr, topCard);
-      }
+  }
 
 </script>
 
@@ -104,7 +103,7 @@ const [send, receive] = crossfade({duration:500})
 <section id="cardGrid">
   {#each topCard as card (card)}
     <div
-      animate:flip={{duration: 1900}}
+      
       in:receive
       out:send
       class="gridCard"
@@ -167,7 +166,7 @@ const [send, receive] = crossfade({duration:500})
       auto-fit,
       minmax(min(100%, max(10rem, 100%/4)), 1fr)
     );
-    gap: 0.5em;
+    gap: 0.4em;
     width: 60vw;
     margin: 1em auto;
     grid-row: 2;
@@ -187,6 +186,8 @@ const [send, receive] = crossfade({duration:500})
     align-items: center;
     justify-content: center;
     text-align: center;
+    background: #222;
+    color: #fff;
   }
 
   /*animated grid Card background box*/
@@ -198,7 +199,8 @@ const [send, receive] = crossfade({duration:500})
     left: 0;
     right: 0;
     z-index: -1;
-    background: rgba(255, 255, 255, 1);
+    background: #222;
+    color: #fff;
     border: solid 1px #252;
   } 
 
@@ -239,6 +241,7 @@ const [send, receive] = crossfade({duration:500})
     color: #fff;
     border-radius: 1.7em 1.7em 0 0;
     cursor: default;
+    z-index: 9;
   }
 
   .gridCard:not(.not_featured) img {
