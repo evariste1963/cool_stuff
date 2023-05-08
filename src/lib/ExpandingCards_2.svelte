@@ -1,6 +1,6 @@
 <script>
   import { flip } from "svelte/animate";
-  import { crossfade } from "svelte/transition";
+  import { crossfade, fade } from "svelte/transition";
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
 
 const [send, receive] = crossfade({duration:500})
@@ -130,7 +130,7 @@ const [send, receive] = crossfade({duration:500})
   {/each}
   {#each cardsArr as card (card)}
     <div
-    animate:flip={{duration: 600}}
+    animate:flip={{duration: 800}}
     in:receive
     out:send
       class="gridCard not_featured hidden"
@@ -166,7 +166,7 @@ const [send, receive] = crossfade({duration:500})
       auto-fit,
       minmax(min(100%, max(10rem, 100%/4)), 1fr)
     );
-    gap: 0.4em;
+    gap: 0.1em;
     width: 60vw;
     margin: 1em auto;
     grid-row: 2;
@@ -201,7 +201,7 @@ const [send, receive] = crossfade({duration:500})
     z-index: -1;
     background: #222;
     color: #fff;
-    border: solid 1px #252;
+    /* border: solid 1px #252; */
   } 
 
   /*only non-featured Cards are animated*/
@@ -210,12 +210,12 @@ const [send, receive] = crossfade({duration:500})
   }
 
   /*non-featured Cards animtion*/
-   .gridCard.not_featured:hover:before {
+   /* .gridCard.not_featured:hover:before {
     top: -1.5%;
     left: -1.5%;
     right: -1.5%;
     bottom: -1.5%;
-  } 
+  }  */
 
   h2 {
     font-size: 100%;
@@ -300,4 +300,5 @@ const [send, receive] = crossfade({duration:500})
     text-align: left;
     font-size: 120%;
   }
+  
 </style>
