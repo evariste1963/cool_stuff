@@ -90,7 +90,7 @@
   //   console.log(cardsArra[cardid - 1]);
   // }
 
-  async function featureCard(cardid) {
+  function featureCard(cardid) {
     /*cardsArr.push(topCard[0]);*/
     topCard = cardsArra.filter(card => card.id === cardid);
     cardsArr = cardsArra.filter(card => card.id !== cardid);
@@ -162,8 +162,9 @@
     margin: 1em auto;
     grid-row: 2;
     padding: 1em;
-    border: 4px solid #222;
+    border: 4px solid #000;
     border-radius: 1.7em 1.7em 0 0;
+    background: #222;
   }
 
   /*each gird Card*/
