@@ -3,7 +3,7 @@
   import { crossfade, fade } from "svelte/transition";
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
 
-const [send, receive] = crossfade({duration:500})
+  const [send, receive] = crossfade({ duration: 500 });
 
   let cardsArray = [
     {
@@ -66,7 +66,7 @@ const [send, receive] = crossfade({duration:500})
   // setup for card ordering --> manipulate cardsArra to change positions
   let cardsArra = [...cardsArray];
   $: cardsArr = cardsArra.slice(1);
-  $: topCard = cardsArra.slice(0, 1);
+  $: topCard = [cardsArra[0]];
   // console.log(
   //   "cardsArra: ",
   //   cardsArra,
@@ -91,24 +91,15 @@ const [send, receive] = crossfade({duration:500})
   // }
 
   async function featureCard(cardid) {
-    cardsArr = cardsArr.filter(card => card.id !== cardid)
-    cardsArr.push(topCard[0])
-    topCard = cardsArra.filter(card => card.id === cardid)
-    
+    /*cardsArr.push(topCard[0]);*/
+    topCard = cardsArra.filter(card => card.id === cardid);
+    cardsArr = cardsArra.filter(card => card.id !== cardid);
   }
-
 </script>
-
 
 <section id="cardGrid">
   {#each topCard as card (card)}
-    <div
-      
-      in:receive
-      out:send
-      class="gridCard"
-      
-    >
+    <div in:receive out:send class="gridCard">
       <div class="card_body">
         <div class="title-image">
           <h1>{card.title}</h1>
@@ -130,9 +121,9 @@ const [send, receive] = crossfade({duration:500})
   {/each}
   {#each cardsArr as card (card)}
     <div
-    animate:flip={{duration: 800}}
-    in:receive
-    out:send
+      animate:flip={{ duration: 800 }}
+      in:receive
+      out:send
       class="gridCard not_featured hidden"
       on:click={() => featureCard(card.id)}
       on:keydown={() => featureCard(card.id)}
@@ -191,7 +182,7 @@ const [send, receive] = crossfade({duration:500})
   }
 
   /*animated grid Card background box*/
- .gridCard:before {
+  .gridCard:before {
     content: "";
     position: absolute;
     top: 0;
@@ -202,7 +193,7 @@ const [send, receive] = crossfade({duration:500})
     background: #222;
     color: #fff;
     /* border: solid 1px #252; */
-  } 
+  }
 
   /*only non-featured Cards are animated*/
   .gridCard.not_featured:before {
@@ -210,7 +201,7 @@ const [send, receive] = crossfade({duration:500})
   }
 
   /*non-featured Cards animtion*/
-   /* .gridCard.not_featured:hover:before {
+  /* .gridCard.not_featured:hover:before {
     top: -1.5%;
     left: -1.5%;
     right: -1.5%;
@@ -300,5 +291,4 @@ const [send, receive] = crossfade({duration:500})
     text-align: left;
     font-size: 120%;
   }
-  
 </style>
