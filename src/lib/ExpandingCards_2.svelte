@@ -67,31 +67,8 @@
   let cardsArra = [...cardsArray];
   $: cardsArr = cardsArra.slice(1);
   $: topCard = [cardsArra[0]];
-  // console.log(
-  //   "cardsArra: ",
-  //   cardsArra,
-  //   "cardsArr: ",
-  //   cardsArr,
-  //   "topcard: ",
-  //   topCard
-  // );
-
-  // chnge this code so that cardsArr and topCard are swapped in their own arrays
-  // function featureCard(cardid) {
-  //   const cards = document.querySelectorAll(".gridCard");
-  //   cardsArr.forEach((card, i) => {
-  //     if (card.id != cardid) {
-  //       cards[i].classList.add("not_featured");
-  //       cards[i].classList.add("hidden");
-  //     }
-  //   });
-  //   cards[cardid - 1].classList.toggle("hidden");
-  //   cards[cardid - 1].classList.toggle("not_featured");
-  //   console.log(cardsArra[cardid - 1]);
-  // }
 
   function featureCard(cardid) {
-    /*cardsArr.push(topCard[0]);*/
     topCard = cardsArra.filter(card => card.id === cardid);
     cardsArr = cardsArra.filter(card => card.id !== cardid);
   }
