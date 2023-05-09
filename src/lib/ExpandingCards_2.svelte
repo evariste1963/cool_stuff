@@ -140,7 +140,7 @@
     grid-row: 2;
     padding: 1em;
     border: 4px solid #000;
-    border-radius: 1.7em 1.7em 0 0;
+    border-radius: 1.7em 1.7em;
     background: #222;
   }
 
