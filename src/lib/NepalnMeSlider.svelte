@@ -44,7 +44,7 @@
       //have to use EventListener instead of svelte on:dblclick to capture all cards including extras on both ends of carousel
       extendedCarouselCards = document.querySelectorAll(".card");
       extendedCarouselCards.forEach(card =>
-        card.addEventListener("click", openModal)
+        card.addEventListener("dblclick", openModal)
       );
   
       // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox/chrome etc
@@ -293,7 +293,7 @@
     box-sizing: border-box;
     font-family: Ink free, cursive, "Poppins", sans-serif;
   }  
-
+  
     .overlay {
       position: fixed;
       /*top:0;
