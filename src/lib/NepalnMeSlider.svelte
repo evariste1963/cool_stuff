@@ -5,7 +5,7 @@
   
     // npm install --save @fortawesome/fontawesome-free
   
-    import "../app.css";
+    //import "../app.css";
     import { onMount } from "svelte";
   
     let carousel,

@@ -12,7 +12,6 @@
   import SvelteCarousel from "$lib/SvelteCarousel.svelte";
   import BmwCarousel from "$lib/BmwCarousel.svelte";
   import FlipCard from "$lib/FlipCard.svelte";
-  import NepalnMeSlider from "$lib/NepalnMeSlider.svelte";
   import ExpandingCards_2 from "$lib/ExpandingCards_2.svelte";
 
   let imagesToShow = 2;
@@ -85,22 +84,17 @@
     <FlipCard />
   </div>
 
-  <div style="height:100vh; display: flex;
-    padding: 0 35px;
+  <div style=" display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(
-      to bottom right,
-      var(--primary),
-      25%,
-      var(--secondary)
-    )"
+    min-width:100vw;
+   "
    
   
     
    >
-    <NepalnMeSlider />
+    <!-- <NepalnMeSlider /> -->
   </div>
 
   <div style="min-height:100vh">
