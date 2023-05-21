@@ -322,13 +322,13 @@
 
   .overlay {
     position: fixed;
-    /*top:0;
-    left:0;*/
+    top:10%;
+    /*left:0;*/
     width: 85%;
-    height: 85%;
+    height: 75%;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.1); /*darkens page behind */
-    backdrop-filter: blur(12px); /*blurs page behind */
+    backdrop-filter: blur(16px); /*blurs page behind */
     border-radius: 20em 6em;
     z-index: 99;
     transform: scale(1);
@@ -382,6 +382,7 @@
     position: absolute;
     top: 50%;
     font-size: 1.25rem;
+    FONT-WEIGHT: BOLD;
     transform: translateY(-50%);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
     transition: transform 0.1s linear;
