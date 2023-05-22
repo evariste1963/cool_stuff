@@ -51,10 +51,17 @@
     color: rgb(255, 255, 255);
     font-size: calc(12px + 0.5vw);
     padding: calc(0.1em + 0.3vw) 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav a:not(.selected):hover {
+    transform: translateY(-10%);
+    color: rgb(240, 219, 163);
   }
 
   .selected {
     font-weight: bold;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgb(231, 209, 111);
+    color: rgb(231, 209, 111);
   }
 </style>
