@@ -366,6 +366,7 @@
     border-radius: 50%;
     cursor: pointer;
     position: absolute;
+    user-select: none;
     top: 50%;
     font-size: 1.25rem;
     font-weight: BOLD;
