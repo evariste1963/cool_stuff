@@ -7,6 +7,13 @@
 
   // import '@fortawesome/fontawesome-free/css/all.css';
   // import '@fortawesome/fontawesome-free/js/all.js';
+
+  import {
+    FontAwesomeIcon,
+    FontAwesomeLayers,
+    FontAwesomeLayersText,
+  } from "fontawesome-svelte";
+
   import { onMount } from "svelte";
 
   let slideShow,
