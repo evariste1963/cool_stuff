@@ -1,4 +1,3 @@
-
 <script>
   // https://www.youtube.com/watch?v=6QE8dXq9SOE&t=1s
 
@@ -6,10 +5,9 @@
 
   // npm install --save @fortawesome/fontawesome-free
 
-   import '@fortawesome/fontawesome-free/css/all.css'; 
+  // import '@fortawesome/fontawesome-free/css/all.css';
   // import '@fortawesome/fontawesome-free/js/all.js';
   import { onMount } from "svelte";
-
 
   let carousel,
     wrapper,
@@ -245,58 +243,47 @@
 
 <svelte:window on:mouseup={dragStop} />
 <body>
-
-<div
-  class="wrapper"
-  on:mouseenter={() => clearInterval(timeoutId)}
-  on:mouseleave={reStartAutoPlay}
->
-  <i
-    id="left"
-    on:click={btnScroll}
-    on:keydown={btnScroll}
-  >prev</i>
-
-  <!-- dragging class required below to prevent errors as it doesn't exist until it's injected in by the dragStart function -->
   <div
-    bind:this={carousel}
-    class="carousel dragging"
-    on:mousemove={dragging}
-    on:mousedown={dragStart}
-    on:scroll={infiniteScroll}
+    class="wrapper"
+    on:mouseenter={() => clearInterval(timeoutId)}
+    on:mouseleave={reStartAutoPlay}
   >
-    {#each cardsArray as card}
-      <div class="card" id={card.id}>
-        <div class="img"
-          ><img src={card.image} alt={card.title} draggable="false" /></div
-        >
-        <h2>{card.title}</h2>
-        <span>{card.subTitle}</span>
-      </div>
-    {/each}
+    <i id="left" on:click={btnScroll} on:keydown={btnScroll}>prev</i>
+
+    <!-- dragging class required below to prevent errors as it doesn't exist until it's injected in by the dragStart function -->
+    <div
+      bind:this={carousel}
+      class="carousel dragging"
+      on:mousemove={dragging}
+      on:mousedown={dragStart}
+      on:scroll={infiniteScroll}
+    >
+      {#each cardsArray as card}
+        <div class="card" id={card.id}>
+          <div class="img"
+            ><img src={card.image} alt={card.title} draggable="false" /></div
+          >
+          <h2>{card.title}</h2>
+          <span>{card.subTitle}</span>
+        </div>
+      {/each}
+    </div>
+    <i id="right" on:click={btnScroll} on:keydown={btnScroll}>next</i>
   </div>
-  <i
-    id="right"
-    on:click={btnScroll}
-    on:keydown={btnScroll}
-  >next</i>
-</div>
-<div class="overlay hidden" on:click={closeModal} on:keydown={closeModal}>
-  <div class="modal" />
-</div>
-  
+  <div class="overlay hidden" on:click={closeModal} on:keydown={closeModal}>
+    <div class="modal" />
+  </div>
 </body>
 
 <!-- <div class="hidden"> modal window code goes here, position is absolute and is hidden in css until doubleclicked card - card details will have to be injected in using js </div>-->
 
 <style>
-
-* {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Ink free, cursive, "Poppins", sans-serif;
-    padding:0;
+    padding: 0;
   }
   body {
     display: flex;
@@ -310,9 +297,8 @@
       25%,
       var(--secondary)
     );
-    background-image: url("../../lib/images/img6.jpg") ;
+    background-image: url("../../lib/images/img6.jpg");
     background-size: cover;
-    
   }
 
   :root {
@@ -322,7 +308,7 @@
 
   .overlay {
     position: fixed;
-    top:10%;
+    top: 10%;
     /*left:0;*/
     width: 85%;
     height: 75%;
@@ -368,7 +354,7 @@
     max-width: 60vw;
     width: 100%;
     position: relative;
-    margin-top: 15% 
+    margin-top: 15%;
   }
 
   .wrapper i {
@@ -382,7 +368,7 @@
     position: absolute;
     top: 50%;
     font-size: 1.25rem;
-    FONT-WEIGHT: BOLD;
+    font-weight: BOLD;
     transform: translateY(-50%);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
     transition: transform 0.1s linear;
@@ -397,7 +383,7 @@
 
   .wrapper i:last-child {
     right: -22px;
-  } 
+  }
   .wrapper .carousel {
     display: grid;
     grid-auto-flow: column;
