@@ -9,14 +9,14 @@
   // import '@fortawesome/fontawesome-free/js/all.js';
   import { onMount } from "svelte";
 
-  let carousel,
+  let slideShow,
     wrapper,
-    firstCardWidth,
+    firstagentWidth,
     timeoutId,
     reStartAutoPlay,
     overlay,
     modal,
-    extendedCarouselCards,
+    extendedslideShowagents,
     html = "",
     pauseScroll = false;
 
@@ -24,40 +24,40 @@
   onMount(() => {
     const isAutoPlay = true;
     wrapper = document.querySelector(".wrapper");
-    carousel = document.querySelector(".carousel");
+    slideShow = document.querySelector(".slideShow");
     modal = document.querySelector(".modal");
-    firstCardWidth = carousel.querySelector(".card").offsetWidth;
-    const carouselChildren = [...carousel.children];
-    //get number of cards that can fit in the carousel at once
-    let cardsPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-    //insert copies of the last few cards to start of carousel for infinite scrolling
-    carouselChildren
-      .slice(-cardsPerView)
+    firstagentWidth = slideShow.querySelector(".agent").offsetWidth;
+    const slideShowChildren = [...slideShow.children];
+    //get number of agents that can fit in the slideShow at once
+    let agentsPerView = Math.round(slideShow.offsetWidth / firstagentWidth);
+    //insert copies of the last few agents to start of slideShow for infinite scrolling
+    slideShowChildren
+      .slice(-agentsPerView)
       .reverse()
-      .forEach(card => {
-        carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+      .forEach(agent => {
+        slideShow.insertAdjacentHTML("afterbegin", agent.outerHTML);
       });
-    //insert copies of the first few cards to end of carousel for infinite scrolling
-    carouselChildren.slice(0, cardsPerView).forEach(card => {
-      carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+    //insert copies of the first few agents to end of slideShow for infinite scrolling
+    slideShowChildren.slice(0, agentsPerView).forEach(agent => {
+      slideShow.insertAdjacentHTML("beforeend", agent.outerHTML);
     });
 
-    //have to use EventListener instead of svelte on:dblclick to capture all cards including extras on both ends of carousel
-    extendedCarouselCards = document.querySelectorAll(".card");
-    extendedCarouselCards.forEach(card =>
-      card.addEventListener("dblclick", openModal)
+    //have to use EventListener instead of svelte on:dblclick to capture all agents including extras on both ends of slideShow
+    extendedslideShowagents = document.querySelectorAll(".agent");
+    extendedslideShowagents.forEach(agent =>
+      agent.addEventListener("dblclick", openModal)
     );
 
-    // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox/chrome etc
-    carousel.scrollLeft =
-      carousel.offsetWidth + (1.75 * carousel.offsetWidth) / firstCardWidth;
+    // Scroll the slideShow at appropriate postition to hide first few duplicate agents on Firefox/chrome etc
+    slideShow.scrollLeft =
+      slideShow.offsetWidth + (1.75 * slideShow.offsetWidth) / firstagentWidth;
 
     const autoPlay = () => {
-      carousel.classList.remove("dragging");
+      slideShow.classList.remove("dragging");
       if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
-      // Autoplay the carousel after every 2500 ms
+      // Autoplay the slideShow after every 2500 ms
       timeoutId = setInterval(() => {
-        carousel.scrollLeft += firstCardWidth;
+        slideShow.scrollLeft += firstagentWidth;
       }, 2500);
     };
     autoPlay();
@@ -78,47 +78,48 @@
 
   const dragStart = e => {
     isDragging = true;
-    carousel.classList.add("dragging");
-    carousel.style = "cursor:grab; user-select: none;";
-    //records the initial cursor and scroll position of the carousel
+    slideShow.classList.add("dragging");
+    slideShow.style = "cursor:grab; user-select: none;";
+    //records the initial cursor and scroll position of the slideShow
     startX = e.pageX;
-    startScrollLeft = carousel.scrollLeft;
+    startScrollLeft = slideShow.scrollLeft;
   };
 
   const dragging = e => {
     if (!isDragging) return;
-    //updates the scroll position of the carousel based on the cursor movement/direction
-    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+    //updates the scroll position of the slideShow based on the cursor movement/direction
+    slideShow.scrollLeft = startScrollLeft - (e.pageX - startX);
   };
 
   const dragStop = () => {
     isDragging = false;
-    carousel.classList.remove("dragging");
-    document.querySelector(".carousel .card").style =
+    slideShow.classList.remove("dragging");
+    document.querySelector(".slideShow .agent").style =
       "scroll-snap-align: start";
   };
 
   const btnScroll = e => {
     const btnId = e.srcElement.attributes.id.value;
-    carousel.scrollLeft += btnId === "left" ? -firstCardWidth : firstCardWidth;
-    carousel.style = "scroll-behavior: smooth";
+    slideShow.scrollLeft +=
+      btnId === "left" ? -firstagentWidth : firstagentWidth;
+    slideShow.style = "scroll-behavior: smooth";
   };
 
   const infiniteScroll = () => {
-    //if carousel is at beginning, scroll to end
-    if (carousel.scrollLeft === 0) {
+    //if slideShow is at beginning, scroll to end
+    if (slideShow.scrollLeft === 0) {
       //instead of fiddling about with classes, this method is far easier
-      carousel.style = "scroll-behavior: auto";
-      carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
-      carousel.style = "scroll-behavior: smooth";
-    } //if carousel is at end, scroll to beginning
+      slideShow.style = "scroll-behavior: auto";
+      slideShow.scrollLeft = slideShow.scrollWidth - 2 * slideShow.offsetWidth;
+      slideShow.style = "scroll-behavior: smooth";
+    } //if slideShow is at end, scroll to beginning
     else if (
-      Math.ceil(carousel.scrollLeft) ===
-      carousel.scrollWidth - carousel.offsetWidth
+      Math.ceil(slideShow.scrollLeft) ===
+      slideShow.scrollWidth - slideShow.offsetWidth
     ) {
-      carousel.style = "scroll-behavior: auto;";
-      carousel.scrollLeft = carousel.offsetWidth;
-      carousel.style = "scroll-behavior: smooth;";
+      slideShow.style = "scroll-behavior: auto;";
+      slideShow.scrollLeft = slideShow.offsetWidth;
+      slideShow.style = "scroll-behavior: smooth;";
     }
   };
 
@@ -137,9 +138,9 @@
   const openModal = e => {
     //modal = document.querySelector(".modal");
     modal.innerHTML = "";
-    // use closest to find the clicked card
-    let modalCardId = e.target.closest(".card").id;
-    const modalCard = cardsArray.filter(card => +card.id == +modalCardId);
+    // use closest to find the clicked agent
+    let modalagentId = e.target.closest(".agent").id;
+    const modalagent = agentsArray.filter(agent => +agent.id == +modalagentId);
     toggleHidden();
     html = `
     <div class="overlay"
@@ -159,7 +160,7 @@
             border-radius: 25% 10%;
             box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.7);"
 
-          ><img src= ${modalCard[0].image} alt= ${modalCard[0].title} draggable="false" style="  width: 12vw;
+          ><img src= ${modalagent[0].image} alt= ${modalagent[0].title} draggable="false" style="  width: 12vw;
               height: 12vw;
               border-radius: 50%;
               object-fit: cover;
@@ -167,8 +168,8 @@
         </div>
 
         <div style="text-align:left; padding-right:2em;">
-          <h2 style="font-size: 2.1vw; margin-bottom: 0.5em"> ${modalCard[0].title} </h2>
-          <p style="font-size: 1.2vw"> ${modalCard[0].details} </p>
+          <h2 style="font-size: 2.1vw; margin-bottom: 0.5em"> ${modalagent[0].title} </h2>
+          <p style="font-size: 1.2vw"> ${modalagent[0].details} </p>
         </div>
       
       </div>
@@ -181,7 +182,7 @@
 
   const imgsArr = Object.keys(import.meta.glob("$lib/images/*.*"));
 
-  let cardsArray = [
+  let agentsArray = [
     {
       id: 1,
       title: "Day Trips",
@@ -252,19 +253,19 @@
 
     <!-- dragging class required below to prevent errors as it doesn't exist until it's injected in by the dragStart function -->
     <div
-      bind:this={carousel}
-      class="carousel dragging"
+      bind:this={slideShow}
+      class="slideShow dragging"
       on:mousemove={dragging}
       on:mousedown={dragStart}
       on:scroll={infiniteScroll}
     >
-      {#each cardsArray as card}
-        <div class="card" id={card.id}>
+      {#each agentsArray as agent}
+        <div class="agent" id={agent.id}>
           <div class="img"
-            ><img src={card.image} alt={card.title} draggable="false" /></div
+            ><img src={agent.image} alt={agent.title} draggable="false" /></div
           >
-          <h2>{card.title}</h2>
-          <span>{card.subTitle}</span>
+          <h2>{agent.title}</h2>
+          <span>{agent.subTitle}</span>
         </div>
       {/each}
     </div>
@@ -275,7 +276,7 @@
   </div>
 </body>
 
-<!-- <div class="hidden"> modal window code goes here, position is absolute and is hidden in css until doubleclicked card - card details will have to be injected in using js </div>-->
+<!-- <div class="hidden"> modal window code goes here, position is absolute and is hidden in css until doubleclicked agent - agent details will have to be injected in using js </div>-->
 
 <style>
   * {
@@ -385,7 +386,7 @@
   .wrapper i:last-child {
     right: -22px;
   }
-  .wrapper .carousel {
+  .wrapper .slideShow {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: calc((100% / 3) - 9px);
@@ -398,11 +399,11 @@
     align-items: center;
   }
 
-  .carousel::-webkit-scrollbar {
+  .slideShow::-webkit-scrollbar {
     display: none;
   }
 
-  .carousel :where(.card, .img) {
+  .slideShow :where(.agent, .img) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -411,7 +412,7 @@
     box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.7);
   }
 
-  .carousel .card {
+  .slideShow .agent {
     scroll-snap-align: start;
     height: 16em;
     padding-bottom: 0.2em;
@@ -419,12 +420,12 @@
     cursor: pointer;
   }
 
-  .carousel.dragging {
+  .slideShow.dragging {
     scroll-snap-type: none;
     scroll-behavior: auto;
   }
 
-  .card .img {
+  .agent .img {
     background: linear-gradient(
       to bottom right,
       var(--primary),
@@ -435,11 +436,11 @@
     width: 10em;
   }
 
-  .card .img:hover {
+  .agent .img:hover {
     transform: scale(1.04);
   }
 
-  .card .img img {
+  .agent .img img {
     width: 7em;
     height: 7em;
     border-radius: 50%;
@@ -447,25 +448,25 @@
     border: 0.3em solid #fff;
   }
 
-  .card h2 {
+  .agent h2 {
     font-weight: 800;
     font-size: 1.3rem;
     margin: 0.6em 0 0.3em;
   }
 
-  .card span {
+  .agent span {
     color: #4f5157;
     font-size: 1.1rem;
   }
 
   @media screen and (max-width: 950px) {
-    .wrapper .carousel {
+    .wrapper .slideShow {
       grid-auto-columns: calc((100% / 2) - 7px);
     }
   }
 
   @media screen and (max-width: 650px) {
-    .wrapper .carousel {
+    .wrapper .slideShow {
       grid-auto-columns: 100%;
     }
   }
