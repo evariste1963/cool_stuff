@@ -8,9 +8,6 @@
   // import '@fortawesome/fontawesome-free/css/all.css';
   // import '@fortawesome/fontawesome-free/js/all.js';
 
- 
-  
-
   import { onMount } from "svelte";
 
   let slideShow,
@@ -313,17 +310,17 @@
 
   .overlay {
     position: fixed;
-    top: 10%;
+    top: 0;
     /*left:0;*/
-    width: 85%;
-    height: 75%;
+    width: 100%;
+    height: 100%;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.1); /*darkens page behind */
-    backdrop-filter: blur(16px); /*blurs page behind */
-    border-radius: 20em 6em;
+    /*background-color: rgba(158, 151, 151, 0.1);*/ /*darkens page behind */
+    backdrop-filter: blur(8px); /*blurs page behind */
+    /*border-radius: 20em 6em;*/
     z-index: 99;
     transform: scale(1);
-    transition: all 0.5s;
+    transition: all 0.3s;
     cursor: pointer;
   }
 
