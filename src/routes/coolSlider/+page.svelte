@@ -320,7 +320,7 @@
     /*border-radius: 20em 6em;*/
     z-index: 99;
     transform: scale(1);
-    transition: all 0.3s;
+    transition: all 0.4s ease-in-out;
     cursor: pointer;
   }
 
@@ -341,7 +341,7 @@
     align-items: center;
     z-index: 999;
     transform: scale(1);
-    transition: all 0.3s;
+    transition: all 0.4s ease-in-out;
   }
   .modal {
     transform: translate(-50%, -50%);
