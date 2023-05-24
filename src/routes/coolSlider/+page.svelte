@@ -144,8 +144,7 @@
     const modalagent = agentsArray.filter(agent => +agent.id == +modalagentId);
     toggleHidden();
     html = `
-    <div class="overlay"
-      <div style="display:flex">
+      <div  style="display:flex">
         <div class="img" style="display: flex; align-items: center;
             justify-content: center;
             margin:auto 2em auto 1em;
@@ -172,9 +171,7 @@
           <h2 style="font-size: 2.1vw; margin-bottom: 0.5em"> ${modalagent[0].title} </h2>
           <p style="font-size: 1.2vw"> ${modalagent[0].details} </p>
         </div>
-      
-      </div>
-    </div>
+      </div>    
     `;
 
     modal.insertAdjacentHTML("afterbegin", html);
@@ -277,8 +274,6 @@
   </div>
 </body>
 
-<!-- <div class="hidden"> modal window code goes here, position is absolute and is hidden in css until doubleclicked agent - agent details will have to be injected in using js </div>-->
-
 <style>
   * {
     margin: 0;
@@ -291,8 +286,8 @@
     display: flex;
     padding: 0 35px;
     align-items: center;
-    /* justify-content: center; */
-    min-height: 100vh;
+    /*justify-content: center;*/
+    max-height: 100vh;
     background: linear-gradient(
       to bottom right,
       var(--primary),
@@ -312,8 +307,8 @@
     position: fixed;
     top: 0;
     /*left:0;*/
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     margin: auto;
     /*background-color: rgba(158, 151, 151, 0.1);*/ /*darkens page behind */
     backdrop-filter: blur(8px); /*blurs page behind */
@@ -327,7 +322,7 @@
   .modal {
     display: flex;
     position: fixed;
-    top: 50%;
+    top: 40%;
     left: 50%;
     user-select: none;
     border-radius: 8em 2em;
@@ -347,6 +342,15 @@
     transform: translate(-50%, -50%);
   }
 
+  .modal::after {
+    content: "X";
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
   .hidden {
     visibility: hidden;
     transform: scale(0%);
@@ -356,7 +360,17 @@
     max-width: 60vw;
     width: 100%;
     position: relative;
-    margin-top: 15%;
+    margin-top: 10%;
+  }
+
+  .wrapper::before {
+    content: "doubleClick card for more information";
+    position: absolute;
+    top: -0.5em;
+    left: 1em;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 
   .wrapper i {

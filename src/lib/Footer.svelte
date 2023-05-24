@@ -13,7 +13,7 @@
     bottom: 0;
     width: 100%;
     height: 3em;
-    background: rgba(97, 108, 110, 0.88);
+    background: rgba(97, 108, 110, 0.99);
     box-shadow: 0px -1px 10px 0 rgb(0 0 0);
     text-align: center;
     color: #fff;
