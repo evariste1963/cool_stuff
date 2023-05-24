@@ -269,8 +269,8 @@
     </div>
     <i id="right" on:click={btnScroll} on:keydown={btnScroll}>next</i>
   </div>
-  <div class="overlay hidden" on:click={closeModal} on:keydown={closeModal}>
-    <div class="modal" />
+  <div class="overlay hidden">
+    <div class="modal" on:click={closeModal} on:keydown={closeModal}/>
   </div>
 </body>
 
@@ -316,7 +316,6 @@
     z-index: 99;
     transform: scale(1);
     transition: all 0.4s ease-in-out;
-    cursor: pointer;
   }
 
   .modal {
@@ -349,6 +348,7 @@
     right: 1.5em;
     font-size: 2rem;
     font-weight: bold;
+    cursor: pointer;
   }
 
   .hidden {
