@@ -13,6 +13,7 @@
   import BmwCarousel from "$lib/components/BmwCarousel.svelte";
   import FlipCard from "$lib/components/FlipCard.svelte";
   import ExpandingCards_2 from "$lib/components/ExpandingCards_2.svelte";
+  import MixBlendMode from "$lib/components/MixBlendMode.svelte";
   //import NepalnMeSlider from "$lib/components/NepalnMeSlider.svelte";
 
   let imagesToShow = 2;
@@ -112,6 +113,10 @@
   <SKEmbed />
 </div>
 
+<div class="mix-blend-mode">
+  <MixBlendMode />
+</div>
+
 <div class="scroll" use:scrollRef={"scroll"} />
 
 <style>
@@ -161,5 +166,13 @@
     padding: 1em 0;
     border-top: 2px solid rgba(97, 108, 110, 0.7);
     border-bottom: 2px solid rgba(97, 108, 110, 0.7);
+  }
+
+  .mix-blend-mode {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    border-top: solid 3px #777;
+    border-bottom: solid 3px #777;
   }
 </style>
