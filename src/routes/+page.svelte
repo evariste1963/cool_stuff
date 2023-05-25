@@ -14,6 +14,7 @@
   import FlipCard from "$lib/components/FlipCard.svelte";
   import ExpandingCards_2 from "$lib/components/ExpandingCards_2.svelte";
   import MixBlendMode from "$lib/components/MixBlendMode.svelte";
+  import WWRMixBlendMode from "$lib/components/WWRMixBlendMode.svelte";
   //import NepalnMeSlider from "$lib/components/NepalnMeSlider.svelte";
 
   let imagesToShow = 2;
@@ -117,6 +118,10 @@
   <MixBlendMode />
 </div>
 
+<div class="wwr-mix-blend-mode">
+  <WWRMixBlendMode />
+</div>
+
 <div class="scroll" use:scrollRef={"scroll"} />
 
 <style>
@@ -174,5 +179,11 @@
     padding: 0;
     border-top: solid 3px #777;
     border-bottom: solid 3px #777;
+  }
+
+  .wwr-mix-blend-mode {
+    background:#fff;
+    align-items: center;
+    justify-content: center;
   }
 </style>

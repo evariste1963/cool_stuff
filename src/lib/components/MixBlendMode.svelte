@@ -160,7 +160,7 @@
   }
 
   .wrapper {
-    width: min(100% - 28rem);
+    width: min(100% - 36rem);
     margin-inline: auto;
   }
 
@@ -175,8 +175,8 @@
     color: #fff;
     width: 8rem;
     margin: 1rem;
-    font-size: 4rem;
-    font-weight: 900;
+    font-size: 10rem;
+    font-weight: bold;
     text-transform: uppercase;
   }
 
