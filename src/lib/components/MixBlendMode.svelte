@@ -183,7 +183,7 @@
   @media (min-width: 980px) {
     .logo {
       position: sticky;
-      top: 3rem;
+      top: 6rem;
       mix-blend-mode: difference;
     }
   }
