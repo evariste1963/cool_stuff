@@ -1,19 +1,19 @@
 <script>
-  import Button89 from "$lib/Button89.svelte";
-  import SliderBtn from "$lib/SliderBtn.svelte";
-  import BackToTopBtn from "../lib/BackToTopBtn.svelte";
-  import SvelteScolling from "../lib/SvelteScolling.svelte";
-  import ScrollToBtn from "$lib/ScrollToBtn.svelte";
-  import ToggleHideBtn from "$lib/ToggleHideBtn.svelte";
-  import SlideShow from "$lib/SlideShow.svelte";
+  import Button89 from "$lib/components/Button89.svelte";
+  import SliderBtn from "$lib/components/SliderBtn.svelte";
+  import BackToTopBtn from "../lib/components/BackToTopBtn.svelte";
+  import SvelteScolling from "../lib/components/SvelteScolling.svelte";
+  import ScrollToBtn from "$lib/components/ScrollToBtn.svelte";
+  import ToggleHideBtn from "$lib/components/ToggleHideBtn.svelte";
+  import SlideShow from "$lib/components/SlideShow.svelte";
   import { scrollRef } from "svelte-scrolling";
-  import SKEmbed from "$lib/SKEmbed.svelte";
+  import SKEmbed from "$lib/components/SKEmbed.svelte";
   import Container from "$lib/Container/Container.svelte";
-  import SvelteCarousel from "$lib/SvelteCarousel.svelte";
-  import BmwCarousel from "$lib/BmwCarousel.svelte";
-  import FlipCard from "$lib/FlipCard.svelte";
-  import ExpandingCards_2 from "$lib/ExpandingCards_2.svelte";
-  //import NepalnMeSlider from "$lib/NepalnMeSlider.svelte";
+  import SvelteCarousel from "$lib/components/SvelteCarousel.svelte";
+  import BmwCarousel from "$lib/components/BmwCarousel.svelte";
+  import FlipCard from "$lib/components/FlipCard.svelte";
+  import ExpandingCards_2 from "$lib/components/ExpandingCards_2.svelte";
+  //import NepalnMeSlider from "$lib/components/NepalnMeSlider.svelte";
 
   let imagesToShow = 2;
 </script>
