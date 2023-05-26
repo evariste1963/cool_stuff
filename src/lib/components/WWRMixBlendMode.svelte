@@ -11,6 +11,7 @@
     <section />
     <section />
     <section />
+    <section />
   </div>
 </container>
 
@@ -33,7 +34,7 @@
     background: #fff;
   }
 
-  section:nth-child(6) {
+  section:nth-child(7) {
     background: #6b0505;
   }
 
