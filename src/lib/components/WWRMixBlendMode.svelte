@@ -19,22 +19,28 @@
   section {
     height: 400px;
     align-items: center;
+    transform: skewY(-2deg);
   }
 
   section:nth-child(6) {
     background: #0d5f1c;
+    transform: skewY(2deg);
   }
 
   section:nth-child(2) {
     background: #000;
+    transform: skewY(2deg);
   }
 
   section:nth-child(4) {
     background: #6b0505;
+    transform: skewY(2deg);
   }
 
   section:nth-child(odd) {
     background: #fff;
+    transform: skewY(-2deg);
+    z-index: 9;
   }
 
   /*
@@ -62,5 +68,6 @@
     justify-content: center;
     margin: auto;
     width: calc(150px + 30vmin);
+    z-index: 99;
   }
 </style>
