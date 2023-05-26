@@ -20,14 +20,14 @@
   }
 
   section:nth-child(even) {
-    color: #323232;
-    background: #fff;
+    color: #efefef;
+    background: #000;
     height: 300px;
   }
 
   section:nth-child(odd) {
-    color: #efefef;
-    background: #000;
+    color: #323232;
+    background: #fff;
     height: 300px;
   }
 
