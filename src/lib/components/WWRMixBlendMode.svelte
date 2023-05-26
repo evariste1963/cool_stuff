@@ -8,6 +8,7 @@
   <section />
   <section />
   <section />
+  <section />
 </container>
 
 <style>
@@ -17,18 +18,24 @@
   }
   section {
     padding-block: 3rem;
+    height: 400px;
+    align-items: center;
   }
 
-  section:nth-child(even) {
-    color: #efefef;
+  section:nth-child(6) {
+    background: #0d5f1c;
+  }
+
+  section:nth-child(2) {
     background: #000;
-    height: 300px;
+  }
+
+  section:nth-child(4) {
+    background: #6b0505;
   }
 
   section:nth-child(odd) {
-    color: #323232;
     background: #fff;
-    height: 300px;
   }
 
   /*
@@ -52,10 +59,9 @@
     mix-blend-mode: difference;
     height: 25em;
     width: auto;
-
     align-items: center;
     justify-content: center;
-    margin: 2vh auto;
+    margin: auto;
     width: calc(150px + 30vmin);
   }
 </style>
