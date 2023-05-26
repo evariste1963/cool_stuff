@@ -17,7 +17,6 @@
     height: 100%;
   }
   section {
-    padding-block: 3rem;
     height: 400px;
     align-items: center;
   }
