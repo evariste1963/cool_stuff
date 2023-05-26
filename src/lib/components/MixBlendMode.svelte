@@ -160,7 +160,7 @@
   }
 
   .wrapper {
-    width: min(100% - 36rem);
+    width: min(100% - 60rem);
     margin-inline: auto;
   }
 

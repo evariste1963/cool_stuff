@@ -1,20 +1,17 @@
 <script>
-	import logo from "$lib/WWRlogo/logo.png"
+  import logo from "$lib/WWRlogo/logo.png";
 </script>
 
 <container>
-    <img class="logo" src={logo} alt="WWRlogo">
-    <section />
-    <section />
-    <section />
-    <section />
-
-   
+  <img class="logo" src={logo} alt="WWRlogo" />
+  <section />
+  <section />
+  <section />
+  <section />
 </container>
 
 <style>
-
-container {
+  container {
     background: #fff;
     height: 100%;
   }
@@ -25,15 +22,16 @@ container {
   section:nth-child(even) {
     color: #323232;
     background: #fff;
-    height:300px;
+    height: 300px;
   }
 
   section:nth-child(odd) {
     color: #efefef;
     background: #000;
-    height:300px;
+    height: 300px;
   }
-/*
+
+  /*
   .wrapper {
     width: min(100% - 36rem);
     margin-inline: auto;
@@ -48,18 +46,16 @@ container {
 */
   .logo {
     position: sticky;
-   	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
     top: 30rem;
     mix-blend-mode: difference;
-    Height: 25em;
+    height: 25em;
     width: auto;
-    
+
     align-items: center;
     justify-content: center;
     margin: 2vh auto;
-		width: calc(150px + 30vmin);
-}
-
- 
+    width: calc(150px + 30vmin);
+  }
 </style>
