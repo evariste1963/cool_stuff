@@ -13,7 +13,7 @@
   import BmwCarousel from "$lib/components/BmwCarousel.svelte";
   import FlipCard from "$lib/components/FlipCard.svelte";
   import ExpandingCards_2 from "$lib/components/ExpandingCards_2.svelte";
-  import MixBlendMode from "$lib/components/MixBlendMode.svelte";
+  //import MixBlendMode from "$lib/components/MixBlendMode.svelte";
   import WWRMixBlendMode from "$lib/components/WWRMixBlendMode.svelte";
   //import NepalnMeSlider from "$lib/components/NepalnMeSlider.svelte";
 
@@ -80,7 +80,8 @@
       <h2 style="width:100%; text-align:center; margin-top:2em;"
         >BMW Carousel</h2
       >
-      <BmwCarousel />
+      <!-- importing component differently-->
+      <svelte:component this={BmwCarousel} />
     </div>
   </div>
   <div style="height:100vh; border-bottom: 2px solid rgba(97, 108, 110, 0.7); ">
@@ -114,10 +115,12 @@
   <SKEmbed />
 </div>
 
-<div class="mix-blend-mode">
-  <MixBlendMode />
-</div>
-
+<!-- importing component differently-->
+{#await import("$lib/components/MixBlendMode.svelte") then Module}
+  <div class="mix-blend-mode">
+    <Module.default />
+  </div>
+{/await}
 <div class="wwr-mix-blend-mode">
   <WWRMixBlendMode />
 </div>
@@ -182,7 +185,7 @@
   }
 
   .wwr-mix-blend-mode {
-    background:#fff;
+    background: #fff;
     align-items: center;
     justify-content: center;
   }
