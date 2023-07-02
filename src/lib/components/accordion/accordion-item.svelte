@@ -54,19 +54,19 @@
 
 	.image {
 		float: left;
-		height: 100px;
+		height: 125px;
 		width:auto;
-		padding-right: 1rem;
+		margin: 0 1rem 0.5rem 0;
 	}
 
 	.accordion-caret {
-		rotate: -180deg;
+		rotate: 90deg;
 		font-size: 1.5rem;
 		transition: all 0.6s ease;
 	}
 
-	.open {
-		rotate: 0deg;
+	.accordion-caret.open {
+		rotate: -180deg;
 	}
 
 	:where(.accordion-caret, .accordion-title).open

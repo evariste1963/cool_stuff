@@ -109,10 +109,10 @@
   </div>
 
   <div class="accordion">
-    <Accordion colapse --accordion-width="60ch">
+    <Accordion colapse --accordion-width="50ch">
       {#each items as item, i}
         <!-- <AccordionItem open={i === 0}> -->
-        <AccordionItem open={false} ind={i}>
+        <AccordionItem open={false} ind={i+1}>
           <svelte:fragment slot="title">{item.title}</svelte:fragment>
           <svelte:fragment slot="content">{@html item.details}</svelte:fragment>
       
@@ -152,7 +152,7 @@
 display: grid;
 height: 100vh;
 place-content: center;
-font-family: 'Manrope', sans-serif;
+font-family: inherit;
 font-size: 1.5rem;
 color: #fff;
 background-color: hsl(220 10% 10%)
