@@ -43,7 +43,9 @@
 	{#if isOpen}
 		<div transition:slide|local class="accordion-content">
 			<img class="image" src={imgsArr[ind]} alt="">
+			
 			<slot name="content" />
+		
 		</div>
 	{/if}
 </div>
@@ -51,8 +53,10 @@
 <style>
 
 	.image {
+		float: left;
 		height: 100px;
 		width:auto;
+		padding-right: 1rem;
 	}
 
 	.accordion-caret {
@@ -96,6 +100,7 @@
 	}
 
 	.accordion-content {
+		
 		font-size: 1.25rem;
 		padding: var(--accordion-content-padding, 1rem);
 		color:var(--accordion-content-color, rgb(240, 225, 212))
