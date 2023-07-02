@@ -2,8 +2,10 @@
 	
 	import { slide } from 'svelte/transition';
 	import { getAccordionOptions } from './context'
+	const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
 
 	export let open = false; 
+	export let ind = 0
 	
 	const componentId = crypto.randomUUID();
 	// const colapse = getContext('colapse');
@@ -40,12 +42,19 @@
 	</button>
 	{#if isOpen}
 		<div transition:slide|local class="accordion-content">
+			<img class="image" src={imgsArr[ind]} alt="">
 			<slot name="content" />
 		</div>
 	{/if}
 </div>
 
 <style>
+
+	.image {
+		height: 100px;
+		width:auto;
+	}
+
 	.accordion-caret {
 		rotate: -180deg;
 		font-size: 1.5rem;

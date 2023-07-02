@@ -19,6 +19,7 @@
   //import NepalnMeSlider from "$lib/components/NepalnMeSlider.svelte";
 
   let imagesToShow = 2;
+ 
   export let data;
 	let { items } = data;
 </script>
@@ -111,9 +112,10 @@
     <Accordion colapse --accordion-width="60ch">
       {#each items as item, i}
         <!-- <AccordionItem open={i === 0}> -->
-        <AccordionItem open={false}>
+        <AccordionItem open={false} ind={i}>
           <svelte:fragment slot="title">{item.title}</svelte:fragment>
           <svelte:fragment slot="content">{@html item.details}</svelte:fragment>
+      
         </AccordionItem>
       {/each}
     </Accordion>
