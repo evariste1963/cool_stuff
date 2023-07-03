@@ -58,7 +58,7 @@
   }
 
   .accordion-caret.open {
-    rotate: -180deg;
+    rotate: 360deg;
   }
 
   :where(.accordion-caret, .accordion-title).open {
