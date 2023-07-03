@@ -13,15 +13,18 @@
   import BmwCarousel from "$lib/components/BmwCarousel.svelte";
   import FlipCard from "$lib/components/FlipCard.svelte";
   import ExpandingCards_2 from "$lib/components/ExpandingCards_2.svelte";
-  import { Accordion, AccordionItem } from '$lib/components/accordion/accordion';
+  import {
+    Accordion,
+    AccordionItem,
+  } from "$lib/components/accordion/accordion";
   //import MixBlendMode from "$lib/components/MixBlendMode.svelte";
   import WWRMixBlendMode from "$lib/components/WWRMixBlendMode.svelte";
   //import NepalnMeSlider from "$lib/components/NepalnMeSlider.svelte";
 
   let imagesToShow = 2;
- 
+
   export let data;
-	let { items } = data;
+  let { items } = data;
 </script>
 
 <BackToTopBtn />
@@ -112,15 +115,13 @@
     <Accordion colapse --accordion-width="50ch">
       {#each items as item, i}
         <!-- <AccordionItem open={i === 0}> -->
-        <AccordionItem open={false} ind={i+1}>
+        <AccordionItem open={false} ind={i + 1}>
           <svelte:fragment slot="title">{item.title}</svelte:fragment>
           <svelte:fragment slot="content">{@html item.details}</svelte:fragment>
-      
         </AccordionItem>
       {/each}
     </Accordion>
-    </div>
-    
+  </div>
 
   <div style="height:100vh"
     ><br /><br /><h1>**** CCC MASK/CLIPPING to go in here? **** </h1></div
@@ -147,16 +148,17 @@
 <div class="scroll" use:scrollRef={"scroll"} />
 
 <style>
-
-.accordion {
-display: grid;
-height: 100vh;
-place-content: center;
-font-family: inherit;
-font-size: 1.5rem;
-color: #fff;
-background-color: hsl(220 10% 10%)
-}
+  .accordion {
+    display: grid;
+    height: fit-content;
+    min-height: 100vh;
+    padding: 10em 0;
+    place-content: center;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: hsl(220 10% 10%);
+  }
 
   .page {
     margin: 2em;
