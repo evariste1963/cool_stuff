@@ -1,6 +1,7 @@
 <script>
   import { slide } from "svelte/transition";
   import { getAccordionOptions } from "./context";
+
   const imgsArr = Object.keys(import.meta.glob("$lib/images/**/*.*"));
 
   export let open = false;
@@ -32,7 +33,7 @@
     <div class="accordion-title" class:open={isOpen}>
       <slot name="title" />
     </div>
-    <div class="accordion-caret" class:open={isOpen}>ʌ</div>
+    <div class="accordion-caret" class:open={isOpen}>+</div>
   </button>
   {#if isOpen}
     <div transition:slide|local class="accordion-content">
@@ -52,13 +53,16 @@
   }
 
   .accordion-caret {
-    rotate: 90deg;
+    transform: rotate(0deg);
+    font-family: Tahoma, Verdana, sans-serif;
     font-size: 1.5rem;
+    font-style: normal;
+    font-weight: bolder;
     transition: all 0.6s ease;
   }
 
   .accordion-caret.open {
-    rotate: 360deg;
+    transform: rotate(-135deg);
   }
 
   :where(.accordion-caret, .accordion-title).open {
