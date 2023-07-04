@@ -73,7 +73,7 @@
 
   .accordion-title.open {
     border-bottom: solid 1.5px
-      var(--accordion-content-color, rgb(248, 214, 184));
+      var(--accordion-content-color, rgba(246, 247, 248, 0.3));
   }
 
   .accordion-toggle {
@@ -81,7 +81,7 @@
     display: flex;
     justify-content: space-between;
     padding: var(--accordion-padding, 1rem);
-    color: var(--accordion-color, inherit);
+    color: inherit;
     font: inherit;
     font-weight: 200;
     border: none;
@@ -101,7 +101,7 @@
   .accordion-content {
     font-size: 1.25rem;
     padding: var(--accordion-content-padding, 1rem);
-    color: var(--accordion-content-color, rgb(248, 214, 184));
+    color: var(--accordion-content-color, rgb(249, 221, 196));
   }
 
   .image {
