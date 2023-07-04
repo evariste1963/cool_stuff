@@ -45,13 +45,6 @@
 </div>
 
 <style>
-  .image {
-    float: left;
-    height: 125px;
-    width: auto;
-    margin: 0 1rem 0.5rem 0;
-  }
-
   .accordion-caret {
     transform: rotate(0deg);
     font-family: Tahoma, Verdana, sans-serif;
@@ -100,5 +93,13 @@
     font-size: 1.25rem;
     padding: var(--accordion-content-padding, 1rem);
     color: var(--accordion-content-color, rgb(240, 225, 212));
+  }
+
+  .image {
+    float: left;
+    height: 125px;
+    width: auto;
+    margin: 0 1rem 0.5rem 0;
+    border-radius: 5%;
   }
 </style>
