@@ -29,7 +29,7 @@
 
 <BackToTopBtn />
 <div class="page">
-  <h1>this is my cool stuff library</h1>
+  <h1>this is my cool stuff library - pretty cool eh?</h1>
 
   <SvelteScolling />
   <div class="btns">
